@@ -36,9 +36,9 @@ LCARS.element.button.prototype = {
 	//Required.  Create DOM element and base class
 	create:function(oDef){
 		if(oDef.href !== undefined){
-			var element = $('<a id="'+this.data.id+'" class="button"></a>');
+			var element = $('<a id="'+this.data.id+'" class="button" onclick="play(0001)"></a>');
 		}else{
-			var element = $('<div id="'+this.data.id+'" class="button"></div>');
+			var element = $('<div id="'+this.data.id+'" class="button" onclick="play(0002)"></div>');
 		}            
 		return element;
 	},	
