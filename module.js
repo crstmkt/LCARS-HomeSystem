@@ -42,7 +42,7 @@ children:[
                     {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'},
                     {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'},
                     {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'},
-                    {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'},
+                    {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round', label:'clean', href:'javascript:ws.send(\'{"id": 2, "type": "call_service", "domain": "vacuum", "service": "start", "service_data":{"entity_id": "vacuum.lcars_clean"}}\n\')'},
                     {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round', label:'Docs', state:'blink', href:'https://github.com/crstmkt/LCARS-SDK/wiki'}           
                 ]},
             ]},
