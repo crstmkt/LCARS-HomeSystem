@@ -1,9 +1,3 @@
-/** LCARS SDK 19182.4
-* This file is a part of the LCARS SDK.
-* https://github.com/AricwithanA/LCARS-SDK/blob/master/LICENSE.md
-* For more information please go to http://www.lcarssdk.org.
-**/
-
 $( document ).ready(function() {
     $('body').append( LCARS.create(nemesisUI).dom );
 });
@@ -29,21 +23,26 @@ children:[
         ]},
 
         {type:'wrapper', flexc:'h', flex:'v', children:[
-
+            
             //Header Content Area
-            {type:'wrapper', version:'content', flexc:'v', children:[
+            {type:'wrapper', version:'content', flexc:'v', flex:'h', children:[
+
+                //Logs Area
+                {type:'wrapper', flexc:'v', flex:'h', children:[
+                    {id: 'logs', type:'text', color:'text-blue-1', text:''},
+                ]},
 
                 //Header Title
                 {type:'title', text:'LCARS HOME SYSTEM'},
 
                 //Header Round Button Group
                 {type:'wrapper', flex:'h', version:'button-wrap', children:[
-                    {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'},
+                    {type:'button', color:'bg-grey-4', version:'round', label:'GREY MODE'},
                     {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'},
                     {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'},
                     {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'},
                     {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round', label:'clean', href:'javascript:ws.send(\'{"id": 2, "type": "call_service", "domain": "vacuum", "service": "start", "service_data":{"entity_id": "vacuum.lcars_clean"}}\n\')'},
-                    {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round', label:'Docs', state:'blink', href:'https://github.com/crstmkt/LCARS-SDK/wiki'}           
+                    {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'}
                 ]},
             ]},
 

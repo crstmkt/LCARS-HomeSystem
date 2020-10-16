@@ -11,18 +11,10 @@
 	text-align:right;
 }
 
-#wpr_viewport > .column:first-child{
-	width:305px; 
-	margin-right:5px;
+#logs{
+	text-align: left;
+	max-height: 120px;
 }
-
-#wpr_viewport > .column:first-child .button-wrap:last-child{margin-top:195px;}
-
-.default-bracket{
-	width:305px; 
-	height:255px; 
-	margin-bottom:5px;
-} 
 
 .button-wrap{
 	flex-wrap:wrap; 
