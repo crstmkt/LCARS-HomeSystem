@@ -1,3 +1,3 @@
 function getToken(){
-    return("");
+    return('');
 }

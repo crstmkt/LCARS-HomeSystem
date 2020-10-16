@@ -3,7 +3,7 @@ $(document).ready(function() {
     ws = new WebSocket('ws://homeassistant:8123/api/websocket');
 
     ws.addEventListener('open', function (event) {
-      ws.send('{"type": "auth","access_token": '+ getToken() +'}\n');
+      ws.send('{"type": "auth","access_token": "'+ getToken() +'"}\n');
       ws.send('{"id": 1, "type": "subscribe_events", "event_type": "state_changed"}\n');
     });
 
