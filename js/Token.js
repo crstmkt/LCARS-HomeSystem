@@ -1,0 +1,3 @@
+function getToken(){
+    return("");
+}
