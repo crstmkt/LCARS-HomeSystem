@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     ws.addEventListener('open', function (event) {
       ws.send('{"type": "auth","access_token": "'+ getToken() +'"}\n');
-      ws.send('{"id": 1, "type": "subscribe_events", "event_type": "state_changed"}\n');
+      ws.send('{"id":'+getI()+', "type": "subscribe_events", "event_type": "state_changed"}\n');
     });
 
     ws.onmessage = function(event) {
@@ -21,6 +21,7 @@ $(document).ready(function() {
           }
         }
         log(logstring.toLocaleUpperCase());
+        console.log(event);
     };
     ws.onclose = log('Connection lost');
     ws.onopen = log('Connected');

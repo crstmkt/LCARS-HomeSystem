@@ -37,11 +37,11 @@ children:[
 
                 //Header Round Button Group
                 {type:'wrapper', flex:'h', version:'button-wrap', children:[
-                    {type:'button', color:'bg-grey-4', version:'round', label:'GREY MODE'},
+                    {type:'button', color:'bg-grey-4', version:'round', label:'GREY MODE', href:'javascript:activateGreyMode();'},
                     {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'},
                     {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'},
                     {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'},
-                    {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round', label:'clean', href:'javascript:ws.send(\'{"id": 2, "type": "call_service", "domain": "vacuum", "service": "start", "service_data":{"entity_id": "vacuum.lcars_clean"}}\n\')'},
+                    {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round', label:'clean', href:'javascript:startClean();'},
                     {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'}
                 ]},
             ]},
