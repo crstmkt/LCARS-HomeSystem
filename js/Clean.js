@@ -8,4 +8,5 @@ function startClean(){
             'content-type': 'application/json'
         }
     })
+    log('Started cleaning');
 }

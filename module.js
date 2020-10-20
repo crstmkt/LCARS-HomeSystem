@@ -71,7 +71,9 @@ children:[
             {type:'button', color:LCARS.helper.aRandColor(uiColors), size:'step-two'},
             {type:'button', color:LCARS.helper.aRandColor(uiColors)},
             {type:'button', color:LCARS.helper.aRandColor(uiColors), size:'step-two'},
-            {type:'button', color:LCARS.helper.aRandColor(uiColors), flexc:'v'}
+            {type:'button', color:LCARS.helper.aRandColor(uiColors), flexc:'v'},
+            {type:'button', color:LCARS.helper.aRandColor(uiColors)},
+            {type:'button', color:LCARS.helper.aRandColor(uiColors), size: 'step-two'}
         ]},
 
         {type:'column', flexc:'h', flex:'v', children:[

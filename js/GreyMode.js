@@ -7,4 +7,5 @@ function activateGreyMode(){
             'content-type': 'application/json'
         }
     })
+    log('Grey Mode activated');
 }
