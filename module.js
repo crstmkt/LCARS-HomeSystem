@@ -1,10 +1,14 @@
 $( document ).ready(function() {
     $('body').append( LCARS.create(nemesisUI).dom );
+    ShowMainFrame(true);
 });
 
-var uiColors = ['bg-blue-1', 'bg-blue-2','bg-blue-3','bg-blue-4','bg-green-1','bg-green-2','bg-green-3','bg-green-4'];
+var uiColors = ['bg-blue-1', 'bg-blue-2','bg-blue-3','bg-blue-4', 'bg-green-1','bg-green-2','bg-green-3','bg-green-4', 'bg-white'];
 
-var nemesisUI = {type:'wrapper', id:'wpr_viewport', version:'row', flex:'h', 
+var timer_colorChanges = null
+var array_colorChangeObjects = null;
+
+var nemesisUI = {type:'wrapper', id:'wpr_viewport', version:'row', flex:'h', class:{'scale': true, 'red-alert' : false},
 arrive:function(){var dom = this.dom; LCARS.helper.viewportZoom(dom, {width:1440, height:1080}); 
     window.addEventListener("resize", function(){LCARS.helper.viewportZoom(dom, {width:1440, height:1080});});},
 
@@ -14,18 +18,18 @@ children:[
 {type:'wrapper', version:'column', id:'wpr_mainView', flex:'v', flexc:'h', children:[   
 
     //Header
-    {type:'row', version:'header', flex:'h', children:[
+    {type:'wrapper', version:'header', flex:'h', children:[
 
         //Elbow & Button
-        {type:'column', flex:'v', children:[
-            {type:'button', color:LCARS.helper.aRandColor(uiColors), size:'step-two'},
-            {type:'elbow', version:'horizontal', direction:'bottom-left', color:LCARS.helper.aRandColor(uiColors), flexc:'v'}
+        {type:'wrapper', version:'column', flex:'v', children:[
+            {type:'button', color:LCARS.helper.aRandColor(uiColors), size:'step-two', hidden: true},
+            {type:'elbow', version:'horizontal', direction:'bottom-left', color:LCARS.helper.aRandColor(uiColors), flexc:'v', hidden: true}
         ]},
 
         {type:'wrapper', flexc:'h', flex:'v', children:[
             
             //Header Content Area
-            {type:'wrapper', version:'content', flexc:'v', flex:'h', children:[
+            {type:'wrapper', version:'content', hidden: true, flexc:'v', flex:'h', children:[
 
                 //Logs Area
                 {type:'wrapper', flexc:'v', flex:'h', children:[
@@ -38,7 +42,7 @@ children:[
                 //Header Round Button Group
                 {type:'wrapper', flex:'h', version:'button-wrap', children:[
                     {type:'button', color:'bg-grey-4', version:'round', label:'GREY MODE', href:'javascript:activateGreyMode();'},
-                    {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'},
+                    {type:'button', color:'bg-blue-2', version:'round', label: 'TEST', href:''},
                     {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'},
                     {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'},
                     {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round', label:'clean', href:'javascript:startClean();'},
@@ -48,13 +52,13 @@ children:[
 
             //Header Bottom Bars
             {type:'row', version:'frame', flex:'h', children:[
-                {type:'bar', color:LCARS.helper.aRandColor(uiColors)},
-                {type:'bar', color:LCARS.helper.aRandColor(uiColors)},
-                {type:'bar', color:LCARS.helper.aRandColor(uiColors)},
-                {type:'bar', color:LCARS.helper.aRandColor(uiColors), flexc:'h'},
-                {type:'bar', color:LCARS.helper.aRandColor(uiColors)},
-                {type:'bar', color:LCARS.helper.aRandColor(uiColors)},
-                {type:'bar', color:LCARS.helper.aRandColor(uiColors)}
+                {type:'bar', color:LCARS.helper.aRandColor(uiColors), hidden: true},
+                {type:'bar', color:LCARS.helper.aRandColor(uiColors), hidden: true},
+                {type:'bar', color:LCARS.helper.aRandColor(uiColors), hidden: true},
+                {type:'bar', color:LCARS.helper.aRandColor(uiColors), flexc:'h', hidden: true},
+                {type:'bar', color:LCARS.helper.aRandColor(uiColors), hidden: true},
+                {type:'bar', color:LCARS.helper.aRandColor(uiColors), hidden: true},
+                {type:'bar', color:LCARS.helper.aRandColor(uiColors), hidden: true}
             ]}
 
         ]}
@@ -66,26 +70,26 @@ children:[
 
         //Left Columns & Elbow
         {type:'wrapper', version:'column', flex:'v', children:[
-            {type:'elbow', version:'horizontal', direction:'top-left', color:LCARS.helper.aRandColor(uiColors), class:'step-two'},
-            {type:'button', color:LCARS.helper.aRandColor(uiColors), label: 'DASH'},
-            {type:'button', color:LCARS.helper.aRandColor(uiColors), size:'step-two'},
-            {type:'button', color:LCARS.helper.aRandColor(uiColors)},
-            {type:'button', color:LCARS.helper.aRandColor(uiColors), size:'step-two'},
-            {type:'button', color:LCARS.helper.aRandColor(uiColors), flexc:'v'},
-            {type:'button', color:LCARS.helper.aRandColor(uiColors)},
-            {type:'button', color:LCARS.helper.aRandColor(uiColors), size: 'step-two'}
+            {type:'elbow', version:'horizontal', direction:'top-left', color:LCARS.helper.aRandColor(uiColors), class:'step-two', hidden: true},
+            {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, label: 'DASH'},
+            {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, size:'step-two'},
+            {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true},
+            {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, size:'step-two'},
+            {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, flexc:'v'},
+            {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true},
+            {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, size: 'step-two'}
         ]},
 
         {type:'column', flexc:'h', flex:'v', children:[
             //Top Bars Group
             {type:'row', flex:'h', version:'frame', children:[
-                {type:'bar', color:LCARS.helper.aRandColor(uiColors)},
-                {type:'bar', color:LCARS.helper.aRandColor(uiColors), size:'small'},
-                {type:'bar', color:LCARS.helper.aRandColor(uiColors)},
-                {type:'bar', color:LCARS.helper.aRandColor(uiColors), flexc:'h'},
-                {type:'bar', color:LCARS.helper.aRandColor(uiColors)},
-                {type:'bar', color:LCARS.helper.aRandColor(uiColors)},
-                {type:'bar', color:LCARS.helper.aRandColor(uiColors)}
+                {type:'bar', color:LCARS.helper.aRandColor(uiColors), hidden: true},
+                {type:'bar', color:LCARS.helper.aRandColor(uiColors), hidden: true, size:'small'},
+                {type:'bar', color:LCARS.helper.aRandColor(uiColors), hidden: true},
+                {type:'bar', color:LCARS.helper.aRandColor(uiColors), hidden: true, flexc:'h'},
+                {type:'bar', color:LCARS.helper.aRandColor(uiColors), hidden: true},
+                {type:'bar', color:LCARS.helper.aRandColor(uiColors), hidden: true},
+                {type:'bar', color:LCARS.helper.aRandColor(uiColors), hidden: true}
             ]},
 
             //Main Content Wrapper
@@ -93,4 +97,6 @@ children:[
         ]}
     ]}
 ]}
-]}; 
+]};
+
+    

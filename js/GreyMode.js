@@ -8,4 +8,5 @@ function activateGreyMode(){
         }
     })
     log('Grey Mode activated');
+    $('body').addClass('grey');
 }

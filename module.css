@@ -1,9 +1,3 @@
-/** LCARS SDK 19182.4
-* This file is a part of the LCARS SDK.
-* https://github.com/AricwithanA/LCARS-SDK/blob/master/LICENSE.md
-* For more information please go to http://www.lcarssdk.org.
-**/
-
 #wpr_viewport{
 	width:100%; 
 	height:100%; 
@@ -43,7 +37,7 @@
 	right:-204px;
 }
 
-.header .row.frame{padding-left:204px;}
+.header .row.frame{padding-left:209px;}
 
 .main .column{
 	left:0px; 
@@ -69,7 +63,7 @@
 .frame .bar:nth-child(5){
 	width:100%; 
 	max-width:305px;
-}	
+}
 
 .frame .bar:nth-child(6){
 	width:100%; 
@@ -99,3 +93,28 @@
 .step-two{height:125px;}
 .step-three{height:190px;}
 .step-four{height:255px;}
+
+/* Color Rotation */
+
+.grey{
+	-webkit-filter:grayscale(1); 
+	filter:grayscale(1); 
+	-webkit-animation: toGrey 1s linear; 
+	animation: toGrey 1s linear;
+}
+
+@-webkit-keyframes toGrey{
+	0%{-webkit-filter: grayscale(0);}
+	25%{-webkit-filter: grayscale(0.25);}
+	50%{-webkit-filter: grayscale(0.5);}
+	75%{-webkit-filter: grayscale(0.75);}
+	100%{-webkit-filter: grayscale(1);}
+}
+
+@keyframes toGrey{
+	0%{-webkit-filter: grayscale(0);}
+	25%{-webkit-filter: grayscale(0.25);}
+	50%{-webkit-filter: grayscale(0.5);}
+	75%{-webkit-filter: grayscale(0.75);}
+	100%{-webkit-filter: grayscale(1);}
+}
