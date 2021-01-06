@@ -36,18 +36,21 @@ children:[
                     {id: 'logs', type:'text', color:'text-blue-1', text:''},
                 ]},
 
-                //Header Title
-                {type:'title', text:'LCARS HOME SYSTEM'},
-
-                //Header Round Button Group
-                {type:'wrapper', flex:'h', version:'button-wrap', children:[
-                    {type:'button', color:'bg-grey-4', version:'round', label:'GREY MODE', href:'javascript:activateGreyMode();'},
-                    {type:'button', color:'bg-blue-2', version:'round', label: 'TEST', href:''},
-                    {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'},
-                    {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'},
-                    {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round', label:'clean', href:'javascript:startClean();'},
-                    {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'}
-                ]},
+                {type: 'wrapper', flexc:'h', flex:'v', children:[
+                    //Header Title
+                    {type:'title', text:'LCARS HOME SYSTEM'},
+                    {type:'title', id:'systemTime', size:'half', text: setInterval(function(){writeSystemTime();}, 1000) }, 
+                    
+                    //Header Round Button Group
+                    {type:'wrapper', flex:'h', version:'button-wrap', children:[
+                        {type:'button', color:'bg-grey-4', version:'round', label:'GREY MODE', href:'javascript:activateGreyMode();'},
+                        {type:'button', color:'bg-blue-2', version:'round', label: 'TEST', href:''},
+                        {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'},
+                        {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'},
+                        {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round', label:'clean', href:'javascript:startClean();'},
+                        {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'}
+                    ]}
+                ]}
             ]},
 
             //Header Bottom Bars
@@ -93,7 +96,9 @@ children:[
             ]},
 
             //Main Content Wrapper
-            {type:'wrapper', style:{'overflow':'auto'}, version:'content', flexc:'v'}
+            {type:'wrapper', style:{'overflow':'auto'}, version:'content', flexc:'v',children:[
+
+            ]}
         ]}
     ]}
 ]}

@@ -6,5 +6,5 @@ function log(str){
         $('#logs').children().eq(0).remove();
     }
 
-    $('#logs').append('<p>'+getCurrentTimestampWithMS()+' '+ str.toUpperCase() +'</p>');
+    $('#logs').append('<p>'+getTime()+' '+ str.toUpperCase() +'</p>');
 }
