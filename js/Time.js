@@ -1,7 +1,10 @@
 function getTime(){
     
-        return moment().format("DD.MM.YYYY hh:mm:ss")
-    
+        getTime(moment())
+}
+
+function getTime(str){
+		return moment(str).format("DD.MM.YYYY hh:mm:ss")
 }
 
 function writeSystemTime(){
