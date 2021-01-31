@@ -1,6 +1,8 @@
 $( document ).ready(function() {
     $('body').append( LCARS.create(nemesisUI).dom );
     ShowMainFrame(true);
+	initiateLogger();
+	initiateWasteCollection();
 });
 
 var uiColors = ['bg-blue-1', 'bg-blue-2','bg-blue-3','bg-blue-4', 'bg-green-1','bg-green-2','bg-green-3','bg-green-4', 'bg-white'];
@@ -39,12 +41,12 @@ children:[
                 {type: 'wrapper', flexc:'h', flex:'v', children:[
                     //Header Title
                     {type:'title', text:'LCARS HOME SYSTEM'},
-                    {type:'title', id:'systemTime', size:'half', text: setInterval(function(){writeSystemTime();}, 1000) }, 
+                    {type:'title', id:'systemTime', size: 'half',text: setInterval(function(){writeSystemTime();}, 1000) }, 
                     
                     //Header Round Button Group
                     {type:'wrapper', flex:'h', version:'button-wrap', children:[
                         {type:'button', color:'bg-grey-4', version:'round', label:'GREY MODE', href:'javascript:activateGreyMode();'},
-                        {type:'button', color:'bg-blue-2', version:'round', label: 'TEST', href:''},
+                        {type:'button', color:'bg-blue-2', version:'round', label: 'TEST', href:'javascript:getNextWasteCollection();'},
                         {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'},
                         {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'},
                         {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round', label:'clean', href:'javascript:startClean();'},
@@ -94,14 +96,33 @@ children:[
                 {type:'bar', color:LCARS.helper.aRandColor(uiColors), hidden: true},
                 {type:'bar', color:LCARS.helper.aRandColor(uiColors), hidden: true}
             ]},
-
-            //Main Content Wrapper
-            {type:'wrapper', style:{'overflow':'auto'}, version:'content', flexc:'v',children:[
-
-            ]}
+		
+            //Start Main Content Wrapper
+            {type:'wrapper', id:'wpr_centerControls' , style:{'overflow':'auto'}, version:'content', flex:'h', flexc:'v',children:[
+				
+				//WasteCollectionLeft
+				{type:'wrapper', version:'column', flex:'v', children:[
+					{type:'elbow', version:'horizontal', direction:'top-left', color:LCARS.helper.aRandColor(uiColors), class:'step-two', hidden: true},
+					{type:'block', color:LCARS.helper.aRandColor(uiColors), hidden: true, label: 'WASTE'}
+				]},
+				//WasteCollectionTop
+				{type:'column', flexc: 'h', flex:'v', children:[
+					{type:'row', flex:'h', version:'frame', children:[
+						{type:'title', size: 'small', text:'NEXT WASTE COLLECTION', hidden: true},
+						{type:'cap', version:'round-right', color:LCARS.helper.aRandColor(uiColors), hidden: true, size: 'small'}
+					]},
+					//WasteCollectionContentWrapper
+					{type:'wrapper', style:{'overflow':'auto'}, version:'content', flex:'h', flexc:'v',children:[
+						{type:'text', size: 'large', id: 'nextWasteCollectionDate', color:LCARS.helper.aRandColor(uiColors)},
+						{type:'text', size: 'large', id: 'nextWasteCollectionType', color:LCARS.helper.aRandColor(uiColors)}
+					]}
+					
+				]}
+				
+				
+			]}
+			//End Main Content Wrapper
         ]}
     ]}
 ]}
 ]};
-
-    
