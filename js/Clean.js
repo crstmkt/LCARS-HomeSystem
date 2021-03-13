@@ -13,10 +13,10 @@ function startClean(){
     })
 }
 
-function callbackStartClean(state){
+function callbackStartClean(state){    
     $.ajax({
         type: 'POST',
-        url: getHost() + '/api/services/vacuum/' + state == 'idle' ? 'start' : 'pause',
+        url: getHost() + '/api/services/vacuum/' + (state == 'idle' || state == 'paused' ? 'start' : 'pause'),
         data: '{"entity_id": "vacuum.lcars_clean"}',
         headers: {
             'Authorization': 'Bearer ' + getToken(),
