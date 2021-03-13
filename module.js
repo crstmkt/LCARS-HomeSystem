@@ -2,7 +2,7 @@ $( document ).ready(function() {
     $('body').append( LCARS.create(nemesisUI).dom );
     ShowMainFrame(true);
 	initiateLogger();
-	initiateWasteCollection();
+    initiateWasteCollection();
 });
 
 var uiColors = ['bg-blue-1', 'bg-blue-2','bg-blue-3','bg-blue-4', 'bg-green-1','bg-green-2','bg-green-3','bg-green-4', 'bg-white'];
@@ -46,8 +46,8 @@ children:[
                     //Header Round Button Group
                     {type:'wrapper', flex:'h', version:'button-wrap', children:[
                         {type:'button', color:'bg-grey-4', version:'round', label:'GREY MODE', href:'javascript:activateGreyMode();'},
-                        {type:'button', color:'bg-blue-2', version:'round', label: 'TEST', href:'javascript:getNextWasteCollection();'},
-                        {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'},
+                        {type:'button', color:'bg-blue-2', version:'round', label: 'TEST', href:''},
+                        {type:'button', id:'guestWifiSwitch', color: 'bg-orange-4', version:'round', label: 'GUEST WIFI', href:'javascript:toggleGuestWifi();'},
                         {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'},
                         {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round', label:'clean', href:'javascript:startClean();'},
                         {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'}

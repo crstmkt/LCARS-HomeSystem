@@ -11,6 +11,7 @@ function getNextWasteCollection(){
 function apiCallWasteCollectionType(){
 	$.ajax({
 			url: getHost() + '/api/states/sensor.next_waste_collection_type',
+			type: 'GET',
 			headers: {
 				'Authorization': 'Bearer ' + getToken()
 			},
@@ -23,6 +24,7 @@ function apiCallWasteCollectionType(){
 function apiCallWasteCollectionDate(){
 	$.ajax({
 			url: getHost() + '/api/states/sensor.next_waste_collection_date',
+			type: 'GET',
 			headers: {
 				'Authorization': 'Bearer ' + getToken()
 			},
