@@ -1970,6 +1970,20 @@ pre{white-space: pre-wrap;
      50% {background-color:transparent; color:transparent; border-color:transparent;}
 }
 
+.flash{
+	-webkit-animation: flash 0.7s step-end infinite; 
+	animation: flash 0.7s step-end infinite;
+}
+
+@-webkit-keyframes flash {
+	from, to { }
+	  80% {background-color:transparent; color:#FFFFFF; border-color:transparent;}
+ }
+
+@keyframes flash {
+	from, to { }
+	  80% {background-color:transparent; color:#ffffff; border-color:transparent;}
+ }
 
 .red-dark-light:not(.complexButton){ 
 	-webkit-animation: red-dark-light 1.5s step-end infinite !important; 
