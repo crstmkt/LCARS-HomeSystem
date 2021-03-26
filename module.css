@@ -7,7 +7,11 @@
 
 #logs{
 	text-align: left;
-	max-height: 120px;
+	max-height: 120px !important;
+}
+
+#nextWasteCollection{
+	text-align: left;
 }
 
 .button-wrap{
@@ -35,6 +39,10 @@
 #wpr_mainView > .header .column .elbow .bar{
 	width:209px; 
 	right:-204px;
+}
+
+#systemTime{
+	margin: 10px;
 }
 
 .header .row.frame{padding-left:209px;}
@@ -93,28 +101,3 @@
 .step-two{height:125px;}
 .step-three{height:190px;}
 .step-four{height:255px;}
-
-/* Color Rotation */
-
-.grey{
-	-webkit-filter:grayscale(1); 
-	filter:grayscale(1); 
-	-webkit-animation: toGrey 1s linear; 
-	animation: toGrey 1s linear;
-}
-
-@-webkit-keyframes toGrey{
-	0%{-webkit-filter: grayscale(0);}
-	25%{-webkit-filter: grayscale(0.25);}
-	50%{-webkit-filter: grayscale(0.5);}
-	75%{-webkit-filter: grayscale(0.75);}
-	100%{-webkit-filter: grayscale(1);}
-}
-
-@keyframes toGrey{
-	0%{-webkit-filter: grayscale(0);}
-	25%{-webkit-filter: grayscale(0.25);}
-	50%{-webkit-filter: grayscale(0.5);}
-	75%{-webkit-filter: grayscale(0.75);}
-	100%{-webkit-filter: grayscale(1);}
-}
