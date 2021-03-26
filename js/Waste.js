@@ -4,11 +4,10 @@ function initiateWasteCollection(){
 }
 
 function getNextWasteCollection(){
-	apiCallWasteCollectionDate();
-	apiCallWasteCollectionType();
+	apiCallWasteCollection();
 }
 
-function apiCallWasteCollectionType(){
+function apiCallWasteCollection(){
 	$.ajax({
 			url: getHost() + '/api/states/sensor.next_waste_collection_type',
 			type: 'GET',
@@ -16,20 +15,23 @@ function apiCallWasteCollectionType(){
 				'Authorization': 'Bearer ' + getToken()
 			},
 			success: function(data){
-				$('#nextWasteCollectionType').html('<p>: ' + data.state.toUpperCase() + '</p>');
-			}
-		})
-}
 
-function apiCallWasteCollectionDate(){
-	$.ajax({
-			url: getHost() + '/api/states/sensor.next_waste_collection_date',
-			type: 'GET',
-			headers: {
-				'Authorization': 'Bearer ' + getToken()
-			},
-			success: function(data){
-				$('#nextWasteCollectionDate').html('<p>' + data.state + '</p>');
+				$('#nextWasteCollection').html('');
+
+				for(i = 0; i < 5; i++)
+				{
+					var wdate = moment(Object.keys(data.attributes)[i]);
+					var wdateminus2 = moment(Object.keys(data.attributes)[i]).add(-2, 'days');			
+					
+					if(moment() >= wdateminus2)
+					{
+						$('#nextWasteCollection').append('<p class="flash">' + wdate.format("DD.MM.YYYY") + ' : ' +data.attributes[Object.keys(data.attributes)[i]].toUpperCase() + '</p>');
+					}
+					else
+					{
+						$('#nextWasteCollection').append('<p>' + wdate.format("DD.MM.YYYY") + ' : ' +data.attributes[Object.keys(data.attributes)[i]].toUpperCase() + '</p>');
+					}
+				}
 			}
 		})
 }
