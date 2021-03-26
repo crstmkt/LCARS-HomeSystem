@@ -5,7 +5,7 @@ function ShowMainFrame(){
     var headerColumn = $('#wpr_mainView > .header .column > *');
     var mainBars = $('#wpr_mainView > .main .row *');
     var mainColumn = $('#wpr_mainView > .main > .elbow, #wpr_mainView > .main .column > *');
-    var centerControlsColumn = $('#wpr_centerControls > *');
+    var centerControlsColumn = $('#wpr_centerControls > :first-child');
 
     sequenceHeaderPattern = []
     sequenceFooterPattern = []
@@ -129,25 +129,42 @@ $.fn.showObjectSequence = function(args){
     }         
 }
 
-// $.fn.hideObjectSequence = function(args){		
-//     var array = this;
-//     var count = array.length
-//     var numberStart = args.number || 0;
-//     var object = array[numberStart]
-//     var objectID = $(object).attr('id'); 
-//     if(!args.timing){args.timing = 0;}
-//     if($(object).hasClass('fade') && args.fade !== true){
-//         $(object).addClass('hidden');
-//         $(object).css('opacity', '0');
-//         //if(allObjects.hasOwnProperty(objectID)){if(typeof allObjects[objectID].show === 'function'){setTimeout(function(){allObjects[objectID].show();}, args.timing+timing_sequence);}}
-//     }else{
-//         $(object).addClass('hidden');
-//         //if(allObjects.hasOwnProperty(objectID)){if(typeof allObjects[objectID].show === 'function'){setTimeout(function(){allObjects[objectID].show();}, args.timing+timing_sequence);}}
-//     }    
+//Change current Site
+//Get first child of wrp_centerControls, then remove hidden class from the the given dom ID
+
+function changeHub(){
+    var activeHub = $('#wpr_centerControls > :first-child');
+    sequenceHubPattern = [];
+
+    $(activeHub).each(function(){
+        sequenceHubPattern.push(this);
+    });
     
-//     if(numberStart+1 !== count){
-//         setTimeout(function(){ $(array).showObjectSequence({timing:args.timing, number:numberStart+1, success:args.success}); }, args.timing+timing_sequence);
-//     }else{
-//        if(typeof args.success  === 'function'){setTimeout(function(){ args.success();}, args.timing+timing_sequence);}
-//     }         
-// }
+    sequenceHubPattern.reverse();
+    sequenceHubPattern.hideObjectSequence({});
+
+}
+
+
+$.fn.hideObjectSequence = function(args){		
+    var array = this;
+    var count = array.length
+    var numberStart = args.number || 0;
+    var object = array[numberStart]
+    var objectID = $(object).attr('id'); 
+    if(!args.timing){args.timing = 0;}
+    if($(object).hasClass('fade') && args.fade !== true){
+        $(object).addClass('hidden');
+        $(object).css('opacity', '0');
+        //if(allObjects.hasOwnProperty(objectID)){if(typeof allObjects[objectID].show === 'function'){setTimeout(function(){allObjects[objectID].show();}, args.timing+timing_sequence);}}
+    }else{
+        $(object).addClass('hidden');
+        //if(allObjects.hasOwnProperty(objectID)){if(typeof allObjects[objectID].show === 'function'){setTimeout(function(){allObjects[objectID].show();}, args.timing+timing_sequence);}}
+    }    
+    
+    if(numberStart+1 !== count){
+        setTimeout(function(){ $(array).showObjectSequence({timing:args.timing, number:numberStart+1, success:args.success}); }, args.timing+timing_sequence);
+    }else{
+       if(typeof args.success  === 'function'){setTimeout(function(){ args.success();}, args.timing+timing_sequence);}
+    }         
+}
