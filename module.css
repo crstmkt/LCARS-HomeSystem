@@ -65,6 +65,11 @@
 	overflow:visible;
 }
 
+.main .content{
+	padding-top:35px; 
+	padding-left:35px;
+}
+
 .main .column:first-child .elbow .bar{width:209px;}
 .main .row.frame{padding-left:209px;}
 
