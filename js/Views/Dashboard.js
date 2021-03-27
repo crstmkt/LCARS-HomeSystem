@@ -1,6 +1,7 @@
 function renderDashboard(){
     $('#wpr_centerControls').html('');
     $('#wpr_centerControls').append( LCARS.create(DashboardUI).dom );
+    
 }
 var uiColors = ['bg-blue-1', 'bg-blue-2','bg-blue-3','bg-blue-4', 'bg-green-1','bg-green-2','bg-green-3','bg-green-4', 'bg-white'];
 
