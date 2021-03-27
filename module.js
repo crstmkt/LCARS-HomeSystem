@@ -77,12 +77,12 @@ children:[
         //Left Columns & Elbow
         {type:'wrapper', version:'column', flex:'v', children:[
             {type:'elbow', version:'horizontal', direction:'top-left', color:LCARS.helper.aRandColor(uiColors), class:'step-two', hidden: true},
-            {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, label: 'DASHBOARD'},
+            {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, label: 'DASHBOARD', href:'javascript:renderDashboard()'},
             {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, size:'step-two'},
             {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true},
             {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, size:'step-two'},
             {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, flexc:'v'},
-            {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, label: 'WIFI'},
+            {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, label: 'WIFI', href:'javascript:renderWiFi();'},
             {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, size: 'step-two'}
         ]},
 
