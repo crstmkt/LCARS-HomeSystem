@@ -1,5 +1,6 @@
 $( document ).ready(function() {
     $('body').append( LCARS.create(nemesisUI).dom );
+    renderWiFi();
     ShowMainFrame(true);
 	initiateLogger();
     initiateWasteCollection();
@@ -99,65 +100,11 @@ children:[
 		
             //Start Main Content Wrapper
             {type:'wrapper', id:'wpr_centerControls' ,  version:'content', flex:'h', flexc:'v',children:[
-				
-                {type: 'wrapper', id: 'dashboard', version: 'content', flex:'h', flexc:'v', hidden: true, children:[
-				    //WasteCollectionLeft
-				    {type:'wrapper', version:'column', flex:'v', children:[
-				    	{type:'elbow', version:'horizontal', direction:'top-left', color:LCARS.helper.aRandColor(uiColors), class:'step-two', hidden: true},
-				    	{type:'block', color:LCARS.helper.aRandColor(uiColors), hidden: true, label: 'WASTE'}
-				    ]},
-				    //WasteCollectionTop
-				    {type:'column', flexc: 'h', flex:'v', children:[
-				    	{type:'row', flex:'h', version:'frame', hidden: true, children:[
-				    		{type:'title', size: 'small', text:'NEXT WASTE COLLECTION',},
-				    		{type:'cap', version:'round-right', color:LCARS.helper.aRandColor(uiColors), size: 'small'}
-				    	]},
-				    	//WasteCollectionContentWrapper
-				    	{type:'wrapper', version:'content', flex:'h', flexc:'v', hidden: true, children:[
-                            {type: 'wrapper', flex: 'h', flexc: 'v', children: [
-                                {type: 'text', id: 'nextWasteCollection', color: 'text-blue-1', text: ''}
-                            ]}
-				    	]}
-				    ]},
-                    //WasteCollection End
-
-                    //Wifi Start
-                    {type:'wrapper', flex: 'h', flexc: 'v' , children:[
-                        {type:'defaultBracket', namespace:'sdk', 
-                            coloring:{
-                                elbow:LCARS.helper.aRandColor(uiColors),
-                                column1:LCARS.helper.aRandColorGroup(uiColors, 3),				
-                                column2:LCARS.helper.aRandColorGroup(uiColors, 3),				
-                                column3:LCARS.helper.aRandColorGroup(uiColors, 3),				
-                                column4:LCARS.helper.aRandColorGroup(uiColors, 3),
-                            },
-                            content:[
-                                {type: 'title', color: LCARS.helper.aRandColor(uiColors), text: 'SSID: LCARS_Net_g'}       
-                            ]}
-                    ]}
-                    //Wifi End
-
-                ]},
-
-                {type: 'wrapper', id: 'wifi', version: 'content', flex:'h', flexc:'v', hidden: true, children:[
-                    //{type: 'title', color: LCARS.helper.aRandColor(uiColors), text: 'SSID: LCARS_Net_g'},
-                        {type:'wrapper', children:[
-                            {type:'defaultBracket', namespace:'sdk', 
-                                coloring:{
-                                    elbow:LCARS.helper.aRandColor(uiColors),
-                                    column1:LCARS.helper.aRandColorGroup(uiColors, 3),				
-                                    column2:LCARS.helper.aRandColorGroup(uiColors, 3),				
-                                    column3:LCARS.helper.aRandColorGroup(uiColors, 3),				
-                                    column4:LCARS.helper.aRandColorGroup(uiColors, 3),
-                                },
-                                content:[
-                                    {type: 'title', color: LCARS.helper.aRandColor(uiColors), text: 'SSID: LCARS_Net_g'}       
-                                ]}
-                        ]}
-                ]}
-			]}
-			//End Main Content Wrapper
-        ]}
-    ]}
+                //Here, Content of Views will be rendered
+            ]}
+            //End Main Content Wrapper
+		]}
+			
+    ]}    
 ]}
 ]};

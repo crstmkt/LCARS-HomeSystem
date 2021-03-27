@@ -5,7 +5,7 @@ function ShowMainFrame(){
     var headerColumn = $('#wpr_mainView > .header .column > *');
     var mainBars = $('#wpr_mainView > .main .row *');
     var mainColumn = $('#wpr_mainView > .main > .elbow, #wpr_mainView > .main .column > *');
-    var centerControlsColumn = $('#wpr_centerControls > :first-child');
+    var centerControlsColumn = $('#wpr_centerControls > *');
 
     sequenceHeaderPattern = []
     sequenceFooterPattern = []

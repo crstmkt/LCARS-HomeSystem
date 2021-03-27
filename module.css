@@ -45,6 +45,12 @@
 	margin: 10px;
 }
 
+.default-bracket{
+	width:305px; 
+	height:255px; 
+	margin-bottom:5px;
+} 
+
 .header .row.frame{padding-left:209px;}
 
 .main .column{
