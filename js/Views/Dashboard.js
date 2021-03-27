@@ -1,12 +1,10 @@
 function renderDashboard(){
     $('#wpr_centerControls').html('');
-    $('#wpr_centerControls').append( LCARS.create(viewUI).dom );
+    $('#wpr_centerControls').append( LCARS.create(DashboardUI).dom );
 }
 var uiColors = ['bg-blue-1', 'bg-blue-2','bg-blue-3','bg-blue-4', 'bg-green-1','bg-green-2','bg-green-3','bg-green-4', 'bg-white'];
 
-var viewUI = 
-
-{type: 'column', flex: 'v', flexc: 'h', children: [
+var DashboardUI = 
     {type: 'wrapper', version: 'content', flex:'h', flexc:'v', children:[
         //WasteCollectionLeft
         {type:'wrapper', version:'column', flex:'v', children:[
@@ -26,5 +24,4 @@ var viewUI =
                 ]}
             ]}
         ]}
-    ]}
-]};
+    ]};

@@ -1,6 +1,6 @@
 $( document ).ready(function() {
     $('body').append( LCARS.create(nemesisUI).dom );
-    renderWiFi();
+    renderDashboard();
     ShowMainFrame(true);
 	initiateLogger();
     initiateWasteCollection();
