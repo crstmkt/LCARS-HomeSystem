@@ -2,7 +2,7 @@
 
 
 # Introduction
-This is a JS based web frontend that communicates with Home Assistants REST API. It is based on LCARS-SDK (https://github.com/crstmkt/LCARS-SDK) and brings the style of LCARS to your home!
+This is a JS based web frontend that communicates with Home Assistants REST API. It is based on LCARS-SDK (https://github.com/crstmkt/LCARS-SDK) and brings the style of LCARS to your home! I will update the wiki in the near future.
 THIS IS STILL IN DEVELOPMENT
 
 # Installation
