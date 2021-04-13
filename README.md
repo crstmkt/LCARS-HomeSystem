@@ -17,3 +17,5 @@ Network access to the \config\ folder of Home Assistant
 2. In the js\API.js File, you have to paste your token and your Base-URL to establish communication to REST API.
 3. At least the logbook should get some data now.
 4. Within the "modules" Files (like Clean.js or Waste.js) you have to change the corresponding entityIDs so they fit your Home Assistant installation.
+
+![MainDashboard.jpg](img/MainDashboard.jpg)
