@@ -122,8 +122,18 @@ LCARS.element.sdk.defaultBracket.prototype = {
                 LCARS.active[sID].set('colors', value.column4);                   
             } 
             return true;
+        },
+        content:function(object, value){
+            if(Array.isArray(value)){
+				for (var i = 0; i < value.length; i++) { 
+                    var child = LCARS.create(value[i]);
+					object.dom.children('.content').append(child.dom);            
+				}
+            }else if(typeof value === 'string'){
+                object.dom.children('.content').append(value);
+            }
+			return true;
         }
-		
 	},
 	//Required. Set Value by Setting Name | Ignores ID & Type
 	set:function(setting, value){
