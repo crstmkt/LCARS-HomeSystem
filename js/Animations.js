@@ -1,14 +1,14 @@
 // Barebones 'Automated' Show Pattern - idea testing a later proper module.
-function ShowMainFrame(){  
+function ShowMainView(){  
 
     var headerBars = $('#wpr_mainView > .header .row *');
     var headerColumn = $('#wpr_mainView > .header .column > *');
     var mainBars = $('#wpr_mainView > .main .row *');
     var mainColumn = $('#wpr_mainView > .main > .elbow, #wpr_mainView > .main .column > *');
-    var centerControlsColumn = $('#wpr_centerControls > *');
 
-    sequenceHeaderPattern = []
-    sequenceFooterPattern = []
+
+    sequenceHeaderPattern = [];
+    sequenceFooterPattern = [];
 
     $(headerColumn).each(function(){
         sequenceHeaderPattern.push(this);
@@ -30,29 +30,39 @@ function ShowMainFrame(){
         sequenceFooterPattern.push(this); 
     }); 
 
-    $(centerControlsColumn).each(function(){
-        sequenceFooterPattern.push(this); 
-    }); 
-
-    sequenceFooterPattern.push($('#wpr_leftControls > :first-child'))
     sequenceFooterPattern.push($('.header .content'))
     
     $(sequenceHeaderPattern).showObjectSequence({});
     $(sequenceFooterPattern).showObjectSequence({});
 }
 
-// Barebones 'Automated' Alert System - idea testing a later proper module.    
-var headerRASequence = []
-var mainRASequence = []
-var timer_whiteFlash = null;  
-var timing_sequence = 65;
+function showMainFrame(){
+    var centerControls = $('#wpr_centerControls > .content *');
 
-function raMainFrameSetup(){
+    sequenceFramePattern = [];
+
+    $(centerControls).each(function(){
+        sequenceFramePattern.push(this); 
+    });
+
+    $(sequenceFramePattern).showObjectSequence({});
+
+}
+
+// Barebones 'Automated' Alert System - idea testing a later proper module.    
+ var headerRASequence = []
+ var mainRASequence = []
+ var timer_whiteFlash = null;  
+ var timing_sequence = 65;
+
+function raMainViewSetup(){
+
+    $('#wpr_mainView').addClass('red-alert');
 
     var headerBars = $('#wpr_mainView > .header .row *');
     var headerColumn = $('#wpr_mainView > .header .column > *');
     var mainBars = $('#wpr_mainView > .main .row *');
-    var mainColumn = $('#wpr_mainView > .main .column > *');
+    var mainColumn =  $('#wpr_mainView > .main > .elbow, #wpr_mainView > .main .column > *:not([class*="wrapper"],[class*="row"])');//, #wpr_mainView > .main .column > *
 
     $(headerColumn).each(function(){
         headerRASequence.push(this);
@@ -70,6 +80,23 @@ function raMainFrameSetup(){
     $(mainBars).each(function(){
         mainRASequence.push(this); 
     });
+
+    var posValHeader = .5;
+    var posValMain = .1;
+    $(headerRASequence).each(function(){
+        $(this).attr('style', '-webkit-animation-delay:' + posValHeader+'s; animation-delay:' + posValHeader+'s;')
+            $(this).addClass('alertFlash');
+            posValHeader = posValHeader + .1
+        });
+
+    $(mainRASequence).each(function(){
+        $(this).attr('style', '-webkit-animation-delay:' + posValMain+'s; animation-delay:' + posValMain+'s;')
+
+        $(this).addClass('alertFlash');
+        posValMain = posValMain + .1
+    }); 
+    timer_whiteFlash = setInterval(function(){$('body').toggleClass('alertFlash')}, posValMain*1000);
+
 }
 
 /** +brief Show Object
@@ -86,11 +113,29 @@ $.fn.showObject = function(args){
         if($(this).hasClass('fade') && args.fade !== false){
             $(this).removeClass('hidden');
             $(this).css('opacity', '1');
-    
-            //if(allObjects.hasOwnProperty(objectID)){if(typeof allObjects[objectID].show === 'function'){setTimeout(function(){allObjects[objectID].show();}, args.timing + timing_sequence);}}
+            
+            // if(allObjects.hasOwnProperty(objectID))
+            // {
+            //     if(typeof allObjects[objectID].show === 'function')
+            //     {
+            //         setTimeout(function()
+            //         {
+            //             allObjects[objectID].show();
+            //         }, args.timing + timing_sequence);
+            //     }
+            // }
         }else{
             $(this).removeClass('hidden');
-            //if(allObjects.hasOwnProperty(objectID)){if(typeof allObjects[objectID].show === 'function'){setTimeout(function(){allObjects[objectID].show();}, args.timing + timing_sequence);}}
+            
+            // if(allObjects.hasOwnProperty(objectID))
+            // {
+            //     if(typeof allObjects[objectID].show === 'function')
+            //     {
+            //         setTimeout(function(){
+            //             allObjects[objectID].show();
+            //         }, args.timing + timing_sequence);
+            //     }
+            // }
         }   
     });
     if(typeof args.success === 'function'){setTimeout(function(){ args.success();}, args.timing+timing_sequence);}
@@ -116,10 +161,30 @@ $.fn.showObjectSequence = function(args){
     if($(object).hasClass('fade') && args.fade !== false){
         $(object).removeClass('hidden');
         $(object).css('opacity', '1');
-        //if(allObjects.hasOwnProperty(objectID)){if(typeof allObjects[objectID].show === 'function'){setTimeout(function(){allObjects[objectID].show();}, args.timing+timing_sequence);}}
+        
+        // if(allObjects.hasOwnProperty(objectID))
+        // {
+        //     if(typeof allObjects[objectID].show === 'function')
+        //     {
+        //         setTimeout(function()
+        //         {
+        //             allObjects[objectID].show();
+        //         }, args.timing+timing_sequence);
+        //     }
+        // }
     }else{
         $(object).removeClass('hidden');
-        //if(allObjects.hasOwnProperty(objectID)){if(typeof allObjects[objectID].show === 'function'){setTimeout(function(){allObjects[objectID].show();}, args.timing+timing_sequence);}}
+        
+        // if(allObjects.hasOwnProperty(objectID))
+        // {
+        //     if(typeof allObjects[objectID].show === 'function')
+        //     {
+        //         setTimeout(function()
+        //         {
+        //             allObjects[objectID].show();
+        //         }, args.timing+timing_sequence);
+        //     }
+        // }
     }    
     
     if(numberStart+1 !== count){
@@ -128,43 +193,3 @@ $.fn.showObjectSequence = function(args){
        if(typeof args.success  === 'function'){setTimeout(function(){ args.success();}, args.timing+timing_sequence);}
     }         
 }
-
-//MAYBE USE LATER
-//Change current Site
-//Get first child of wrp_centerControls, then remove hidden class from the the given dom ID
-// function hideView(){
-//     var activeHub = $('#wpr_centerControls > * > *');
-//     sequenceHubPattern = [];
-
-//     $(activeHub).each(function(){
-//         sequenceHubPattern.push(this);
-//     });
-    
-//     sequenceHubPattern.reverse();
-//     $(sequenceHubPattern).hideObjectSequence({});
-
-// }
-
-
-// $.fn.hideObjectSequence = function(args){		
-//     var array = this;
-//     var count = array.length
-//     var numberStart = args.number || 0;
-//     var object = array[numberStart]
-//     var objectID = $(object).attr('id'); 
-//     if(!args.timing){args.timing = 0;}
-//     if($(object).hasClass('fade') && args.fade !== true){
-//         $(object).addClass('hidden');
-//         $(object).css('opacity', '0');
-//         //if(allObjects.hasOwnProperty(objectID)){if(typeof allObjects[objectID].show === 'function'){setTimeout(function(){allObjects[objectID].show();}, args.timing+timing_sequence);}}
-//     }else{
-//         $(object).addClass('hidden');
-//         //if(allObjects.hasOwnProperty(objectID)){if(typeof allObjects[objectID].show === 'function'){setTimeout(function(){allObjects[objectID].show();}, args.timing+timing_sequence);}}
-//     }    
-    
-//     if(numberStart+1 !== count){
-//         setTimeout(function(){ $(array).hideObjectSequence({timing:args.timing, number:numberStart+1, success:args.success}); }, args.timing+timing_sequence);
-//     }else{
-//        if(typeof args.success  === 'function'){setTimeout(function(){ args.success();}, args.timing+timing_sequence);}
-//     }         
-// }
