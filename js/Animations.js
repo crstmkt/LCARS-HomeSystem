@@ -62,7 +62,7 @@ function raMainViewSetup(){
     var headerBars = $('#wpr_mainView > .header .row *');
     var headerColumn = $('#wpr_mainView > .header .column > *');
     var mainBars = $('#wpr_mainView > .main .row *');
-    var mainColumn =  $('#wpr_mainView > .main > .elbow, #wpr_mainView > .main .column > *:not([class*="wrapper"],[class*="row"])');//, #wpr_mainView > .main .column > *
+    var mainColumn =  $('#wpr_mainView > .main > .elbow, #wpr_mainView > .main .column > *:not([class*="wrapper"],[class*="row"],[class*="content"])');// > *:not([class*="wrapper"],[class*="row"])
 
     $(headerColumn).each(function(){
         headerRASequence.push(this);
