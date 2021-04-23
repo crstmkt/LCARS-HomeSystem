@@ -1,12 +1,11 @@
 $( document ).ready(function() {
     $('body').append( LCARS.create(nemesisUI).dom );
+    ShowMainView(true);
     renderDashboard();
-    ShowMainFrame(true);
 	initiateLogger();
-    initiateWasteCollection();
 });
 
-var uiColors = ['bg-blue-1', 'bg-blue-2','bg-blue-3','bg-blue-4', 'bg-green-1','bg-green-2','bg-green-3','bg-green-4', 'bg-white'];
+var uiColors = ['bg-color-1', 'bg-color-2','bg-color-3','bg-color-4', 'bg-color-5'];
 
 var timer_colorChanges = null
 var array_colorChangeObjects = null;
@@ -36,7 +35,7 @@ children:[
 
                 //Logs Area
                 {type:'wrapper', flexc:'v', flex:'h', children:[
-                    {id: 'logs', type:'text', color:'text-blue-1', text:''},
+                    {id: 'logs', type:'text', color:'text-color-1', text:''},
                 ]},
 
                 {type: 'wrapper', flexc:'h', flex:'v', children:[
@@ -49,7 +48,7 @@ children:[
                         {type:'button', color:'bg-grey-4', version:'round', label:'GREY MODE', href:'javascript:activateGreyMode();'},
                         {type:'button', color:'bg-blue-2', version:'round', label: 'RELOAD', href:'javascript:window.location.reload(true);'},
                         {type:'button', id:'guestWifiSwitch', color: 'bg-orange-4', version:'round', label: 'GUEST WIFI', href:'javascript:toggleGuestWifi();'},
-                        {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round', label:'Test', href:'javascript:changeHub();'},
+                        {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round', label:'Test', href:'javascript:raMainViewSetup();'},
                         {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round', label:'clean', href:'javascript:startClean();'},
                         {type:'button', color:LCARS.helper.aRandColor(uiColors), version:'round'}
                     ]}
@@ -86,9 +85,9 @@ children:[
             {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, size: 'step-two'}
         ]},
 
-        {type:'column', flexc:'h', flex:'v', children:[
+        {type:'wrapper', version: 'column', flexc:'h', flex:'v', children:[
             //Top Bars Group
-            {type:'row', flex:'h', version:'frame', children:[
+            {type:'row', version:'frame', children:[
                 {type:'bar', color:LCARS.helper.aRandColor(uiColors), hidden: true},
                 {type:'bar', color:LCARS.helper.aRandColor(uiColors), hidden: true, size:'small'},
                 {type:'bar', color:LCARS.helper.aRandColor(uiColors), hidden: true},
@@ -99,12 +98,11 @@ children:[
             ]},
 		
             //Start Main Content Wrapper
-            {type:'wrapper', id:'wpr_centerControls' ,  version:'content', flex:'h', flexc:'v',children:[
-                //Here, Content of Views will be rendered
+            {type:'wrapper', id:'wpr_centerControls' , flex:'h', flexc:'v',children:[
+                //Here, content of Views will be rendered
             ]}
             //End Main Content Wrapper
-		]}
-			
+		]}	
     ]}    
 ]}
 ]};

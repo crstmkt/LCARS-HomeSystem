@@ -50,6 +50,21 @@
 	margin: 10px;
 }
 
+#logs{
+	padding-left: 35px;
+}
+
+#nextWasteCollection{
+	padding-top:35px; 
+	padding-left:35px;	
+}
+
+#wifiqr{
+	height: 100%;
+	width: 100%;
+	object-fit: contain;	
+}
+
 .default-bracket{
 	width:305px; 
 	height:255px; 
@@ -65,7 +80,7 @@
 	overflow:visible;
 }
 
-.main .content{
+.main > .content{
 	padding-top:35px; 
 	padding-left:35px;
 }
@@ -111,3 +126,15 @@
 .step-two{height:125px;}
 .step-three{height:190px;}
 .step-four{height:255px;}
+
+
+/* White Strobe */    
+.alertFlash .alertFlash:not(.complexButton){-webkit-animation: whiteFade .25s linear; animation: whiteFade .25s linear;}
+.alertFlash .alertFlash.complexButton :not(.numericBlock){-webkit-animation: whiteFade .25s linear; animation: whiteFade .25s linear;}
+@-webkit-keyframes whiteFade {
+	 0% {background-color:#ffffff;border-color:#ffffff; }    
+}
+
+@keyframes whiteFade {
+	 0% {background-color:#ffffff;border-color:#ffffff; }
+}  
