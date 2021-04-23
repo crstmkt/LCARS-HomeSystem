@@ -3,7 +3,7 @@ function renderWiFi(){
     $('#wpr_centerControls').append( LCARS.create(WiFiUI).dom );
     showMainFrame();
 }
-var uiColors = ['bg-blue-1', 'bg-blue-2','bg-blue-3','bg-blue-4', 'bg-green-1','bg-green-2','bg-green-3','bg-green-4', 'bg-white'];
+var uiColors = ['bg-color-1', 'bg-color-2','bg-color-3','bg-color-4', 'bg-color-5'];
 
 var WiFiUI = 
     {type: 'content', children: [
