@@ -1898,13 +1898,44 @@ pre{white-space: pre-wrap;
 	width:100%; 
 	position:relative; 
 	margin-top:5px;
-	min-width:100%;
+	min-width:150;
 }
 
 .column.flex-v > .complexButton > * {height:auto;}
 
 .column > *:first-child{margin-top:0px;}
 
+/* =============================================================================
+   Sliders
+   ========================================================================== */
+input[type=range] {
+    width: 150px !important;
+    -webkit-appearance: none;
+    background-image: -webkit-linear-gradient(right, #e03e3e, #4b1dcc);
+	background-image: linear-gradient(right, #e03e3e, #4b1dcc);
+}
+
+/* input[type=range] {
+    width: 150px !important;
+    -webkit-appearance: none;
+    background-image: -webkit-linear-gradient(right, #e03e3e, #4b1dcc);
+	background-image: linear-gradient(right, #e03e3e, #4b1dcc);
+} */
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 10px;
+    background-color: #555;
+	background-image: -webkit-linear-gradient(right, #e03e3e, #4b1dcc);
+    background-image: linear-gradient(right, #e03e3e, #4b1dcc);
+}
+
+input[type=range].vertical {
+	position: relative;
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg)
+}
 
 /* =============================================================================
    Rows
@@ -1970,20 +2001,6 @@ pre{white-space: pre-wrap;
      50% {background-color:transparent; color:transparent; border-color:transparent;}
 }
 
-.flash{
-	-webkit-animation: flash 0.7s step-end infinite; 
-	animation: flash 0.7s step-end infinite;
-}
-
-@-webkit-keyframes flash {
-	from, to { }
-	  80% {background-color:transparent; color:#FFFFFF; border-color:transparent;}
- }
-
-@keyframes flash {
-	from, to { }
-	  80% {background-color:transparent; color:#ffffff; border-color:transparent;}
- }
 
 .red-dark-light:not(.complexButton){ 
 	-webkit-animation: red-dark-light 1.5s step-end infinite !important; 
@@ -2093,9 +2110,9 @@ pre{white-space: pre-wrap;
 
 /* =============================================================================
    Active/Hover States. Included for optional use.
-   ==========================================================================
+   ==========================================================================*/
 
-
+/* 
 .button:hover, 
 .endcap:hover > .cap, 
 .elbow:hover,
@@ -2104,6 +2121,6 @@ pre{white-space: pre-wrap;
 .button:not(.endcap):active, 
 .endcap:active > .cap, 
 .elbow:active,
-.complexButton:active > *:not(.text){-webkit-animation:none !important;animation:none !important; background-color:#ffffff !important; border-color:#ffffff !important;}
+.complexButton:active > *:not(.text){-webkit-animation:none !important;animation:none !important; background-color:#ffffff !important; border-color:#ffffff !important;} */
 
-   ========================================================================== */
+   /* ========================================================================== */

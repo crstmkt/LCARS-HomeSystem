@@ -13,29 +13,59 @@ function renderDashboard(){
 var uiColors = ['bg-color-1', 'bg-color-2','bg-color-3','bg-color-4', 'bg-color-5'];
 
 var DashboardUI = 
-    {type: 'wrapper', id: 'wasteCollections', version: 'content', flex:'h', flexc:'v', children:[
+    {type: 'wrapper', version: 'content', flex: 'h', children:[
+        
+        {type:'column', id: 'weather', version: 'content', flex: 'h', children:[
+            //WeatherLeft
+            {type:'column', id:'weather_left', flex:'v', children:[
+                {type:'row', flex:'h', hidden: true, children:[
+                    {type:'cap', version:'round-left', color:LCARS.helper.aRandColor(uiColors), size: 'small'},
+                    {type:'title', size: 'small', text:'WEATHER'}
+                ]},
+                //WasteCollectionContentWrapper
+                {type:'wrapper', version:'content', hidden: true, children:[
+                    {type: 'text', id: 'weather-c', color: 'text-color-1', text: ''}
+                ]},
+                {type:'row', id:'weather_bottom_frame', flex:'h', hidden: true, children:[
+                    {type:'cap', version:'round-left', color:LCARS.helper.aRandColor(uiColors), size: 'small'},
+                    {type:'bar', color:LCARS.helper.aRandColor(uiColors), flexc:'h',}
+                ]}
+            ]},
+             //WeatherRight
+            {type:'column', id: 'weather_right', children:[
+                {type:'elbow', version:'horizontal', direction:'top-right', color:LCARS.helper.aRandColor(uiColors), hidden: true},
+                {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, label: 'FORECAST', href:''},
+                {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, label: '', href:''},
+                {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, label: '' , href:''},
+                {type:'elbow', version:'horizontal', direction:'bottom-right', color:LCARS.helper.aRandColor(uiColors), hidden: true}
+            ]},
 
-        //WasteCollectionLeft
-        {type:'wrapper', version:'column', flex:'v', children:[
-            {type:'elbow', version:'horizontal', direction:'top-left', color:LCARS.helper.aRandColor(uiColors), class:'step-two', hidden: true},
-            {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, label: 'NEXT FIVE', href:'javascript:javascript:this._waste.cntDays = 0;_waste.getNextWasteCollection();'},
-            {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, label: 'NEXT 7 DAYS', href:'javascript:this._waste.cntDays = 7;_waste.getNextWasteCollection();'},
-            {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, label: 'NEXT 30 DAYS' , href:'javascript:this._waste.cntDays = 30;_waste.getNextWasteCollection();'},
-            {type:'elbow', version:'horizontal', direction:'bottom-left', color:LCARS.helper.aRandColor(uiColors), class:'step-two', hidden: true}
-        ]},
-        //WasteCollectionTop
-        {type:'column', flexc: 'h', flex:'v', children:[
-            {type:'row', flex:'h', version:'frame', hidden: true, children:[
-                {type:'title', size: 'small', text:'WASTE COLLECTIONS'},
-                {type:'cap', version:'round-right', color:LCARS.helper.aRandColor(uiColors), size: 'small'}
+        ]}, 
+        
+        //WasteCollections
+        {type: 'column', id: 'wasteCollections', version: 'content', flex:'h', children:[
+            //WasteCollectionLeft
+            {type:'column', id: 'waste_left', version:'column', flex:'v', children:[
+                {type:'elbow', version:'horizontal', direction:'top-left', color:LCARS.helper.aRandColor(uiColors), class:'step-two', hidden: true},
+                {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, label: 'NEXT FIVE', href:'javascript:javascript:this._waste.cntDays = 0;_waste.getNextWasteCollection();'},
+                {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, label: 'NEXT 7 DAYS', href:'javascript:this._waste.cntDays = 7;_waste.getNextWasteCollection();'},
+                {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, label: 'NEXT 30 DAYS' , href:'javascript:this._waste.cntDays = 30;_waste.getNextWasteCollection();'},
+                {type:'elbow', version:'horizontal', direction:'bottom-left', color:LCARS.helper.aRandColor(uiColors), class:'step-two', hidden: true}
             ]},
-            //WasteCollectionContentWrapper
-            {type:'wrapper', version:'content', hidden: true, children:[
-                {type: 'text', id: 'nextWasteCollection', color: 'text-color-1', text: ''}
+            //WasteCollectionRight
+            {type:'column', id: 'waste_right', flex:'v', children:[
+                {type:'row', flex:'h', version:'frame', hidden: true, children:[
+                    {type:'title', size: 'small', text:'WASTE COLLECTIONS'},
+                    {type:'cap', version:'round-right', color:LCARS.helper.aRandColor(uiColors), size: 'small'}
+                ]},
+                //WasteCollectionContentWrapper
+                {type:'wrapper', version:'content', hidden: true, children:[
+                    {type: 'text', id: 'nextWasteCollection', color: 'text-color-1', text: ''}
+                ]},
+                {type:'row', version:'frame', flex:'h', hidden: true, children:[
+                    {type:'bar', color:LCARS.helper.aRandColor(uiColors), flexc:'h',},
+                    {type:'cap', version:'round-right', color:LCARS.helper.aRandColor(uiColors), size: 'small'}
+                ]}
             ]},
-            {type:'row', version:'frame', flex:'h', hidden: true, children:[
-                {type:'bar', color:LCARS.helper.aRandColor(uiColors), flexc:'h',},
-                {type:'cap', version:'round-right', color:LCARS.helper.aRandColor(uiColors), size: 'small'}
-            ]}
-        ]},
-    ]};
+        ]}
+]};
