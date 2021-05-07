@@ -10,8 +10,14 @@
 	max-height: 120px !important;
 }
 
+#wasteCollections{
+	max-height: 400 !important;
+	max-width: 590 !important;
+}
+
 #nextWasteCollection{
 	text-align: left;
+	min-height: 315;
 }
 
 .button-wrap{

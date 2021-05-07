@@ -13,13 +13,15 @@ function renderDashboard(){
 var uiColors = ['bg-color-1', 'bg-color-2','bg-color-3','bg-color-4', 'bg-color-5'];
 
 var DashboardUI = 
-    {type: 'wrapper', version: 'content', flex:'h', flexc:'v', children:[
+    {type: 'wrapper', id: 'wasteCollections', version: 'content', flex:'h', flexc:'v', children:[
+
         //WasteCollectionLeft
         {type:'wrapper', version:'column', flex:'v', children:[
             {type:'elbow', version:'horizontal', direction:'top-left', color:LCARS.helper.aRandColor(uiColors), class:'step-two', hidden: true},
             {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, label: 'NEXT FIVE', href:'javascript:javascript:this._waste.cntDays = 0;_waste.getNextWasteCollection();'},
             {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, label: 'NEXT 7 DAYS', href:'javascript:this._waste.cntDays = 7;_waste.getNextWasteCollection();'},
-            {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, label: 'NEXT 30 DAYS' , href:'javascript:this._waste.cntDays = 30;_waste.getNextWasteCollection();'}
+            {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, label: 'NEXT 30 DAYS' , href:'javascript:this._waste.cntDays = 30;_waste.getNextWasteCollection();'},
+            {type:'elbow', version:'horizontal', direction:'bottom-left', color:LCARS.helper.aRandColor(uiColors), class:'step-two', hidden: true}
         ]},
         //WasteCollectionTop
         {type:'column', flexc: 'h', flex:'v', children:[
@@ -28,10 +30,12 @@ var DashboardUI =
                 {type:'cap', version:'round-right', color:LCARS.helper.aRandColor(uiColors), size: 'small'}
             ]},
             //WasteCollectionContentWrapper
-            {type:'wrapper', version:'content', flex:'h', flexc:'v', hidden: true, children:[
-                {type: 'wrapper', flex: 'h', flexc: 'v', children: [
-                    {type: 'text', id: 'nextWasteCollection', color: 'text-color-1', text: ''}
-                ]}
+            {type:'wrapper', version:'content', hidden: true, children:[
+                {type: 'text', id: 'nextWasteCollection', color: 'text-color-1', text: ''}
+            ]},
+            {type:'row', version:'frame', flex:'h', hidden: true, children:[
+                {type:'bar', color:LCARS.helper.aRandColor(uiColors), flexc:'h',},
+                {type:'cap', version:'round-right', color:LCARS.helper.aRandColor(uiColors), size: 'small'}
             ]}
-        ]}
+        ]},
     ]};
