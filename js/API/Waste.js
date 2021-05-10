@@ -7,7 +7,6 @@ class Waste{
 	}
 
 getNextWasteCollection(){
-	console.log("getNextWasteCollection");
 	this.apiCallWasteCollections(this.cntDays);
 }
 

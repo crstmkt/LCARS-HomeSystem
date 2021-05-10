@@ -1,12 +1,16 @@
 var _waste = new Waste(0);
+var _weather = new Weather(0);
 
 function renderDashboard(){
     $('#wpr_centerControls').html('');
     $('#wpr_centerControls').append( LCARS.create(DashboardUI).dom );
     showMainFrame();
-    _waste.getNextWasteCollection() //I know this is ugly but I dont know how this can be done better
+    //I know this is ugly but I dont know how this can be done better
+    _waste.getNextWasteCollection()
+    _weather.getWeather();
     setInterval(function(){
-        _waste.getNextWasteCollection()
+        _waste.getNextWasteCollection();
+        _weather.getWeather();
     }.bind(this), 3600000);
 }
 
@@ -34,8 +38,8 @@ var DashboardUI =
              //WeatherRight
             {type:'column', id: 'weather_right', children:[
                 {type:'elbow', version:'horizontal', direction:'top-right', color:LCARS.helper.aRandColor(uiColors), hidden: true},
-                {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, label: 'FORECAST', href:''},
-                {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, label: '', href:''},
+                {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, label: 'CURRENT', href:'javascript: this._weather.mode = 0; _weather.getWeather()'},
+                {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, label: 'FORECAST', href:'javascript: this._weather.mode = 1; _weather.getWeather()'},
                 {type:'button', color:LCARS.helper.aRandColor(uiColors), hidden: true, label: '' , href:''},
                 {type:'elbow', version:'horizontal', direction:'bottom-right', color:LCARS.helper.aRandColor(uiColors), hidden: true}
             ]},
