@@ -15,7 +15,8 @@
 }
 
 #weather_right{
-    max-width: 10px !important;
+    max-width: 150px !important;
+	min-width: 150px !important;
 }
 
 #weather-c{
@@ -45,6 +46,10 @@
 	min-height: 315;
 	padding-top:35px; 
 	padding-left:35px;	
+}
+
+.wi{
+	font-size: xxx-large;
 }
 
 

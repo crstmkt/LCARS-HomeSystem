@@ -8,10 +8,14 @@ function renderDashboard(){
     //I know this is ugly but I dont know how this can be done better
     _waste.getNextWasteCollection()
     _weather.getWeather();
+    //Refresh every hour
     setInterval(function(){
         _waste.getNextWasteCollection();
-        _weather.getWeather();
     }.bind(this), 3600000);
+    //Refresh every minute
+    setInterval(function(){
+        _weather.getWeather();
+    }, 600000)
 }
 
 var uiColors = ['bg-color-1', 'bg-color-2','bg-color-3','bg-color-4', 'bg-color-5'];
