@@ -24,7 +24,6 @@ apiCallWeather(mode){
             switch(mode){
                 case 0:
 					var icon = "";
-					var wind_icon = ""
 					switch(data.state){
 						case "clear-night":
 							icon = "wi wi-night-clear";
@@ -71,33 +70,30 @@ apiCallWeather(mode){
 							icon = "wi wi-storm-warning";
 							break;
 					}
-					if(data.attributes.wind_bearing < 30 || data.attributes.wind_bearing > 330)
-						wind_icon = "wi wi-direction-up";
-					else if(data.attributes.wind_bearing >= 30 && data.attributes.wind_bearing < 60)
-						wind_icon = "wi wi-direction-up-right";
-					else if(data.attributes.wind_bearing >= 60 && data.attributes.wind_bearing < 120)
-						wind_icon = "wi wi-direction-right";
-					else if(data.attributes.wind_bearing >= 120 && data.attributes.wind_bearing < 150)
-						wind_icon = "wi wi-direction-down-right";
-					else if(data.attributes.wind_bearing >= 150 && data.attributes.wind_bearing < 210)
-						wind_icon = "wi wi-direction-down";
-					else if(data.attributes.wind_bearing >= 210 && data.attributes.wind_bearing < 240)
-						wind_icon = "wi wi-direction-down-left";
-					else if(data.attributes.wind_bearing >= 240 && data.attributes.wind_bearing < 300)
-						wind_icon = "wi wi-direction-left";
-					else if(data.attributes.wind_bearing >= 300 && data.attributes.wind_bearing < 330)
-						wind_icon = "wi wi-direction-up-left";
 
 
-                    var html = "<i class='wi wi-" + icon + "'></i>" + 
-								"<p>HUMIDITY: " + data.attributes.humidity + "%</p>" +
+                    var html = "<i class='wi wi-xxxlarge wi-" + data.state + "'></i>" + 
+								"<p>HUMIDITY: " + data.attributes.humidity + "mm</p>" +
 								"<p>TEMPERATURE: " + data.attributes.temperature + "°C</i></p>" + 
 								"<p>PRESSURE: " + data.attributes.pressure + "</p>" + 
-								"<p>WIND: " + data.attributes.wind_speed + "km/h <i class='" + wind_icon +"'></p>";
+								"<p>WIND: " + data.attributes.wind_speed + "km/h <i class='wi wi-wind towards-" + Math.round(data.attributes.wind_bearing) +"-deg'></i></p>";
                     $('#weather-c').append(html);
                     break;
                 case 1:
-                    
+                    html = "";
+					
+					data.attributes.forecast.forEach( elem => {
+
+						var temp = "<i class='wi wi-xxxlarge wi-" + elem.condition + "'></i>" +
+						"<p>" + moment(elem.datetime).format("dddd, Do MMM YYYY").toUpperCase() +"</p>"  +
+						"<p>PRECIPITATION: " + elem.precipitation + "%</p>" +
+						"<p>TEMPERATURE: " + elem.templow + " - " + elem.temperature + "°C</i></p>" + 
+						"<p>WIND: " + elem.wind_speed + "km/h <i class='wi wi-wind towards-" + Math.round(elem.wind_bearing) +"-deg'></i></p>";
+
+						html += temp;
+					});
+					
+					$('#weather-c').append(html);
                     break;
             }
 		}

@@ -99,6 +99,10 @@
 	width:460px;
 }
 
+.wi-xxxlarge{
+	font-size: xxx-large !important;
+}
+
 .header .button-wrap .button{margin-left:5px !important;}
 .header .button-wrap .button:first-child:nth-last-child(2),
 .header .button-wrap .button:first-child:nth-last-child(2) ~ .button{margin-bottom:0px;}
