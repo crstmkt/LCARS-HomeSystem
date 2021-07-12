@@ -1,7 +1,7 @@
 function apiGetGuestWifiState(onSuccessCallback){
     $.ajax({
         type: 'GET',
-        url: getHost() + '/api/states/switch.fritzbox_6660_cable_guest_wifi',
+        url: getHost() + '/api/states/switch.lcars_srv_wi_fi_lcars_net_g',
         headers: {
             'Authorization': 'Bearer ' + getToken(),
             'content-type': 'application/json'
@@ -18,7 +18,7 @@ function toggleGuestWifi(){
     $.ajax({
         type: 'POST',
         url: getHost() + '/api/services/switch/toggle',
-        data: '{"entity_id": "switch.fritzbox_6660_cable_guest_wifi"}',
+        data: '{"entity_id": "switch.lcars_srv_wi_fi_lcars_net_g"}',
         headers: {
             'Authorization': 'Bearer ' + getToken(),
             'content-type': 'application/json'
