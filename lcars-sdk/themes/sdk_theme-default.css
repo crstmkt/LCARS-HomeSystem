@@ -13,62 +13,62 @@
 /* Color Group */
 .bg-color-1,
 .bg-color-1 > *:not([class*="bg-"]){
-	background-color:#ffffff; 
-	border-color:#ffffff;
+	background-color:#FF9E63; 
+	border-color:#FF9E63;
 }
 
 .bg-color-2,
 .bg-color-2 > *:not([class*="bg-"]){
-	background-color:#ffffff; 
-	border-color:#ffffff;
+	background-color:#F7BD5A; 
+	border-color:#F7BD5A;
 }
 
 .bg-color-3,
 .bg-color-3 > *:not([class*="bg-"]){
-	background-color:#ffffff; 
-	border-color:#ffffff;
+	background-color:#FFCC99; 
+	border-color:#FFCC99;
 }
 
 .bg-color-4,
 .bg-color-4 > *:not([class*="bg-"]){
-	background-color:#ffffff; 
-	border-color:#ffffff;
+	background-color:#CD6363; 
+	border-color:#CD6363;
 }
 
 .bg-color-5,
 .bg-color-5 > *:not([class*="bg-"]){
-	background-color:#ffffff; 
-	border-color:#ffffff;
+	background-color:#CC99CC; 
+	border-color:#CC99CC;
 }
 
 .red-alert .bg-color-1,
 .red-alert .bg-color-1 > *:not([class*="bg-"]){
-	background-color:#ffffff; 
-	border-color:#ffffff;
+	background-color:#F5173C; 
+	border-color:#F5173C;
 }
 
 .red-alert .bg-color-2,
 .red-alert .bg-color-2 > *:not([class*="bg-"]){
-	background-color:#ffffff; 
-	border-color:#ffffff;
+	background-color:#A30E24; 
+	border-color:#A30E24;
 }
 
 .red-alert .bg-color-3,
 .red-alert .bg-color-3 > *:not([class*="bg-"]){
-	background-color:#ffffff; 
-	border-color:#ffffff;
+	background-color:#BF2D42; 
+	border-color:#BF2D42;
 }
 
 .red-alert .bg-color-4,
 .red-alert .bg-color-4 > *:not([class*="bg-"]){
-	background-color:#ffffff; 
-	border-color:#ffffff;
+	background-color:#F5173C; 
+	border-color:#F5173C;
 }
 
 .red-alert .bg-color-5,
 .red-alert .bg-color-5 > *:not([class*="bg-"]){
-	background-color:#ffffff; 
-	border-color:#ffffff;
+	background-color:#BF2D42; 
+	border-color:#BF2D42;
 }
 
 .blue-alert .bg-color-1,
@@ -735,7 +735,13 @@
 }
 
 /* Colors for Text */
-.red-alert .text-color-1{color:#000000;}
+.text-color-1{color:#FF9C00;}
+.text-color-2{color:#000000;}
+.text-color-3{color:#000000;}
+.text-color-4{color:#000000;}
+.text-color-5{color:#000000;}
+
+.red-alert .text-color-1{color:#A30E24;}
 .red-alert .text-color-2{color:#000000;}
 .red-alert .text-color-3{color:#000000;}
 .red-alert .text-color-4{color:#000000;}
@@ -907,8 +913,6 @@
 
 .text-white{color:#ffffff;}
 .text-black{color:#ffffff;}
-
-.grayscale{-webkit-filter:grayscale(1);}
 
 
 /* =============================================================================
