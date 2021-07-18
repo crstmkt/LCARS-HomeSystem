@@ -3,13 +3,28 @@ class Weather{
     // 0 = CURRENT
     // 1 = FORECAST
 	mode = 0;
+	sun = 'above_horizon';
 
 	constructor(_mode){
 		this.mode = _mode;
 	}
 
 getWeather(){
-	this.apiCallWeather(this.mode);
+	this.sun = this.apiCallSun();
+	this.apiCallWeather(this.mode);	
+}
+
+apiCallSun(){
+	$.ajax({
+		url: getHost() + '/api/states/sun.sun',
+		type: 'GET',
+		headers: {
+			'Authorization': 'Bearer ' + getToken()
+		},
+		success: function(data){
+			return data.state;
+		}
+	})
 }
 
 apiCallWeather(mode){
@@ -27,6 +42,19 @@ apiCallWeather(mode){
 					if(data.state == 'partlycloudy')
 					{
 						data.state = 'partly-cloudy';
+					}
+					if(this.sun != 'above_horizon')
+					{
+						switch(data.state){
+							case 'sunny':
+								data.state = 'night';
+								break;
+							case 'partly-cloudy':
+								data.state = 'night-partly-cloudy';
+								break;
+							default:
+								break;
+						}
 					}
                     var html = "<i class='mdi wi-xxxlarge mdi-weather-" + data.state + "'></i>" + 
 								"<p>HUMIDITY: " + data.attributes.humidity + "mm</p>" +
