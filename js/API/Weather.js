@@ -7,10 +7,13 @@ class Weather{
 
 	constructor(_mode){
 		this.mode = _mode;
+
+		setInterval(function(){
+			_weather.apiCallSun();
+		}, 30000)
 	}
 
 getWeather(){
-	this.sun = this.apiCallSun();
 	this.apiCallWeather(this.mode);	
 }
 
@@ -22,7 +25,8 @@ apiCallSun(){
 			'Authorization': 'Bearer ' + getToken()
 		},
 		success: function(data){
-			return data.state;
+			//Yep, this is ugly.
+			_weather.sun = data.state;
 		}
 	})
 }
