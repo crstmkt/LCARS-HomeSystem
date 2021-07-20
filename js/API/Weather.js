@@ -47,7 +47,7 @@ apiCallWeather(mode){
 					{
 						data.state = 'partly-cloudy';
 					}
-					if(this.sun != 'above_horizon')
+					if(_weather.sun != 'above_horizon')
 					{
 						switch(data.state){
 							case 'sunny':
