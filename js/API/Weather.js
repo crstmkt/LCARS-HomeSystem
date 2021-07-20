@@ -61,7 +61,7 @@ apiCallWeather(mode){
 						}
 					}
                     var html = "<i class='mdi wi-xxxlarge mdi-weather-" + data.state + "'></i>" + 
-								"<p>HUMIDITY: " + data.attributes.humidity + "mm</p>" +
+								"<p>HUMIDITY: " + data.attributes.humidity + "%</p>" +
 								"<p>TEMPERATURE: " + data.attributes.temperature + "°C</i></p>" + 
 								"<p>PRESSURE: " + data.attributes.pressure + "</p>" + 
 								"<p>WIND: " + data.attributes.wind_speed + "km/h <i class='wi wi-wind towards-" + Math.round(data.attributes.wind_bearing) +"-deg'></i></p>";
@@ -77,7 +77,7 @@ apiCallWeather(mode){
 						}
 						var temp = "<i class='mdi wi-xxxlarge mdi-weather-" + elem.condition + "'></i>" +
 						"<p>" + moment(elem.datetime).format("dddd, Do MMM YYYY").toUpperCase() +"</p>"  +
-						"<p>PRECIPITATION: " + elem.precipitation + "%</p>" +
+						"<p>PRECIPITATION: " + elem.precipitation + "mm</p>" +
 						"<p>TEMPERATURE: " + elem.templow + " - " + elem.temperature + "°C</i></p>" + 
 						"<p>WIND: " + elem.wind_speed + "km/h <i class='wi wi-wind towards-" + Math.round(elem.wind_bearing) +"-deg'></i></p>";
 
