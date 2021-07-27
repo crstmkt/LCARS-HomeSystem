@@ -1,2 +1,0 @@
-0001 - Single Panel Beep
-0002 - Single Panel Beep High Pitch
