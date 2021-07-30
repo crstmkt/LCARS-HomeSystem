@@ -1,7 +1,7 @@
 import $ from "jquery";
 import { LCARS } from "../core/lcars-sdk"; //Circle reference?
 
-LCARS.element.wrapper = function (oDef) {
+export const wrapper = function (oDef) {
   //Begin Required
   this.data = {
     type: "wrapper",
