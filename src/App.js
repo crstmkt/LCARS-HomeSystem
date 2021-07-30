@@ -1,6 +1,7 @@
 import { render } from "@testing-library/react";
 import $ from "jquery";
 import { LCARS, lcars } from "./lcars-sdk/core/lcars-sdk";
+import "./lcars-sdk/core/lcars-sdk.css";
 import moment from "moment";
 
 function App() {
