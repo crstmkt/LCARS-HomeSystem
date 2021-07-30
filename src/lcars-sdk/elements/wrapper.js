@@ -1,7 +1,7 @@
 import $ from "jquery";
-import { LCARS } from "../core/lcars-sdk"; //Circle reference?
+import LCARS from "../core/lcars-sdk"; //Circle reference?
 
-export const wrapper = function (oDef) {
+const wrapper = function (oDef) {
   //Begin Required
   this.data = {
     type: "wrapper",
@@ -31,6 +31,8 @@ export const wrapper = function (oDef) {
   return LCARS.active[this.data.id];
   //End Required
 };
+
+export default wrapper;
 
 LCARS.element.wrapper.prototype = {
   //Required.  Create DOM element and base class

@@ -1,7 +1,7 @@
 import $ from "jquery";
 import wrapper from "../elements/wrapper"; //Circle reference?
 
-export const lcars = {
+const lcars = {
   colors: {
     pool: {
       blue: ["bg-blue-1", "bg-blue-2", "bg-blue-3", "bg-blue-4", "bg-blue-5"],
@@ -1284,6 +1284,8 @@ export const LCARS = {
     return true;
   },
 };
+
+export default LCARS;
 
 //Apply Setting via DOM Element
 $.fn.objectSet = function (setting, value) {
