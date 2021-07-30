@@ -1,5 +1,5 @@
 import $ from "jquery";
-import { LCARS } from "../core/lcars-sdk";
+import { LCARS } from "../core/lcars-sdk"; //Circle reference?
 
 LCARS.element.wrapper = function (oDef) {
   //Begin Required
