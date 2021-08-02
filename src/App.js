@@ -3,6 +3,9 @@ import $ from "jquery";
 import { LCARS, lcars } from "./lcars-sdk/core/lcars-sdk";
 import wrapper from "./lcars-sdk/elements/wrapper"; //Don't know if needed
 import "./lcars-sdk/core/lcars-sdk.css"; //better in index.html?
+import "./lcars-sdk/themes/sdk_theme-default.css";
+import "./App.css";
+import "./theme.css";
 import moment from "moment";
 
 function App() {
@@ -13,7 +16,7 @@ function App() {
     "bg-color-4",
     "bg-color-5",
   ];
-
+  //#region
   const nemesisUI = {
     type: "wrapper",
     id: "wpr_viewport",
@@ -27,7 +30,7 @@ function App() {
         LCARS.helper.viewportZoom(dom, { width: 1440, height: 1080 });
       });
     },
-
+    //#region "Children"
     // children: [
     // //Main Area
     // {
@@ -349,9 +352,11 @@ function App() {
     // ],
     // },
     // ],
+    //#endregion
   };
+  //#endregion
 
-  return LCARS.create(nemesisUI);
+  return LCARS.create(nemesisUI).dom;
 }
 
 export default App;
