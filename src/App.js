@@ -30,7 +30,7 @@ import play from "./lcars-sdk/sounds/play";
 // import title from "./lcars-sdk/elements/title";
 // import wrapper from "./lcars-sdk/elements/wrapper";
 import { showMainView, showMainFrame } from "./js/Animations";
-import moment from "moment";
+import Systemtime from "./components/Systemtime";
 
 function App() {
   const uiColors = [
@@ -77,7 +77,7 @@ function App() {
               <div id="titleSID33g9m1vio" class="title">
                 LCARS HOME SYSTEM
               </div>
-              <div id="systemTime" class="title half"></div>
+              <Systemtime />
               <div id="wrapperSIDeuhyxyz4z" class="wrapper flex-h button-wrap">
                 <div
                   id="buttonSID78cy19k2t"
