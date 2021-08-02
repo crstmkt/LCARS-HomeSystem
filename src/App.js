@@ -29,11 +29,7 @@ import play from "./lcars-sdk/sounds/play";
 // import text from "./lcars-sdk/elements/text";
 // import title from "./lcars-sdk/elements/title";
 // import wrapper from "./lcars-sdk/elements/wrapper";
-import "./lcars-sdk/core/lcars-sdk.css";
-import "./lcars-sdk/themes/sdk_theme-default.css";
 import { showMainView, showMainFrame } from "./js/Animations";
-import "./App.css";
-import "./theme.css";
 import moment from "moment";
 
 function App() {
