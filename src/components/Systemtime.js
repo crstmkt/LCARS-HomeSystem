@@ -15,7 +15,3 @@ const Systemtime = () => {
 };
 
 export default Systemtime;
-
-// setInterval(function () {
-//   writeSystemTime();
-// }, 1000);
