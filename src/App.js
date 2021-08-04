@@ -31,6 +31,7 @@ import { LCARS, lcars } from "./lcars-sdk/core/lcars-sdk";
 // import wrapper from "./lcars-sdk/elements/wrapper";
 import { showMainView, showMainFrame } from "./js/Animations";
 import Systemtime from "./components/Systemtime";
+import Logs from "./components/Logs";
 
 function App() {
   const uiColors = [
@@ -72,7 +73,7 @@ function App() {
             class="wrapper content hidden flex-c-v flex-h"
           >
             <div id="wrapperSIDnpltj5x5x" class="wrapper flex-c-v flex-h">
-              <div id="logs" class="text text-color-1"></div>
+              <Logs />
             </div>
             <div id="wrapperSID8u7837ms0" class="wrapper flex-c-h flex-v">
               <div id="titleSID33g9m1vio" class="title">
