@@ -18,7 +18,7 @@ const Systemtime = () => {
 
   return (
     <div id="systemTime" class="title half">
-      {systemtime}
+      SYSTEM TIME {systemtime}
     </div>
   );
 };
