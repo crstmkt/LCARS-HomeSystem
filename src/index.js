@@ -2,10 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import TestAPI from "./TestAPI";
 import reportWebVitals from "./reportWebVitals";
 import "./lcars-sdk/fonts/sdk_fonts-default.css";
-import "./lcars-sdk/core/lcars-sdk.css";
-import "./lcars-sdk/themes/sdk_theme-default.css";
+//import "./lcars-sdk/core/lcars-sdk.css";
+//import "./lcars-sdk/themes/sdk_theme-default.css";
 import "./lcars-sdk/widgets/sdk_default-bar-frame/default-bar-frame.css";
 import "./lcars-sdk/widgets/sdk_default-bracket/default-bracket.css";
 import "./lcars-sdk/widgets/sdk_solid-level-bar/solid-level-bar.css";
@@ -15,7 +16,7 @@ import "./theme.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <TestAPI />
   </React.StrictMode>,
   document.getElementById("wpr_viewport")
 );
