@@ -153,16 +153,19 @@ function App() {
             id="buttonSIDwmrlmu37z"
             class="button bg-color-4 hidden step-two"
             onclick="play(2)"
+            data-label="NETWORK"
           ></div>
           <div
             id="buttonSID7r59osbl1"
             class="button bg-color-3 hidden"
             onclick="play(2)"
+            data-label="ENERGY"
           ></div>
           <div
             id="buttonSIDntglo1ex8"
             class="button bg-color-2 hidden step-two"
             onclick="play(2)"
+            data-label="WEATHER"
           ></div>
           <div
             id="buttonSIDeukie0ohw"
@@ -173,7 +176,6 @@ function App() {
             id="buttonSID9spzacj4j"
             class="button bg-color-3 hidden"
             onclick="play(2)"
-            data-label="WIFI"
           ></div>
           <div
             id="buttonSIDp9gewhasz"
