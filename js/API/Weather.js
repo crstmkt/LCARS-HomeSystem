@@ -3,13 +3,32 @@ class Weather{
     // 0 = CURRENT
     // 1 = FORECAST
 	mode = 0;
+	sun = 'above_horizon';
 
 	constructor(_mode){
 		this.mode = _mode;
+
+		setInterval(function(){
+			_weather.apiCallSun();
+		}, 30000)
 	}
 
 getWeather(){
-	this.apiCallWeather(this.mode);
+	this.apiCallWeather(this.mode);	
+}
+
+apiCallSun(){
+	$.ajax({
+		url: getHost() + '/api/states/sun.sun',
+		type: 'GET',
+		headers: {
+			'Authorization': 'Bearer ' + getToken()
+		},
+		success: function(data){
+			//Yep, this is ugly.
+			_weather.sun = data.state;
+		}
+	})
 }
 
 apiCallWeather(mode){
@@ -28,8 +47,21 @@ apiCallWeather(mode){
 					{
 						data.state = 'partly-cloudy';
 					}
+					if(_weather.sun != 'above_horizon')
+					{
+						switch(data.state){
+							case 'sunny':
+								data.state = 'night';
+								break;
+							case 'partly-cloudy':
+								data.state = 'night-partly-cloudy';
+								break;
+							default:
+								break;
+						}
+					}
                     var html = "<i class='mdi wi-xxxlarge mdi-weather-" + data.state + "'></i>" + 
-								"<p>HUMIDITY: " + data.attributes.humidity + "mm</p>" +
+								"<p>HUMIDITY: " + data.attributes.humidity + "%</p>" +
 								"<p>TEMPERATURE: " + data.attributes.temperature + "°C</i></p>" + 
 								"<p>PRESSURE: " + data.attributes.pressure + "</p>" + 
 								"<p>WIND: " + data.attributes.wind_speed + "km/h <i class='wi wi-wind towards-" + Math.round(data.attributes.wind_bearing) +"-deg'></i></p>";
@@ -45,7 +77,7 @@ apiCallWeather(mode){
 						}
 						var temp = "<i class='mdi wi-xxxlarge mdi-weather-" + elem.condition + "'></i>" +
 						"<p>" + moment(elem.datetime).format("dddd, Do MMM YYYY").toUpperCase() +"</p>"  +
-						"<p>PRECIPITATION: " + elem.precipitation + "%</p>" +
+						"<p>PRECIPITATION: " + elem.precipitation + "mm</p>" +
 						"<p>TEMPERATURE: " + elem.templow + " - " + elem.temperature + "°C</i></p>" + 
 						"<p>WIND: " + elem.wind_speed + "km/h <i class='wi wi-wind towards-" + Math.round(elem.wind_bearing) +"-deg'></i></p>";
 
