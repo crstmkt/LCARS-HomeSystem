@@ -40,7 +40,6 @@ function App() {
           <div
             id="buttonSIDhybpg06vw"
             class="button bg-color-3 step-two hidden"
-            onclick="play(2)"
           ></div>
           <div
             id="elbowSID7vwtva2hl"
