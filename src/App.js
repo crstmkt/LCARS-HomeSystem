@@ -2,36 +2,10 @@ import { render } from "@testing-library/react";
 import React, { useEffect } from "react";
 import $ from "jquery";
 import { LCARS, lcars } from "./lcars-sdk/core/lcars-sdk";
-// import play from "./lcars-sdk/sounds/play";
-// import aside from "./lcars-sdk/elements/aside";
-// import bar from "./lcars-sdk/elements/bar";
-// import blank from "./lcars-sdk/elements/blank";
-// import block from "./lcars-sdk/elements/block";
-// import button from "./lcars-sdk/elements/button";
-// import cap from "./lcars-sdk/elements/cap";
-// import column from "./lcars-sdk/elements/column";
-// import complexButton from "./lcars-sdk/elements/complex-button";
-// import content from "./lcars-sdk/elements/content";
-// import details from "./lcars-sdk/elements/details";
-// import elbow from "./lcars-sdk/elements/elbow";
-// import endcap from "./lcars-sdk/elements/endcap";
-// import footer from "./lcars-sdk/elements/footer";
-// import header from "./lcars-sdk/elements/header";
-// import htmlTag from "./lcars-sdk/elements/html-tag";
-// import img from "./lcars-sdk/elements/img";
-// import main from "./lcars-sdk/elements/main";
-// import nav from "./lcars-sdk/elements/nav";
-// import oval from "./lcars-sdk/elements/oval";
-// import row from "./lcars-sdk/elements/row";
-// import section from "./lcars-sdk/elements/section";
-// import slider from "./lcars-sdk/elements/slider";
-// import svg from "./lcars-sdk/elements/svg";
-// import text from "./lcars-sdk/elements/text";
-// import title from "./lcars-sdk/elements/title";
-// import wrapper from "./lcars-sdk/elements/wrapper";
 import { showMainView, showMainFrame } from "./js/Animations";
 import Systemtime from "./components/Systemtime";
 import Logs from "./components/Logs";
+import { callService } from "./API/dist/index.js";
 
 function App() {
   const uiColors = [
@@ -41,6 +15,16 @@ function App() {
     "bg-color-4",
     "bg-color-5",
   ];
+
+  function sayHello() {
+    alert("Hello!");
+  }
+
+  function toggleGuestWifi() {
+    callService(window.connection, "homeassistant", "toggle", {
+      entity_id: "switch.lcars_srv_wi_fi_lcars_net_g",
+    });
+  }
 
   //Unhide LCARS Interface
   useEffect(() => {
@@ -84,37 +68,34 @@ function App() {
                 <div
                   id="buttonSID78cy19k2t"
                   class="button bg-grey-4 round"
-                  onclick="play(2)"
                   data-label="GREY MODE"
+                  onClick={sayHello}
                 ></div>
                 <div
                   id="buttonSIDn0lt6w6rh"
                   class="button bg-blue-2 round"
-                  onclick="play(2)"
+                  onClick="play(2)"
                   data-label="RELOAD"
                 ></div>
                 <div
                   id="guestWifiSwitch"
                   class="button bg-orange-4 round"
-                  onclick="play(2)"
                   data-label="GUEST WIFI"
+                  onClick={toggleGuestWifi}
                 ></div>
                 <div
                   id="buttonSIDyi2s24boi"
                   class="button bg-color-5 round"
-                  onclick="play(2)"
                   data-label="Test"
                 ></div>
                 <div
                   id="buttonSIDui46gi7u4"
                   class="button bg-color-2 round"
-                  onclick="play(2)"
                   data-label="clean"
                 ></div>
                 <div
                   id="buttonSID146lkiysv"
                   class="button bg-color-5 round"
-                  onclick="play(2)"
                 ></div>
               </div>
             </div>
@@ -146,41 +127,31 @@ function App() {
           <div
             id="buttonSIDlymj9dqjd"
             class="button bg-color-2 hidden"
-            onclick="play(2)"
             data-label="DASHBOARD"
           ></div>
           <div
             id="buttonSIDwmrlmu37z"
             class="button bg-color-4 hidden step-two"
-            onclick="play(2)"
             data-label="NETWORK"
           ></div>
           <div
             id="buttonSID7r59osbl1"
             class="button bg-color-3 hidden"
-            onclick="play(2)"
             data-label="ENERGY"
           ></div>
           <div
             id="buttonSIDntglo1ex8"
             class="button bg-color-2 hidden step-two"
-            onclick="play(2)"
             data-label="WEATHER"
           ></div>
           <div
             id="buttonSIDeukie0ohw"
             class="button bg-color-5 hidden flex-c-v"
-            onclick="play(2)"
           ></div>
-          <div
-            id="buttonSID9spzacj4j"
-            class="button bg-color-3 hidden"
-            onclick="play(2)"
-          ></div>
+          <div id="buttonSID9spzacj4j" class="button bg-color-3 hidden"></div>
           <div
             id="buttonSIDp9gewhasz"
             class="button bg-color-2 hidden step-two"
-            onclick="play(2)"
           ></div>
         </div>
         <div id="wrapperSIDfff6sprkp" class="wrapper column flex-c-h flex-v">
