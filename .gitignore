@@ -21,7 +21,6 @@ js/Token.js
 .env.test.local
 .env.production.local
 .dockerignore
-Dockerfile
 
 
 npm-debug.log*
@@ -50,5 +49,4 @@ yarn-error.log*
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-src/API/API.js
-src/API/API.js
+

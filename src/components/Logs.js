@@ -5,6 +5,7 @@ import { getHost, getToken } from "../API/API";
 import { callService } from "../API/dist/index.js";
 
 const Logs = () => {
+  //Because FUCK CORS - and those who are responsible for not working allowed header in HASS Config
   // useEffect(() => {
   //   setInterval(() => {
   //     getLog();
@@ -12,23 +13,23 @@ const Logs = () => {
   //});
 
   function getLog() {
-    $.ajax({
-      url: getHost() + "/api/logbook",
-      headers: {
-        Authorization: "Bearer " + getToken(),
-      },
-      success: function (data) {
-        data.forEach((elem) =>
-          log(
-            moment().format("DD.MM.YYYY hh:mm:ss") +
-              " " +
-              elem.name +
-              " " +
-              stateMessage(elem)
-          )
-        );
-      },
-    });
+    // $.ajax({
+    //   url: getHost() + "/api/logbook",
+    //   headers: {
+    //     Authorization: "Bearer " + getToken(),
+    //   },
+    //   success: function (data) {
+    //     data.forEach((elem) =>
+    //       log(
+    //         moment().format("DD.MM.YYYY hh:mm:ss") +
+    //           " " +
+    //           elem.name +
+    //           " " +
+    //           stateMessage(elem)
+    //       )
+    //     );
+    //   },
+    // });
   }
 
   function log(str) {
