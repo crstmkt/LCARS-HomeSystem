@@ -1,30 +1,32 @@
-import { render } from "@testing-library/react";
 import React, { useEffect } from "react";
-import $ from "jquery";
-import { LCARS, lcars } from "./lcars-sdk/core/lcars-sdk";
-import { showMainView, showMainFrame } from "./js/Animations";
+import { showMainView } from "./js/Animations";
 import Systemtime from "./components/Systemtime";
 import Logs from "./components/Logs";
 import TopButtons from "./components/TopButtons";
 import { callService } from "./API/dist/index.js";
+import { entitiesCollection } from "./API/API";
 
 function App() {
-  function toggleGuestWifi() {
-    callService(window.connection, "homeassistant", "toggle", {
-      entity_id: "switch.lcars_srv_wi_fi_lcars_net_g",
-    });
-  }
-
   const topButtons = [
     {
       color: "bg-color-1",
       dataLabel: "Button1",
       on_Click: () => {
-        alert("Test");
+        console.log(
+          entitiesCollection["switch.lcars_srv_wi_fi_lcars_net_g"].state
+        );
       },
     },
     { color: "bg-color-2", dataLabel: "Button2" },
-    { color: "bg-color-3", dataLabel: "Button3" },
+    {
+      color: "bg-color-3",
+      dataLabel: "GUEST WIFI",
+      on_Click: () => {
+        callService(window.connection, "homeassistant", "toggle", {
+          entity_id: "switch.lcars_srv_wi_fi_lcars_net_g",
+        });
+      },
+    },
     { color: "bg-color-4", dataLabel: "Button4" },
     { color: "bg-color-5", dataLabel: "Button5" },
     { color: "bg-color-6", dataLabel: "Button6" },
@@ -143,347 +145,6 @@ function App() {
     </div>
   );
   //#endregion
-
-  //#region nemesisUI
-  // const nemesisUI = {
-  //   type: "wrapper",
-  //   id: "wpr_viewport",
-  //   version: "row",
-  //   flex: "h",
-  //   class: { scale: true, "red-alert": false },
-  //   arrive: function () {
-  //     var dom = this.dom;
-  //     LCARS.helper.viewportZoom(dom, { width: 1440, height: 1080 });
-  //     window.addEventListener("resize", function () {
-  //       LCARS.helper.viewportZoom(dom, { width: 1440, height: 1080 });
-  //     });
-  //   },
-  //   children: [
-  //     //Main Area
-  //     {
-  //       type: "wrapper",
-  //       version: "column",
-  //       id: "wpr_mainView",
-  //       flex: "v",
-  //       flexc: "h",
-  //       children: [
-  //         //Header
-  //         {
-  //           type: "wrapper",
-  //           version: "header",
-  //           flex: "h",
-  //           children: [
-  //             //Elbow & Button
-  //             {
-  //               type: "wrapper",
-  //               version: "column",
-  //               flex: "v",
-  //               children: [
-  //                 {
-  //                   type: "button",
-  //                   color: LCARS.helper.aRandColor(uiColors),
-  //                   size: "step-two",
-  //                   hidden: true,
-  //                 },
-  //                 {
-  //                   type: "elbow",
-  //                   version: "horizontal",
-  //                   direction: "bottom-left",
-  //                   color: LCARS.helper.aRandColor(uiColors),
-  //                   flexc: "v",
-  //                   hidden: true,
-  //                 },
-  //               ],
-  //             },
-
-  //             {
-  //               type: "wrapper",
-  //               flexc: "h",
-  //               flex: "v",
-  //               children: [
-  //                 //Header Content Area
-  //                 {
-  //                   type: "wrapper",
-  //                   version: "content",
-  //                   hidden: true,
-  //                   flexc: "v",
-  //                   flex: "h",
-  //                   children: [
-  //                     //Logs Area
-  //                     {
-  //                       type: "wrapper",
-  //                       flexc: "v",
-  //                       flex: "h",
-  //                       children: [
-  //                         {
-  //                           id: "logs",
-  //                           type: "text",
-  //                           color: "text-color-1",
-  //                           text: "",
-  //                         },
-  //                       ],
-  //                     },
-
-  //                     {
-  //                       type: "wrapper",
-  //                       flexc: "h",
-  //                       flex: "v",
-  //                       children: [
-  //                         //Header Title
-  //                         { type: "title", text: "LCARS HOME SYSTEM" },
-  //                         {
-  //                           type: "title",
-  //                           id: "systemTime",
-  //                           size: "half",
-  //                           text: setInterval(function () {
-  //                             //writeSystemTime();
-  //                           }, 1000),
-  //                         },
-
-  //                         //Header Round Button Group
-  //                         {
-  //                           type: "wrapper",
-  //                           flex: "h",
-  //                           version: "button-wrap",
-  //                           children: [
-  //                             {
-  //                               type: "button",
-  //                               color: "bg-grey-4",
-  //                               version: "round",
-  //                               label: "GREY MODE",
-  //                               //href: "javascript:activateGreyMode();",
-  //                             },
-  //                             {
-  //                               type: "button",
-  //                               color: "bg-blue-2",
-  //                               version: "round",
-  //                               label: "RELOAD",
-  //                               //href: "javascript:window.location.reload(true);",
-  //                             },
-  //                             {
-  //                               type: "button",
-  //                               id: "guestWifiSwitch",
-  //                               color: "bg-orange-4",
-  //                               version: "round",
-  //                               label: "GUEST WIFI",
-  //                               //href: "javascript:toggleGuestWifi();",
-  //                             },
-  //                             {
-  //                               type: "button",
-  //                               color: LCARS.helper.aRandColor(uiColors),
-  //                               version: "round",
-  //                               label: "Test",
-  //                               //href: "javascript:raMainViewSetup();",
-  //                             },
-  //                             {
-  //                               type: "button",
-  //                               color: LCARS.helper.aRandColor(uiColors),
-  //                               version: "round",
-  //                               label: "clean",
-  //                               //href: "javascript:startClean();",
-  //                             },
-  //                             {
-  //                               type: "button",
-  //                               color: LCARS.helper.aRandColor(uiColors),
-  //                               version: "round",
-  //                             },
-  //                           ],
-  //                         },
-  //                       ],
-  //                     },
-  //                   ],
-  //                 },
-
-  //                 //Header Bottom Bars
-  //                 {
-  //                   type: "row",
-  //                   version: "frame",
-  //                   flex: "h",
-  //                   children: [
-  //                     {
-  //                       type: "bar",
-  //                       color: LCARS.helper.aRandColor(uiColors),
-  //                       hidden: true,
-  //                     },
-  //                     {
-  //                       type: "bar",
-  //                       color: LCARS.helper.aRandColor(uiColors),
-  //                       hidden: true,
-  //                     },
-  //                     {
-  //                       type: "bar",
-  //                       color: LCARS.helper.aRandColor(uiColors),
-  //                       hidden: true,
-  //                     },
-  //                     {
-  //                       type: "bar",
-  //                       color: LCARS.helper.aRandColor(uiColors),
-  //                       flexc: "h",
-  //                       hidden: true,
-  //                     },
-  //                     {
-  //                       type: "bar",
-  //                       color: LCARS.helper.aRandColor(uiColors),
-  //                       hidden: true,
-  //                     },
-  //                     {
-  //                       type: "bar",
-  //                       color: LCARS.helper.aRandColor(uiColors),
-  //                       hidden: true,
-  //                     },
-  //                     {
-  //                       type: "bar",
-  //                       color: LCARS.helper.aRandColor(uiColors),
-  //                       hidden: true,
-  //                     },
-  //                   ],
-  //                 },
-  //               ],
-  //             },
-  //           ],
-  //         },
-
-  //         //Main Content Area
-  //         {
-  //           type: "wrapper",
-  //           version: "main",
-  //           flex: "h",
-  //           flexc: "v",
-  //           children: [
-  //             //Left Columns & Elbow
-  //             {
-  //               type: "wrapper",
-  //               version: "column",
-  //               flex: "v",
-  //               children: [
-  //                 {
-  //                   type: "elbow",
-  //                   version: "horizontal",
-  //                   direction: "top-left",
-  //                   color: LCARS.helper.aRandColor(uiColors),
-  //                   class: "step-two",
-  //                   hidden: true,
-  //                 },
-  //                 {
-  //                   type: "button",
-  //                   color: LCARS.helper.aRandColor(uiColors),
-  //                   hidden: true,
-  //                   label: "DASHBOARD",
-  //                   //href: "javascript:renderDashboard()",
-  //                 },
-  //                 {
-  //                   type: "button",
-  //                   color: LCARS.helper.aRandColor(uiColors),
-  //                   hidden: true,
-  //                   size: "step-two",
-  //                 },
-  //                 {
-  //                   type: "button",
-  //                   color: LCARS.helper.aRandColor(uiColors),
-  //                   hidden: true,
-  //                 },
-  //                 {
-  //                   type: "button",
-  //                   color: LCARS.helper.aRandColor(uiColors),
-  //                   hidden: true,
-  //                   size: "step-two",
-  //                 },
-  //                 {
-  //                   type: "button",
-  //                   color: LCARS.helper.aRandColor(uiColors),
-  //                   hidden: true,
-  //                   flexc: "v",
-  //                 },
-  //                 {
-  //                   type: "button",
-  //                   color: LCARS.helper.aRandColor(uiColors),
-  //                   hidden: true,
-  //                   label: "WIFI",
-  //                   //href: "javascript:renderWiFi();",
-  //                 },
-  //                 {
-  //                   type: "button",
-  //                   color: LCARS.helper.aRandColor(uiColors),
-  //                   hidden: true,
-  //                   size: "step-two",
-  //                 },
-  //               ],
-  //             },
-
-  //             {
-  //               type: "wrapper",
-  //               version: "column",
-  //               flexc: "h",
-  //               flex: "v",
-  //               children: [
-  //                 //Top Bars Group
-  //                 {
-  //                   type: "row",
-  //                   version: "frame",
-  //                   children: [
-  //                     {
-  //                       type: "bar",
-  //                       color: LCARS.helper.aRandColor(uiColors),
-  //                       hidden: true,
-  //                     },
-  //                     {
-  //                       type: "bar",
-  //                       color: LCARS.helper.aRandColor(uiColors),
-  //                       hidden: true,
-  //                       size: "small",
-  //                     },
-  //                     {
-  //                       type: "bar",
-  //                       color: LCARS.helper.aRandColor(uiColors),
-  //                       hidden: true,
-  //                     },
-  //                     {
-  //                       type: "bar",
-  //                       color: LCARS.helper.aRandColor(uiColors),
-  //                       hidden: true,
-  //                       flexc: "h",
-  //                     },
-  //                     {
-  //                       type: "bar",
-  //                       color: LCARS.helper.aRandColor(uiColors),
-  //                       hidden: true,
-  //                     },
-  //                     {
-  //                       type: "bar",
-  //                       color: LCARS.helper.aRandColor(uiColors),
-  //                       hidden: true,
-  //                     },
-  //                     {
-  //                       type: "bar",
-  //                       color: LCARS.helper.aRandColor(uiColors),
-  //                       hidden: true,
-  //                     },
-  //                   ],
-  //                 },
-
-  //                 //Start Main Content Wrapper
-  //                 {
-  //                   type: "wrapper",
-  //                   id: "wpr_centerControls",
-  //                   flex: "h",
-  //                   flexc: "v",
-  //                   children: [
-  //                     //Here, content of Views will be rendered
-  //                   ],
-  //                 },
-  //                 //End Main Content Wrapper
-  //               ],
-  //             },
-  //           ],
-  //         },
-  //       ],
-  //     },
-  //   ],
-  //   //#endregion
-  // };
-  //#endregion
-
-  //return LCARS.create(nemesisUI).dom;
 }
 
 export default App;

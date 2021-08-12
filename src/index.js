@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import TestAPI from "./TestAPI";
 import reportWebVitals from "./reportWebVitals";
 import "./lcars-sdk/fonts/sdk_fonts-default.css";
 import "./lcars-sdk/core/lcars-sdk.css";
@@ -16,7 +15,6 @@ import "./theme.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <TestAPI /> */}
     <App />
   </React.StrictMode>,
   document.getElementById("wpr_viewport")
