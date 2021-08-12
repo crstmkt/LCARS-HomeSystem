@@ -5,26 +5,30 @@ import { LCARS, lcars } from "./lcars-sdk/core/lcars-sdk";
 import { showMainView, showMainFrame } from "./js/Animations";
 import Systemtime from "./components/Systemtime";
 import Logs from "./components/Logs";
+import TopButtons from "./components/TopButtons";
 import { callService } from "./API/dist/index.js";
 
 function App() {
-  const uiColors = [
-    "bg-color-1",
-    "bg-color-2",
-    "bg-color-3",
-    "bg-color-4",
-    "bg-color-5",
-  ];
-
-  function sayHello() {
-    alert("Hello!");
-  }
-
   function toggleGuestWifi() {
     callService(window.connection, "homeassistant", "toggle", {
       entity_id: "switch.lcars_srv_wi_fi_lcars_net_g",
     });
   }
+
+  const topButtons = [
+    {
+      color: "bg-color-1",
+      dataLabel: "Button1",
+      on_Click: () => {
+        alert("Test");
+      },
+    },
+    { color: "bg-color-2", dataLabel: "Button2" },
+    { color: "bg-color-3", dataLabel: "Button3" },
+    { color: "bg-color-4", dataLabel: "Button4" },
+    { color: "bg-color-5", dataLabel: "Button5" },
+    { color: "bg-color-6", dataLabel: "Button6" },
+  ];
 
   //Unhide LCARS Interface
   useEffect(() => {
@@ -63,40 +67,7 @@ function App() {
                 LCARS HOME SYSTEM
               </div>
               <Systemtime />
-              <div id="wrapperSIDeuhyxyz4z" class="wrapper flex-h button-wrap">
-                <div
-                  id="buttonSID78cy19k2t"
-                  class="button bg-grey-4 round"
-                  data-label="GREY MODE"
-                  onClick={sayHello}
-                ></div>
-                <div
-                  id="buttonSIDn0lt6w6rh"
-                  class="button bg-blue-2 round"
-                  onClick="play(2)"
-                  data-label="RELOAD"
-                ></div>
-                <div
-                  id="guestWifiSwitch"
-                  class="button bg-orange-4 round"
-                  data-label="GUEST WIFI"
-                  onClick={toggleGuestWifi}
-                ></div>
-                <div
-                  id="buttonSIDyi2s24boi"
-                  class="button bg-color-5 round"
-                  data-label="Test"
-                ></div>
-                <div
-                  id="buttonSIDui46gi7u4"
-                  class="button bg-color-2 round"
-                  data-label="clean"
-                ></div>
-                <div
-                  id="buttonSID146lkiysv"
-                  class="button bg-color-5 round"
-                ></div>
-              </div>
+              <TopButtons buttons={topButtons} />
             </div>
           </div>
           <div id="rowSID7zfyqtz3a" class="row frame flex-h">
