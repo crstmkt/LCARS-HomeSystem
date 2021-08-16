@@ -38,13 +38,16 @@ import {
 })();
 
 export function getToken() {
-  return "<TOKEN GOES HERE>";
+  return "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjYmVjYTgwYTYzMDU0MjM3ODJkYmE1YmQyYmRhMjBjNyIsImlhdCI6MTYwMjc1ODU3MCwiZXhwIjoxOTE4MTE4NTcwfQ.tTO4QCcQsNrHTv0Li7dh5gM33PDDrn28bxZfRzIO1Y0";
 }
 
 export function getHost() {
-  return "<HOST URL GOES HERE>";
+  return "http://lcars-homesystem:8123";
 }
 
+export var entitiesCollection;
+
 function renderEntities(connection, entities) {
-  console.log(entities);
+  entitiesCollection = entities;
+  //console.log(entitiesCollection);
 }

@@ -5,10 +5,7 @@ export default function RoundedButton({
   id,
   primaryColor,
   secondaryColor,
-  isActive,
   dataLabel,
-  entityId,
-  entityState,
   on_Click,
   onButtonChange,
 }) {
@@ -23,8 +20,6 @@ export default function RoundedButton({
         primaryColor,
         secondaryColor,
         dataLabel,
-        entityId,
-        entityState,
         on_Click,
         onButtonChange,
       });
@@ -33,9 +28,7 @@ export default function RoundedButton({
 
   return (
     <div
-      className={
-        "button round " + (isActive === "off" ? primaryColor : secondaryColor)
-      }
+      className={"button round " + primaryColor}
       data-label={dataLabel}
       onClick={handleClick}
     ></div>

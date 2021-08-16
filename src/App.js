@@ -13,7 +13,6 @@ function App() {
       primaryColor: "bg-color-1",
       secondaryColor: "bg-color-2",
       dataLabel: "Button1",
-      isActive: null,
       on_Click: () => {
         console.log(
           entitiesCollection["switch.lcars_srv_wi_fi_lcars_net_g"].state
@@ -26,8 +25,7 @@ function App() {
       primaryColor: "bg-color-2",
       secondaryColor: "bg-color-2",
       dataLabel: "Button2",
-      isActive: null,
-      n_Click: () => {
+      on_Click: () => {
         return null;
       },
       onButtonChange: (button) => handleTopButtonChange(button),
@@ -37,7 +35,6 @@ function App() {
       primaryColor: "bg-color-3",
       secondaryColor: "bg-color-4",
       dataLabel: "GUEST WIFI",
-      isActive: entitiesCollection["switch.lcars_srv_wi_fi_lcars_net_g"].state,
       on_Click: () => {
         callService(window.connection, "homeassistant", "toggle", {
           entity_id: "switch.lcars_srv_wi_fi_lcars_net_g",
@@ -51,7 +48,6 @@ function App() {
       primaryColor: "bg-color-4",
       secondaryColor: "bg-color-2",
       dataLabel: "Button4",
-      isActive: null,
       on_Click: () => {
         return null;
       },
@@ -62,8 +58,7 @@ function App() {
       primaryColor: "bg-color-5",
       secondaryColor: "bg-color-2",
       dataLabel: "Button5",
-      isActive: null,
-      n_Click: () => {
+      on_Click: () => {
         return null;
       },
       onButtonChange: (button) => handleTopButtonChange(button),
@@ -73,8 +68,7 @@ function App() {
       primaryColor: "bg-color-6",
       secondaryColor: "bg-color-2",
       dataLabel: "Button6",
-      isActive: null,
-      n_Click: () => {
+      on_Click: () => {
         return null;
       },
       onButtonChange: (button) => handleTopButtonChange(button),
