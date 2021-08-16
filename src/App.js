@@ -13,8 +13,11 @@ function App() {
       primaryColor: "bg-color-1",
       secondaryColor: "bg-color-2",
       dataLabel: "Button1",
-      n_Click: () => {
-        return null;
+      isActive: null,
+      on_Click: () => {
+        console.log(
+          entitiesCollection["switch.lcars_srv_wi_fi_lcars_net_g"].state
+        );
       },
       onButtonChange: (button) => handleTopButtonChange(button),
     },
@@ -23,6 +26,7 @@ function App() {
       primaryColor: "bg-color-2",
       secondaryColor: "bg-color-2",
       dataLabel: "Button2",
+      isActive: null,
       n_Click: () => {
         return null;
       },
@@ -33,12 +37,13 @@ function App() {
       primaryColor: "bg-color-3",
       secondaryColor: "bg-color-4",
       dataLabel: "GUEST WIFI",
-      entityId: "switch.lcars_srv_wi_fi_lcars_net_g",
+      isActive: entitiesCollection["switch.lcars_srv_wi_fi_lcars_net_g"].state,
       on_Click: () => {
         callService(window.connection, "homeassistant", "toggle", {
           entity_id: "switch.lcars_srv_wi_fi_lcars_net_g",
         });
       },
+      //TODO: Change Button color on state change (when entity is turned on/off in HASS)
       onButtonChange: (button) => handleTopButtonChange(button),
     },
     {
@@ -46,6 +51,7 @@ function App() {
       primaryColor: "bg-color-4",
       secondaryColor: "bg-color-2",
       dataLabel: "Button4",
+      isActive: null,
       on_Click: () => {
         return null;
       },
@@ -56,6 +62,7 @@ function App() {
       primaryColor: "bg-color-5",
       secondaryColor: "bg-color-2",
       dataLabel: "Button5",
+      isActive: null,
       n_Click: () => {
         return null;
       },
@@ -66,6 +73,7 @@ function App() {
       primaryColor: "bg-color-6",
       secondaryColor: "bg-color-2",
       dataLabel: "Button6",
+      isActive: null,
       n_Click: () => {
         return null;
       },
@@ -126,6 +134,7 @@ function App() {
                       id={i.id}
                       primaryColor={i.primaryColor}
                       secondaryColor={i.secondaryColor}
+                      isActive={i.isActive}
                       dataLabel={i.dataLabel}
                       on_Click={i.on_Click}
                       onButtonChange={i.onButtonChange}
