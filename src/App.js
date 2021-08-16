@@ -1,36 +1,86 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { showMainView } from "./js/Animations";
 import Systemtime from "./components/Systemtime";
 import Logs from "./components/Logs";
-import TopButtons from "./components/TopButtons";
+import RoundedButton from "./components/RoundedButton";
 import { callService } from "./API/dist/index.js";
 import { entitiesCollection } from "./API/API";
 
 function App() {
-  const topButtons = [
+  const [topButtons, setTopButtons] = useState([
     {
-      color: "bg-color-1",
+      id: 1,
+      primaryColor: "bg-color-1",
+      secondaryColor: "bg-color-2",
       dataLabel: "Button1",
-      on_Click: () => {
-        console.log(
-          entitiesCollection["switch.lcars_srv_wi_fi_lcars_net_g"].state
-        );
+      n_Click: () => {
+        return null;
       },
+      onButtonChange: (button) => handleTopButtonChange(button),
     },
-    { color: "bg-color-2", dataLabel: "Button2" },
     {
-      color: "bg-color-3",
+      id: 2,
+      primaryColor: "bg-color-2",
+      secondaryColor: "bg-color-2",
+      dataLabel: "Button2",
+      n_Click: () => {
+        return null;
+      },
+      onButtonChange: (button) => handleTopButtonChange(button),
+    },
+    {
+      id: 3,
+      primaryColor: "bg-color-3",
+      secondaryColor: "bg-color-4",
       dataLabel: "GUEST WIFI",
+      entityId: "switch.lcars_srv_wi_fi_lcars_net_g",
       on_Click: () => {
         callService(window.connection, "homeassistant", "toggle", {
           entity_id: "switch.lcars_srv_wi_fi_lcars_net_g",
         });
       },
+      onButtonChange: (button) => handleTopButtonChange(button),
     },
-    { color: "bg-color-4", dataLabel: "Button4" },
-    { color: "bg-color-5", dataLabel: "Button5" },
-    { color: "bg-color-6", dataLabel: "Button6" },
-  ];
+    {
+      id: 4,
+      primaryColor: "bg-color-4",
+      secondaryColor: "bg-color-2",
+      dataLabel: "Button4",
+      on_Click: () => {
+        return null;
+      },
+      onButtonChange: (button) => handleTopButtonChange(button),
+    },
+    {
+      id: 5,
+      primaryColor: "bg-color-5",
+      secondaryColor: "bg-color-2",
+      dataLabel: "Button5",
+      n_Click: () => {
+        return null;
+      },
+      onButtonChange: (button) => handleTopButtonChange(button),
+    },
+    {
+      id: 6,
+      primaryColor: "bg-color-6",
+      secondaryColor: "bg-color-2",
+      dataLabel: "Button6",
+      n_Click: () => {
+        return null;
+      },
+      onButtonChange: (button) => handleTopButtonChange(button),
+    },
+  ]);
+
+  const handleTopButtonChange = (button) => {
+    setTopButtons((prevButtonList) =>
+      prevButtonList.map((btn) => {
+        if (btn.id === button.id) return button;
+        return btn;
+      })
+    );
+  };
 
   //Unhide LCARS Interface
   useEffect(() => {
@@ -69,7 +119,20 @@ function App() {
                 LCARS HOME SYSTEM
               </div>
               <Systemtime />
-              <TopButtons buttons={topButtons} />
+              <div id="wrapperSIDeuhyxyz4z" class="wrapper flex-h button-wrap">
+                {topButtons.map((i) => {
+                  return (
+                    <RoundedButton
+                      id={i.id}
+                      primaryColor={i.primaryColor}
+                      secondaryColor={i.secondaryColor}
+                      dataLabel={i.dataLabel}
+                      on_Click={i.on_Click}
+                      onButtonChange={i.onButtonChange}
+                    />
+                  );
+                })}
+              </div>
             </div>
           </div>
           <div id="rowSID7zfyqtz3a" class="row frame flex-h">

@@ -1,11 +1,40 @@
 import React from "react";
+//import { entitiesCollection } from "../API/API"; for later use to check entities state
 
-export default function RoundedButton({ color, dataLabel, on_Click }) {
+export default function RoundedButton({
+  id,
+  primaryColor,
+  secondaryColor,
+  dataLabel,
+  entityId,
+  entityState,
+  on_Click,
+  onButtonChange,
+}) {
+  const handleClick = () => {
+    on_Click();
+    if (true) {
+      var temp = primaryColor;
+      primaryColor = secondaryColor;
+      secondaryColor = temp;
+      onButtonChange({
+        id,
+        primaryColor,
+        secondaryColor,
+        dataLabel,
+        entityId,
+        entityState,
+        on_Click,
+        onButtonChange,
+      });
+    }
+  };
+
   return (
     <div
-      className={"button round " + color}
+      className={"button round " + primaryColor}
       data-label={dataLabel}
-      onClick={on_Click}
+      onClick={handleClick}
     ></div>
   );
 }
