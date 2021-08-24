@@ -93,32 +93,51 @@ function App() {
             id="buttonSIDlymj9dqjd"
             class="button bg-color-2 hidden"
             data-label="DASHBOARD"
-            onClick={() => setActiveModule("dashboard")}
+            onClick={() => {
+              setActiveModule("dashboard");
+            }}
           ></div>
           <div
             id="buttonSIDwmrlmu37z"
             class="button bg-color-4 hidden step-two"
-            data-label="NETWORK"
+            data-label="ROOMS"
+            onClick={() => {
+              setActiveModule("rooms");
+            }}
           ></div>
           <div
             id="buttonSID7r59osbl1"
             class="button bg-color-3 hidden"
-            data-label="ENERGY"
+            data-label="DEVICES"
+            onClick={() => {
+              setActiveModule("devices");
+            }}
           ></div>
           <div
             id="buttonSIDntglo1ex8"
             class="button bg-color-2 hidden step-two"
-            data-label="WEATHER"
-            onClick={() => setActiveModule("weather")}
+            data-label="ENERGY"
+            onClick={() => setActiveModule("energy")}
           ></div>
           <div
             id="buttonSIDeukie0ohw"
             class="button bg-color-5 hidden flex-c-v"
+            data-label="WEATHER"
+            onClick={() => setActiveModule("weather")}
           ></div>
-          <div id="buttonSID9spzacj4j" class="button bg-color-3 hidden"></div>
+          <div
+            id="buttonSID9spzacj4j"
+            class="button bg-color-3 hidden"
+            data-label="NETWORK"
+            onClick={() => {
+              setActiveModule("network");
+            }}
+          ></div>
           <div
             id="buttonSIDp9gewhasz"
             class="button bg-color-2 hidden step-two"
+            data-label="ENTITIES"
+            onClick={() => setActiveModule("entities")}
           ></div>
         </div>
         <div id="wrapperSIDfff6sprkp" class="wrapper column flex-c-h flex-v">

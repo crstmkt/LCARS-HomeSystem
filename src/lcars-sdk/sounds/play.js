@@ -19,13 +19,13 @@
 //     });
 // });
 
-export default function play(sound) {
-  switch (sound) {
-    case 1:
-      new Audio("/lcars-sdk/sounds/0001.wav").play();
-      break;
-    case 2:
-      new Audio("/lcars-sdk/sounds/0002.wav").play();
-      break;
-  }
-}
+// export default function play(sound) {
+//   switch (sound) {
+//     case 1:
+//       new Audio("/lcars-sdk/sounds/0001.wav").play();
+//       break;
+//     case 2:
+//       new Audio("/lcars-sdk/sounds/0002.wav").play();
+//       break;
+//   }
+// }
