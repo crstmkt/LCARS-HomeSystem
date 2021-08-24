@@ -2,10 +2,14 @@ import React, { useEffect, useState } from "react";
 import { showMainView } from "./js/Animations";
 import Systemtime from "./components/Systemtime";
 import Logs from "./components/Logs";
-import RoundedButton from "./components/RoundedButton";
 import TopButtons, {
   defaultTopButtons,
+  roomsTopButtons,
+  devicesTopButtons,
+  energyTopButtons,
   weatherTopButtons,
+  networkTopButtons,
+  entitiesTopButtons,
 } from "./components/TopButtons";
 import { callService } from "./API/dist/index.js";
 import { entitiesCollection } from "./API/API";
@@ -17,7 +21,12 @@ function App() {
 
   useEffect(() => {
     if (activeModule === "dashboard") setTopButtons(defaultTopButtons);
+    else if (activeModule === "rooms") setTopButtons(roomsTopButtons);
+    else if (activeModule === "devices") setTopButtons(devicesTopButtons);
+    else if (activeModule === "energy") setTopButtons(energyTopButtons);
     else if (activeModule === "weather") setTopButtons(weatherTopButtons);
+    else if (activeModule === "network") setTopButtons(networkTopButtons);
+    else if (activeModule === "entities") setTopButtons(entitiesTopButtons);
     return () => {
       //cleanup;
     };

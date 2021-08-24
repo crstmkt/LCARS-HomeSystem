@@ -73,6 +73,18 @@ export const defaultTopButtons = [
 ];
 //#endregion
 
+//#region roomsTopButtons
+export const roomsTopButtons = [];
+//#endregion
+
+//#region devicesTopButtons
+export const devicesTopButtons = [];
+//#endregion
+
+//#region energyTopButtons
+export const energyTopButtons = [];
+//#endregion
+
 //#region weatherTopButtons
 export const weatherTopButtons = [
   {
@@ -142,6 +154,16 @@ export const weatherTopButtons = [
     //onButtonChange: (button) => handleTopButtonChange(button),
   },
 ];
+//#endregion
+
+//#region networkTopButtons
+
+export const networkTopButtons = [];
+//#endregion
+
+//#region entitiesTopButtons
+export const entitiesTopButtons = [];
+//#endregion
 
 export default function TopButtons(RoundedButtonArray) {
   const [topButtons, setTopButtons] = useState(RoundedButtonArray);
