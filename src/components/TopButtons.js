@@ -1,4 +1,3 @@
-import { render } from "@testing-library/react";
 import React, { useEffect, useState } from "react";
 import RoundedButton from "./RoundedButton";
 import { callService } from "./../API/dist/index.js";

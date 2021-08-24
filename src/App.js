@@ -11,8 +11,6 @@ import TopButtons, {
   networkTopButtons,
   entitiesTopButtons,
 } from "./components/TopButtons";
-import { callService } from "./API/dist/index.js";
-import { entitiesCollection } from "./API/API";
 
 function App() {
   const [activeModule, setActiveModule] = useState("dashboard");

@@ -1,17 +1,16 @@
 import moment from "moment";
-import $ from "jquery";
 import React, { useEffect, useState } from "react";
 
 const Systemtime = () => {
   const [systemtime, setSystemtime] = useState(
-    moment().format("DD.MM.YYYY hh:mm:ss")
+    moment().format("DD.MM.YYYY HH:mm:ss")
   );
 
   useEffect(() => {
     setInterval(() => {
       setSystemtime(
         (prevSystemtime) =>
-          (prevSystemtime = moment().format("DD.MM.YYYY hh:mm:ss"))
+          (prevSystemtime = moment().format("DD.MM.YYYY HH:mm:ss"))
       );
     }, 1000);
   });
