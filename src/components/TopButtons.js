@@ -1,6 +1,7 @@
 import { render } from "@testing-library/react";
 import React, { useEffect, useState } from "react";
 import RoundedButton from "./RoundedButton";
+import { callService } from "./../API/dist/index.js";
 
 //#region defaultTopButtons
 export const defaultTopButtons = [
@@ -74,15 +75,216 @@ export const defaultTopButtons = [
 //#endregion
 
 //#region roomsTopButtons
-export const roomsTopButtons = [];
+export const roomsTopButtons = [
+  {
+    id: 1,
+    primaryColor: "bg-color-1",
+    secondaryColor: "bg-color-2",
+    dataLabel: "Room1",
+    on_Click: () => {
+      return null;
+      //   console.log(
+      //     entitiesCollection["switch.lcars_srv_wi_fi_lcars_net_g"].state
+      //   );
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+  {
+    id: 2,
+    primaryColor: "bg-color-2",
+    secondaryColor: "bg-color-2",
+    dataLabel: "Room2",
+    on_Click: () => {
+      return null;
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+  {
+    id: 3,
+    primaryColor: "bg-color-3",
+    secondaryColor: "bg-color-4",
+    dataLabel: "Room3",
+    on_Click: () => {
+      return null;
+      // callService(window.connection, "homeassistant", "toggle", {
+      //   entity_id: "switch.lcars_srv_wi_fi_lcars_net_g",
+      // });
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+  {
+    id: 4,
+    primaryColor: "bg-color-4",
+    secondaryColor: "bg-color-2",
+    dataLabel: "Room4",
+    on_Click: () => {
+      return null;
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+  {
+    id: 5,
+    primaryColor: "bg-color-5",
+    secondaryColor: "bg-color-2",
+    dataLabel: "Room5",
+    on_Click: () => {
+      return null;
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+  {
+    id: 6,
+    primaryColor: "bg-color-6",
+    secondaryColor: "bg-color-2",
+    dataLabel: "Room6",
+    on_Click: () => {
+      return null;
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+];
 //#endregion
 
 //#region devicesTopButtons
-export const devicesTopButtons = [];
+export const devicesTopButtons = [
+  {
+    id: 1,
+    primaryColor: "bg-color-1",
+    secondaryColor: "bg-color-2",
+    dataLabel: "Devices1",
+    on_Click: () => {
+      return null;
+      //   console.log(
+      //     entitiesCollection["switch.lcars_srv_wi_fi_lcars_net_g"].state
+      //   );
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+  {
+    id: 2,
+    primaryColor: "bg-color-2",
+    secondaryColor: "bg-color-2",
+    dataLabel: "Devices2",
+    on_Click: () => {
+      return null;
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+  {
+    id: 3,
+    primaryColor: "bg-color-3",
+    secondaryColor: "bg-color-4",
+    dataLabel: "Devices3",
+    on_Click: () => {
+      return null;
+      // callService(window.connection, "homeassistant", "toggle", {
+      //   entity_id: "switch.lcars_srv_wi_fi_lcars_net_g",
+      // });
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+  {
+    id: 4,
+    primaryColor: "bg-color-4",
+    secondaryColor: "bg-color-2",
+    dataLabel: "Devices4",
+    on_Click: () => {
+      return null;
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+  {
+    id: 5,
+    primaryColor: "bg-color-5",
+    secondaryColor: "bg-color-2",
+    dataLabel: "Devices5",
+    on_Click: () => {
+      return null;
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+  {
+    id: 6,
+    primaryColor: "bg-color-6",
+    secondaryColor: "bg-color-2",
+    dataLabel: "Devices6",
+    on_Click: () => {
+      return null;
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+];
 //#endregion
 
 //#region energyTopButtons
-export const energyTopButtons = [];
+export const energyTopButtons = [
+  {
+    id: 1,
+    primaryColor: "bg-color-1",
+    secondaryColor: "bg-color-2",
+    dataLabel: "Energy1",
+    on_Click: () => {
+      return null;
+      //   console.log(
+      //     entitiesCollection["switch.lcars_srv_wi_fi_lcars_net_g"].state
+      //   );
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+  {
+    id: 2,
+    primaryColor: "bg-color-2",
+    secondaryColor: "bg-color-2",
+    dataLabel: "Energy2",
+    on_Click: () => {
+      return null;
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+  {
+    id: 3,
+    primaryColor: "bg-color-3",
+    secondaryColor: "bg-color-4",
+    dataLabel: "Energy3",
+    on_Click: () => {
+      return null;
+      // callService(window.connection, "homeassistant", "toggle", {
+      //   entity_id: "switch.lcars_srv_wi_fi_lcars_net_g",
+      // });
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+  {
+    id: 4,
+    primaryColor: "bg-color-4",
+    secondaryColor: "bg-color-2",
+    dataLabel: "Energy4",
+    on_Click: () => {
+      return null;
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+  {
+    id: 5,
+    primaryColor: "bg-color-5",
+    secondaryColor: "bg-color-2",
+    dataLabel: "Energy5",
+    on_Click: () => {
+      return null;
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+  {
+    id: 6,
+    primaryColor: "bg-color-6",
+    secondaryColor: "bg-color-2",
+    dataLabel: "Energy6",
+    on_Click: () => {
+      return null;
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+];
 //#endregion
 
 //#region weatherTopButtons
@@ -157,15 +359,147 @@ export const weatherTopButtons = [
 //#endregion
 
 //#region networkTopButtons
-
-export const networkTopButtons = [];
+export const networkTopButtons = [
+  {
+    id: 1,
+    primaryColor: "bg-color-1",
+    secondaryColor: "bg-color-2",
+    dataLabel: "Network1",
+    on_Click: () => {
+      return null;
+      //   console.log(
+      //     entitiesCollection["switch.lcars_srv_wi_fi_lcars_net_g"].state
+      //   );
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+  {
+    id: 2,
+    primaryColor: "bg-color-2",
+    secondaryColor: "bg-color-2",
+    dataLabel: "Network2",
+    on_Click: () => {
+      return null;
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+  {
+    id: 3,
+    primaryColor: "bg-color-3",
+    secondaryColor: "bg-color-4",
+    dataLabel: "GUEST WIFI",
+    on_Click: () => {
+      callService(window.connection, "homeassistant", "toggle", {
+        entity_id: "switch.lcars_srv_wi_fi_lcars_net_g",
+      });
+    },
+    onButtonChange: (button) => TopButtons.handleTopButtonChange(button),
+  },
+  {
+    id: 4,
+    primaryColor: "bg-color-4",
+    secondaryColor: "bg-color-2",
+    dataLabel: "Network4",
+    on_Click: () => {
+      return null;
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+  {
+    id: 5,
+    primaryColor: "bg-color-5",
+    secondaryColor: "bg-color-2",
+    dataLabel: "Network5",
+    on_Click: () => {
+      return null;
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+  {
+    id: 6,
+    primaryColor: "bg-color-6",
+    secondaryColor: "bg-color-2",
+    dataLabel: "Network6",
+    on_Click: () => {
+      return null;
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+];
 //#endregion
 
 //#region entitiesTopButtons
-export const entitiesTopButtons = [];
+export const entitiesTopButtons = [
+  {
+    id: 1,
+    primaryColor: "bg-color-1",
+    secondaryColor: "bg-color-2",
+    dataLabel: "Entities1",
+    on_Click: () => {
+      return null;
+      //   console.log(
+      //     entitiesCollection["switch.lcars_srv_wi_fi_lcars_net_g"].state
+      //   );
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+  {
+    id: 2,
+    primaryColor: "bg-color-2",
+    secondaryColor: "bg-color-2",
+    dataLabel: "Entities2",
+    on_Click: () => {
+      return null;
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+  {
+    id: 3,
+    primaryColor: "bg-color-3",
+    secondaryColor: "bg-color-4",
+    dataLabel: "Entities3",
+    on_Click: () => {
+      return null;
+      // callService(window.connection, "homeassistant", "toggle", {
+      //   entity_id: "switch.lcars_srv_wi_fi_lcars_net_g",
+      // });
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+  {
+    id: 4,
+    primaryColor: "bg-color-4",
+    secondaryColor: "bg-color-2",
+    dataLabel: "Entities4",
+    on_Click: () => {
+      return null;
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+  {
+    id: 5,
+    primaryColor: "bg-color-5",
+    secondaryColor: "bg-color-2",
+    dataLabel: "Entities5",
+    on_Click: () => {
+      return null;
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+  {
+    id: 6,
+    primaryColor: "bg-color-6",
+    secondaryColor: "bg-color-2",
+    dataLabel: "Entities6",
+    on_Click: () => {
+      return null;
+    },
+    //onButtonChange: (button) => handleTopButtonChange(button),
+  },
+];
 //#endregion
 
-export default function TopButtons(RoundedButtonArray) {
+export default function TopButtons({ RoundedButtonArray }) {
   const [topButtons, setTopButtons] = useState(RoundedButtonArray);
 
   const handleTopButtonChange = (button) => {
@@ -182,7 +516,7 @@ export default function TopButtons(RoundedButtonArray) {
     return () => {};
   }, [RoundedButtonArray]);
 
-  return topButtons.RoundedButtonArray.map((i) => {
+  return topButtons.map((i) => {
     return (
       <RoundedButton
         id={i.id}
