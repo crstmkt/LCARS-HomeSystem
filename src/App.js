@@ -3,86 +3,25 @@ import { showMainView } from "./js/Animations";
 import Systemtime from "./components/Systemtime";
 import Logs from "./components/Logs";
 import RoundedButton from "./components/RoundedButton";
+import TopButtons, {
+  defaultTopButtons,
+  weatherTopButtons,
+} from "./components/TopButtons";
 import { callService } from "./API/dist/index.js";
 import { entitiesCollection } from "./API/API";
 
 function App() {
-  const [topButtons, setTopButtons] = useState([
-    {
-      id: 1,
-      primaryColor: "bg-color-1",
-      secondaryColor: "bg-color-2",
-      dataLabel: "Button1",
-      on_Click: () => {
-        console.log(
-          entitiesCollection["switch.lcars_srv_wi_fi_lcars_net_g"].state
-        );
-      },
-      onButtonChange: (button) => handleTopButtonChange(button),
-    },
-    {
-      id: 2,
-      primaryColor: "bg-color-2",
-      secondaryColor: "bg-color-2",
-      dataLabel: "Button2",
-      on_Click: () => {
-        return null;
-      },
-      onButtonChange: (button) => handleTopButtonChange(button),
-    },
-    {
-      id: 3,
-      primaryColor: "bg-color-3",
-      secondaryColor: "bg-color-4",
-      dataLabel: "GUEST WIFI",
-      on_Click: () => {
-        callService(window.connection, "homeassistant", "toggle", {
-          entity_id: "switch.lcars_srv_wi_fi_lcars_net_g",
-        });
-      },
-      //TODO: Change Button color on state change (when entity is turned on/off in HASS)
-      onButtonChange: (button) => handleTopButtonChange(button),
-    },
-    {
-      id: 4,
-      primaryColor: "bg-color-4",
-      secondaryColor: "bg-color-2",
-      dataLabel: "Button4",
-      on_Click: () => {
-        return null;
-      },
-      onButtonChange: (button) => handleTopButtonChange(button),
-    },
-    {
-      id: 5,
-      primaryColor: "bg-color-5",
-      secondaryColor: "bg-color-2",
-      dataLabel: "Button5",
-      on_Click: () => {
-        return null;
-      },
-      onButtonChange: (button) => handleTopButtonChange(button),
-    },
-    {
-      id: 6,
-      primaryColor: "bg-color-6",
-      secondaryColor: "bg-color-2",
-      dataLabel: "Button6",
-      on_Click: () => {
-        return null;
-      },
-      onButtonChange: (button) => handleTopButtonChange(button),
-    },
-  ]);
+  const [activeModule, setActiveModule] = useState("dashboard");
 
-  const handleTopButtonChange = (button) => {
-    setTopButtons((prevButtonList) =>
-      prevButtonList.map((btn) => {
-        if (btn.id === button.id) return button;
-        return btn;
-      })
-    );
-  };
+  const [topButtons, setTopButtons] = useState(defaultTopButtons);
+
+  useEffect(() => {
+    if (activeModule === "dashboard") setTopButtons(defaultTopButtons);
+    else if (activeModule === "weather") setTopButtons(weatherTopButtons);
+    return () => {
+      //cleanup;
+    };
+  }, [activeModule]);
 
   //Unhide LCARS Interface
   useEffect(() => {
@@ -122,19 +61,7 @@ function App() {
               </div>
               <Systemtime />
               <div id="wrapperSIDeuhyxyz4z" class="wrapper flex-h button-wrap">
-                {topButtons.map((i) => {
-                  return (
-                    <RoundedButton
-                      id={i.id}
-                      primaryColor={i.primaryColor}
-                      secondaryColor={i.secondaryColor}
-                      isActive={i.isActive}
-                      dataLabel={i.dataLabel}
-                      on_Click={i.on_Click}
-                      onButtonChange={i.onButtonChange}
-                    />
-                  );
-                })}
+                <TopButtons RoundedButtonArray={topButtons} />
               </div>
             </div>
           </div>
@@ -166,6 +93,7 @@ function App() {
             id="buttonSIDlymj9dqjd"
             class="button bg-color-2 hidden"
             data-label="DASHBOARD"
+            onClick={() => setActiveModule("dashboard")}
           ></div>
           <div
             id="buttonSIDwmrlmu37z"
@@ -181,6 +109,7 @@ function App() {
             id="buttonSIDntglo1ex8"
             class="button bg-color-2 hidden step-two"
             data-label="WEATHER"
+            onClick={() => setActiveModule("weather")}
           ></div>
           <div
             id="buttonSIDeukie0ohw"
