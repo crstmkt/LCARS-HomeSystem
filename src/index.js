@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import AppReact from "./AppReact";
 import reportWebVitals from "./reportWebVitals";
 import "./lcars-sdk/fonts/sdk_fonts-default.css";
 import "./lcars-sdk/core/lcars-sdk.css";
@@ -15,9 +16,9 @@ import "./theme.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AppReact />
   </React.StrictMode>,
-  document.getElementById("wpr_viewport")
+  document.getElementById("main")
 );
 
 // If you want to start measuring performance in your app, pass a function

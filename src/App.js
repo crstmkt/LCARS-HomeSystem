@@ -11,6 +11,7 @@ import TopButtons, {
   networkTopButtons,
   entitiesTopButtons,
 } from "./components/TopButtons";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   const [activeModule, setActiveModule] = useState("dashboard");
@@ -160,7 +161,9 @@ function App() {
             <div id="barSIDivuywe6cx" class="bar bg-color-5 hidden"></div>
             <div id="barSIDp8ipbh9rx" class="bar bg-color-2 hidden"></div>
           </div>
-          <div id="wpr_centerControls" class="wrapper flex-h flex-c-v"></div>
+          <div id="wpr_centerControls" class="wrapper flex-h flex-c-v">
+            <Dashboard />
+          </div>
         </div>
       </div>
     </div>
