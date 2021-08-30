@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { showMainView } from "./js/Animations";
+import $ from "jquery";
 import LCARS from "./lcars-sdk_react/core/lcars-sdk";
 
 function AppReact() {
@@ -57,7 +58,7 @@ function AppReact() {
     ],
   };
 
-  var dom = LCARS.create(nemesisUI);
+  var dom = LCARS.create(nemesisUI).dom;
 
   return dom;
 }

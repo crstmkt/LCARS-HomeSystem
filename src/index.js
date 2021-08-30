@@ -16,9 +16,9 @@ import "./theme.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AppReact />
   </React.StrictMode>,
-  document.getElementById("wpr_viewport")
+  document.getElementById("mainarea")
 );
 
 // If you want to start measuring performance in your app, pass a function
