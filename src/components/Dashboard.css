@@ -4,18 +4,19 @@
 #waste_left {
   margin-top: 0px !important;
 }
+
 #wasteCollections {
-  margin-left: 155;
-  max-height: 400 !important;
-  max-width: 590 !important;
+  max-height: 370px !important;
+  max-width: 590px !important;
 }
 
 #waste_right {
-  width: 100%;
+  min-width: 450px;
+  height: 100%;
 }
 
 #nextWasteCollection {
   text-align: left;
-  width: 450;
-  min-height: 315;
+  min-width: 370px !important;
+  min-height: 280px !important;
 }

@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import AppReact from "./AppReact";
 import reportWebVitals from "./reportWebVitals";
+import $ from "jquery";
 import "./lcars-sdk/fonts/sdk_fonts-default.css";
 import "./lcars-sdk/core/lcars-sdk.css";
 import "./lcars-sdk/themes/sdk_theme-default.css";
@@ -16,11 +17,10 @@ import "./theme.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppReact />
+    <App />
   </React.StrictMode>,
-  document.getElementById("mainarea")
+  document.getElementById("wpr_viewport")
 );
-
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
