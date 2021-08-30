@@ -16,7 +16,7 @@ import "./theme.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppReact />
+    <App />
   </React.StrictMode>,
   document.getElementById("main")
 );
