@@ -1,6 +1,6 @@
 # LCARS-HomeSystem
 
-![Image text](/.img/M.jpg)
+![Image text](/.img/Main.jpg)
 
 # Introduction
 This is a React based web frontend bringing HomeAssistant and LCARS together. The goal is a LCARS Style frontend running in a docker environment and sending / receiving entity states through WebSocketAPI.
