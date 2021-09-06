@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Dashboard.css";
 import WasteCollection from "./WasteCollection";
 
 export default function Dashboard() {
+  const [wMode, setWMode] = useState(0);
+
   return (
     <div className="wrapper flex-h">
       <div id="wasteCollections" className="column flex-h">
@@ -19,16 +21,19 @@ export default function Dashboard() {
             id="buttonSID0awbdgyqm"
             class="button bg-color-2"
             data-label="NEXT FIVE"
+            onClick={() => setWMode(0)}
           ></div>
           <div
             id="buttonSID6xrzttj6e"
             class="button bg-color-2"
             data-label="NEXT 7 DAYS"
+            onClick={() => setWMode(7)}
           ></div>
           <div
             id="buttonSIDuswe3b3gs"
             class="button bg-color-4"
             data-label="NEXT 30 DAYS"
+            onClick={() => setWMode(30)}
           ></div>
           <div
             id="elbowSID32pi843jy"
@@ -51,7 +56,7 @@ export default function Dashboard() {
           </div>
           <div id="wrapperSIDqeixguu3o" class="wrapper content">
             <div id="nextWasteCollection" class="text text-color-1">
-              <WasteCollection mode="0" />
+              <WasteCollection mode={wMode} />
             </div>
           </div>
           <div id="rowSID6972md01u" class="row frame flex-h">
