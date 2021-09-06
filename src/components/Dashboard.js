@@ -1,5 +1,6 @@
 import React from "react";
 import "./Dashboard.css";
+import WasteCollection from "./WasteCollection";
 
 export default function Dashboard() {
   return (
@@ -50,11 +51,7 @@ export default function Dashboard() {
           </div>
           <div id="wrapperSIDqeixguu3o" class="wrapper content">
             <div id="nextWasteCollection" class="text text-color-1">
-              <p>07.09.2021 : WERTSTOFFSAMMLUNG</p>
-              <p>08.09.2021 : BIOSAMMLUNG</p>
-              <p>20.09.2021 : PAPIERSAMMLUNG</p>
-              <p>21.09.2021 : WERTSTOFFSAMMLUNG</p>
-              <p>22.09.2021 : BIOSAMMLUNG</p>
+              <WasteCollection mode="0" />
             </div>
           </div>
           <div id="rowSID6972md01u" class="row frame flex-h">

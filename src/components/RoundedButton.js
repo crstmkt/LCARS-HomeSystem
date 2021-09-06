@@ -1,5 +1,5 @@
 import React from "react";
-//import { entitiesCollection } from "../API/API"; for later use to check entities state
+//import { entitiesCollection } from "../API/API"; //for later use to check entities state
 
 export default function RoundedButton({
   id,

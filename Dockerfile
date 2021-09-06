@@ -12,3 +12,5 @@ RUN npm install
 COPY . ./
 # start app
 CMD ["npm", "start"]
+
+# docker buildx build . --platform linux/arm64 -t crstmkt/lcars-homesystem --push

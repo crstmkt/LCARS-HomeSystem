@@ -24,9 +24,9 @@ import {
     }
   }
   const connection = await createConnection({ auth });
-  subscribeEntities(connection, (entities) =>
-    renderEntities(connection, entities)
-  );
+  // subscribeEntities(connection, (entities) =>
+  //   renderEntities(connection, entities)
+  // );
 
   // To play from the console
   window.auth = auth;
@@ -45,9 +45,8 @@ export function getHost() {
   return "<HOST URL>";
 }
 
-export var entitiesCollection;
+//export var entitiesCollection;
 
-function renderEntities(connection, entities) {
-  entitiesCollection = entities;
-  //console.log(entitiesCollection);
-}
+// function renderEntities(connection, entities) {
+//   entitiesCollection = entities;
+// }
