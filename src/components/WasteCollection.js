@@ -10,7 +10,7 @@ const WasteCollection = (props) => {
 
   useEffect(() => {
     asyncCall(cntDays);
-    setTimeout(asyncCall(cntDays), 3600000);
+    setTimeout(asyncCall(cntDays), 86400000);
   });
 
   return <div></div>;
