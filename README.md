@@ -8,7 +8,7 @@ This is a React based web frontend bringing HomeAssistant and LCARS together. Th
 # Architecture
 The current architecture is not as modular as I wish it would be, but here are some of my Ideas:
 - The whole system implements and uses the <a href="https://github.com/crstmkt/LCARS-SDK">LCARS-SDK</a> (originally created by <a href="https://github.com/Aricwithana">Aricwithana</a>, forked and modified by me) (Works with the "Hardcoded" Interface, ToDo: Implement more dynamic JS approach (currently in AppReact component))
-- The logs (got from Homeassistants REST API /logs because the WebSocketAPI does not have an Endpoint for Logs) should be displayed in the upper area left to the Title, SystemTime and TopButtons (not working due to CORS restrictions on HASS OS)
+- The logs (got from Homeassistants REST API /logs because the WebSocketAPI does not have an Endpoint for Logs) should be displayed in the upper area left to the Title, SystemTime and TopButtons (not working due to CORS restrictions on HASS OS) <a href="https://github.com/home-assistant/core/issues/39727">Bug</a>
 - The buttons in the bottom area left to the main content area should be the Main Menu to chose the active module (currently not implemented)
 - The TopButtons should depend on the currently active module (working)
 - The modules itself need to be implemented
