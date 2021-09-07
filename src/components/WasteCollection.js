@@ -7,6 +7,21 @@ import $ from "jquery";
 
 const WasteCollection = (props) => {
   var cntDays = props.mode;
+
+  useEffect(() => {
+    asyncCall(cntDays);
+    setTimeout(asyncCall(cntDays), 3600000);
+  });
+
+  return <div></div>;
+};
+
+WasteCollection.propTypes = {};
+
+export default WasteCollection;
+
+// TODO: Refactor this Sh!t
+function asyncCall(cntDays) {
   $.ajax({
     url: getHost() + "/api/states/sensor.next_waste_collection_type",
     type: "GET",
@@ -15,7 +30,7 @@ const WasteCollection = (props) => {
     },
     success: function (data) {
       $("#nextWasteCollection").html("");
-      if (cntDays == 0) {
+      if (cntDays === 0) {
         for (var i = 0; i < 5; i++) {
           var wdate = moment(Object.keys(data.attributes)[i]);
           var wdateminus2 = moment(Object.keys(data.attributes)[i]).add(
@@ -83,10 +98,4 @@ const WasteCollection = (props) => {
       }
     },
   });
-
-  return <div></div>;
-};
-
-WasteCollection.propTypes = {};
-
-export default WasteCollection;
+}
