@@ -12,6 +12,8 @@ import TopButtons, {
   entitiesTopButtons,
 } from "./components/TopButtons";
 import Dashboard from "./components/Dashboard";
+import LCARS from "./lcars-sdk/core/lcars-sdk";
+import $ from "jquery";
 
 function App() {
   const [activeModule, setActiveModule] = useState("dashboard");
@@ -33,6 +35,13 @@ function App() {
 
   //Unhide LCARS Interface
   useEffect(() => {
+    $(function () {
+      var dom = $("#wpr_viewport");
+      LCARS.helper.viewportZoom(dom, { width: 1440, height: 1080 });
+      window.addEventListener("resize", function () {
+        LCARS.helper.viewportZoom(dom, { width: 1440, height: 1080 });
+      });
+    });
     showMainView();
     return () => {};
   }, []);

@@ -1197,25 +1197,27 @@ export var LCARS = {
       }
       object.css("zoom", zoomLevel);
 
-      var bodyW =
-        (viewportWidth - object[0].getBoundingClientRect().width * zoomLevel) /
-        2;
-      var bodyH =
-        (viewportHeight -
-          object[0].getBoundingClientRect().height * zoomLevel) /
-        2;
+      //Currently destroys UI when resizing
+      // var bodyW =
+      //   (viewportWidth - object[0].getBoundingClientRect().width * zoomLevel) /
+      //   2;
+      // var bodyH =
+      //   (viewportHeight -
+      //     object[0].getBoundingClientRect().height * zoomLevel) /
+      //   2;
 
-      var bodyWZ = bodyW * (bodyW / (bodyW * zoomLevel));
-      var bodyHZ = bodyH * (bodyH / (bodyH * zoomLevel));
+      // var bodyWZ = bodyW * (bodyW / (bodyW * zoomLevel));
+      // var bodyHZ = bodyH * (bodyH / (bodyH * zoomLevel));
 
-      if (bodyWZ < 0) {
-        bodyW = 0;
-      }
-      if (bodyHZ < 0) {
-        bodyH = 0;
-      }
-      object.css("left", bodyWZ);
-      object.css("top", bodyHZ);
+      // if (bodyWZ < 0) {
+      //   bodyW = 0;
+      // }
+      // if (bodyHZ < 0) {
+      //   bodyH = 0;
+      // }
+
+      //object.css("left", bodyWZ);
+      //object.css("top", bodyHZ);
     },
     toggleCheck: function (dom, fValue) {
       var object = LCARS.active[dom.id];
