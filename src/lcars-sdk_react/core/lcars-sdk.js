@@ -1,5 +1,5 @@
 import $ from "jquery";
-import _bar from "../elements/bar";
+import _bar from "../elements/Bar";
 import _block from "../elements/block";
 import _button from "../elements/button";
 import _elbow from "../elements/elbow";

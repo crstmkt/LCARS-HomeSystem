@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
-//import AppReact from "./AppReact";
+//import App from "./App";
+import AppReact from "./AppReact";
 //import TestAPI from "./TestAPI";
 import reportWebVitals from "./reportWebVitals";
 import $ from "jquery";
@@ -18,7 +18,7 @@ import "./theme.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AppReact />
   </React.StrictMode>,
   document.getElementById("wpr_viewport")
 );
