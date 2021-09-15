@@ -5,7 +5,10 @@ export function showMainView() {
   var headerColumn = $("#wpr_mainView > .header .column > *");
   var mainBars = $("#wpr_mainView > .main .row *");
   var mainColumn = $(
-    "#wpr_mainView > .main > .elbow, #wpr_mainView > .main .column > *"
+    "#wpr_mainView > .main > .elbow, #wpr_mainView > .main .column > * "
+  );
+  mainColumn.push(
+    $("#wpr_mainView > .main > .elbow, #wpr_mainView > .main .column > a > *")
   );
 
   let sequenceHeaderPattern = [];

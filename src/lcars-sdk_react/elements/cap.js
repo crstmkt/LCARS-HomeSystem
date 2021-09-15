@@ -1,16 +1,33 @@
 import React from "react";
-import { v4 as uuid } from "uuid";
+import LCARS from "../core/lcars-sdk";
+import $ from "jquery";
+//import { v4 as uuid } from "uuid";
 
-const Cap = ({ color, version, size, href, label }) => {
-  var classes = "cap " + color + " " + version + " " + size;
-  if (href !== undefined) {
-    return (
-      <a id={uuid()} className={classes} data-label={label} href={href}></a>
-    );
-  } else {
-    return <div id={uuid()} className={classes} data-label={label}></div>;
+class Cap extends React.Component {
+  constructor(props) {
+    super(props);
+    this.type = "cap";
+    this.setting = {};
   }
-};
+
+  render() {
+    var temp = LCARS.element.create(this);
+    return temp;
+  }
+  // var classes = "cap " + oDef.color + " " + oDef.version + " " + oDef.size;
+  // if (oDef.href !== undefined) {
+  //   return (
+  //     <a
+  //       id={uuid()}
+  //       className={classes}
+  //       data-label={oDef.label}
+  //       href={oDef.href}
+  //     ></a>
+  //   );
+  // } else {
+  //   return <div id={uuid()} className={classes} data-label={oDef.label}></div>;
+  // }
+}
 
 export default Cap;
 

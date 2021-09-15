@@ -79,7 +79,7 @@ export const roomsTopButtons = [
     id: 1,
     primaryColor: "bg-color-1",
     secondaryColor: "bg-color-2",
-    dataLabel: "Room1",
+    dataLabel: "CORRIDOR",
     on_Click: () => {
       return null;
       //   console.log(
@@ -92,7 +92,7 @@ export const roomsTopButtons = [
     id: 2,
     primaryColor: "bg-color-2",
     secondaryColor: "bg-color-2",
-    dataLabel: "Room2",
+    dataLabel: "BEDROOM",
     on_Click: () => {
       return null;
     },
@@ -102,7 +102,7 @@ export const roomsTopButtons = [
     id: 3,
     primaryColor: "bg-color-3",
     secondaryColor: "bg-color-4",
-    dataLabel: "Room3",
+    dataLabel: "BATH",
     on_Click: () => {
       return null;
       // callService(window.connection, "homeassistant", "toggle", {
@@ -115,7 +115,7 @@ export const roomsTopButtons = [
     id: 4,
     primaryColor: "bg-color-4",
     secondaryColor: "bg-color-2",
-    dataLabel: "Room4",
+    dataLabel: "LIVINGROOM",
     on_Click: () => {
       return null;
     },
@@ -125,7 +125,7 @@ export const roomsTopButtons = [
     id: 5,
     primaryColor: "bg-color-5",
     secondaryColor: "bg-color-2",
-    dataLabel: "Room5",
+    dataLabel: "KITCHEN",
     on_Click: () => {
       return null;
     },
@@ -135,7 +135,7 @@ export const roomsTopButtons = [
     id: 6,
     primaryColor: "bg-color-6",
     secondaryColor: "bg-color-2",
-    dataLabel: "Room6",
+    dataLabel: "ATTIC",
     on_Click: () => {
       return null;
     },

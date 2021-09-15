@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-//import App from "./App";
-import AppReact from "./AppReact";
+import App from "./App";
+//import AppReact from "./AppReact";
 //import TestAPI from "./TestAPI";
 import reportWebVitals from "./reportWebVitals";
-import $ from "jquery";
+import { BrowserRouter as Router } from "react-router-dom";
 import "./lcars-sdk/fonts/sdk_fonts-default.css";
 import "./lcars-sdk/core/lcars-sdk.css";
 import "./lcars-sdk/themes/sdk_theme-default.css";
@@ -18,7 +18,9 @@ import "./theme.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppReact />
+    <Router>
+      <App />
+    </Router>
   </React.StrictMode>,
   document.getElementById("wpr_viewport")
 );

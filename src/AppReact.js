@@ -20,9 +20,11 @@ function AppReact() {
   return (
     <div id="wpr_mainView" class="wrapper column flex-v flex-c-h">
       <div id="topRow" class="wrapper row flex-h">
-        <Cap color="bg-color-3" size="medium" version="round-left" />
-        <Bar color="bg-color-1" size="medium" label="LCARS-4711" />
-        <Cap color="bg-color-3" size="medium" version="round-right" />
+        <Cap
+          oDef={{ color: "bg-color-3", size: "medium", version: "round-left" }}
+        />
+        {/* <Bar color="bg-color-1" size="medium" label="LCARS-4711" /> */}
+        {/* <Cap color="bg-color-3" size="medium" version="round-right" /> */}
       </div>
     </div>
   );

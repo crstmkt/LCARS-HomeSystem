@@ -12,8 +12,10 @@ import TopButtons, {
   entitiesTopButtons,
 } from "./components/TopButtons";
 import Dashboard from "./components/Dashboard";
+import Rooms from "./components/Rooms";
 import LCARS from "./lcars-sdk/core/lcars-sdk";
 import $ from "jquery";
+import { Switch, Route, Link } from "react-router-dom";
 
 function App() {
   const [activeModule, setActiveModule] = useState("dashboard");
@@ -106,56 +108,70 @@ function App() {
               <div id="blockSIDasyww0lrz" class="block"></div>
             </div>
           </div>
-          <div
-            id="buttonSIDlymj9dqjd"
-            class="button bg-color-2 hidden"
-            data-label="DASHBOARD"
-            onClick={() => {
-              setActiveModule("dashboard");
-            }}
-          ></div>
-          <div
-            id="buttonSIDwmrlmu37z"
-            class="button bg-color-4 hidden step-two"
-            data-label="ROOMS"
-            onClick={() => {
-              setActiveModule("rooms");
-            }}
-          ></div>
-          <div
-            id="buttonSID7r59osbl1"
-            class="button bg-color-3 hidden"
-            data-label="DEVICES"
-            onClick={() => {
-              setActiveModule("devices");
-            }}
-          ></div>
-          <div
-            id="buttonSIDntglo1ex8"
-            class="button bg-color-2 hidden step-two"
-            data-label="ENERGY"
-            onClick={() => setActiveModule("energy")}
-          ></div>
-          <div
-            id="buttonSIDeukie0ohw"
-            class="button bg-color-5 hidden flex-c-v"
-            data-label="WEATHER"
-            onClick={() => setActiveModule("weather")}
-          ></div>
-          <div
-            id="buttonSID9spzacj4j"
-            class="button bg-color-3 hidden"
-            data-label="NETWORK"
-            onClick={() => {
-              setActiveModule("network");
-            }}
-          ></div>
-          <div
-            id="buttonSIDp9gewhasz"
-            class="button bg-color-2 hidden step-two"
-            data-label="ENTITIES"
-            onClick={() => setActiveModule("entities")}
-          ></div>
+          <Link to={"/dashboard"}>
+            <div
+              id="buttonSIDlymj9dqjd"
+              class="button bg-color-2 hidden"
+              data-label="DASHBOARD"
+              onClick={() => {
+                setActiveModule("dashboard");
+              }}
+            ></div>
+          </Link>
+          <Link to="/rooms">
+            <div
+              id="buttonSIDwmrlmu37z"
+              class="button bg-color-4 hidden step-two"
+              data-label="ROOMS"
+              onClick={() => {
+                setActiveModule("rooms");
+              }}
+            ></div>
+          </Link>
+          <Link to="/devices">
+            <div
+              id="buttonSID7r59osbl1"
+              class="button bg-color-3 hidden"
+              data-label="DEVICES"
+              onClick={() => {
+                setActiveModule("devices");
+              }}
+            ></div>
+          </Link>
+          <Link to="/energy">
+            <div
+              id="buttonSIDntglo1ex8"
+              class="button bg-color-2 hidden step-two"
+              data-label="ENERGY"
+              onClick={() => setActiveModule("energy")}
+            ></div>
+          </Link>
+          <Link to="/weather">
+            <div
+              id="buttonSIDeukie0ohw"
+              class="button bg-color-5 hidden flex-c-v"
+              data-label="WEATHER"
+              onClick={() => setActiveModule("weather")}
+            ></div>
+          </Link>
+          <Link to="/network">
+            <div
+              id="buttonSID9spzacj4j"
+              class="button bg-color-3 hidden"
+              data-label="NETWORK"
+              onClick={() => {
+                setActiveModule("network");
+              }}
+            ></div>
+          </Link>
+          <Link to="/entities">
+            <div
+              id="buttonSIDp9gewhasz"
+              class="button bg-color-2 hidden step-two"
+              data-label="ENTITIES"
+              onClick={() => setActiveModule("entities")}
+            ></div>
+          </Link>
         </div>
         <div id="wrapperSIDfff6sprkp" class="wrapper column flex-c-h flex-v">
           <div id="rowSIDmnu78fmyz" class="row frame">
@@ -171,7 +187,17 @@ function App() {
             <div id="barSIDp8ipbh9rx" class="bar bg-color-2 hidden"></div>
           </div>
           <div id="wpr_centerControls" class="wrapper flex-h flex-c-v">
-            <Dashboard />
+            <Switch>
+              <Route exact path="/dashboard">
+                <Dashboard />
+              </Route>
+              <Route exact path="/rooms">
+                <Rooms />
+              </Route>
+              <Route path="*">
+                <h1 class="bar text-color-1 blink">SYSTEM HALTED</h1>
+              </Route>
+            </Switch>
           </div>
         </div>
       </div>
