@@ -1,16 +1,8 @@
-/** LCARS SDK 19182.4
-* This file is a part of the LCARS SDK.
-* https://github.com/AricwithanA/LCARS-SDK/blob/master/LICENSE.md
-* For more information please go to http://www.lcarssdk.org.
-**/
-
 #wpr_viewport {
   width: 100%;
   height: 100%;
   padding: 10px;
   text-align: right;
-  min-width: 575px;
-  min-height: 375px;
 }
 
 #wpr_viewport > .column:first-child {
@@ -34,16 +26,16 @@
   padding-top: 5px;
 }
 
-.button-wrap .button {
+.button-wrap a .button {
   margin-bottom: 5px;
   margin-left: 5px;
 }
 
-.button-wrap .button:nth-last-child(2),
-.button-wrap .button:nth-last-child(2) ~ .button {
+.button-wrap a .button:nth-last-child(2),
+.button-wrap a .button:nth-last-child(2) ~ .button {
   margin-bottom: 0px;
 }
-.button-wrap .button:nth-child(odd) {
+.button-wrap a .button:nth-child(odd) {
   margin-left: 0px !important;
 }
 
@@ -71,8 +63,29 @@
   right: -204px;
 }
 
+#wpr_centerControls {
+  padding-top: 35px;
+  padding-left: 35px;
+}
+
+#systemTime {
+  margin: 10px;
+}
+
+#logs {
+  padding-left: 35px;
+  text-align: left;
+  max-height: 120px !important;
+}
+
+.default-bracket {
+  width: 305px;
+  height: 255px;
+  margin-bottom: 5px;
+}
+
 .header .row.frame {
-  padding-left: 204px;
+  padding-left: 209px;
 }
 
 .main .column {
@@ -118,34 +131,61 @@
   position: absolute;
   bottom: 35px;
   right: 0px;
-  width: 460px;
+  width: 470px;
 }
 
-.header .button-wrap .button {
+.header .button-wrap a .button {
   margin-left: 5px !important;
 }
-.header .button-wrap .button:first-child:nth-last-child(2),
-.header .button-wrap .button:first-child:nth-last-child(2) ~ .button {
+.header .button-wrap a .button:first-child:nth-last-child(2),
+.header .button-wrap a .button:first-child:nth-last-child(2) ~ .button {
   margin-bottom: 0px;
 }
-.header .button-wrap .button:nth-child(3n + 1),
-.header .button-wrap .button:first-child {
+
+/* .header .button-wrap > a .button:nth-child(3n + 1),
+.header .button-wrap > a .button:first-child {
   margin-left: 0px !important;
+} */
+
+/* White Strobe */
+.alertFlash .alertFlash:not(.complexButton) {
+  -webkit-animation: whiteFade 0.25s linear;
+  animation: whiteFade 0.25s linear;
+}
+.alertFlash .alertFlash.complexButton :not(.numericBlock) {
+  -webkit-animation: whiteFade 0.25s linear;
+  animation: whiteFade 0.25s linear;
+}
+@-webkit-keyframes whiteFade {
+  0% {
+    background-color: #ffffff;
+    border-color: #ffffff;
+  }
+}
+
+@keyframes whiteFade {
+  0% {
+    background-color: #ffffff;
+    border-color: #ffffff;
+  }
 }
 
 /* Static Pattern Heights */
 .step-two {
-  flex: 1;
-  max-height: 125px;
+  /* flex: 1;
+  max-height: 125px; */
+  height: 125px;
 }
 .step-three {
-  flex: 2;
+  /* flex: 2;
   max-height: 190px;
-  min-height: 125px;
+  min-height: 125px; */
+  height: 190px;
 }
 .step-four {
-  flex: 3;
-  max-height: 255px;
+  /* flex: 3;
+  max-height: 255px; */
+  height: 255px;
 }
 
 @media (max-width: 1150px), (max-height: 745px) {
@@ -158,4 +198,32 @@
   body {
     zoom: 0.5;
   }
+}
+
+/* =============================================================================
+   Active/Hover States. Included for optional use.
+   ==========================================================================*/
+
+.button:not(.endcap):active,
+.endcap:active > .cap,
+.elbow:active,
+.elbow:active > .bar,
+.elbow:active > .bar > .block,
+.complexButton:active > *:not(.text) {
+  -webkit-animation: none !important;
+  animation: none !important;
+  background-color: #ffffff !important;
+  border-bottom-color: #ffffff !important;
+  border-right-color: #ffffff !important;
+  border-top-color: #ffffff !important;
+  border-left-color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+.elbow:active > .bar > .block {
+  background-color: transparent !important;
+}
+
+[class*="bg-"],
+[class*="bg-"] > *:not([class*="bg-"]) {
+  transition: background-color 0.25s linear, border 0.25s linear;
 }

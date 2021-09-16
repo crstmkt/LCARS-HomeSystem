@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import RoundedButton from "./RoundedButton";
 import { callService } from "./../API/dist/index.js";
+import { Link } from "react-router-dom";
 
 //#region defaultTopButtons
 export const defaultTopButtons = [
@@ -79,7 +80,8 @@ export const roomsTopButtons = [
     id: 1,
     primaryColor: "bg-color-1",
     secondaryColor: "bg-color-2",
-    dataLabel: "CORRIDOR",
+    group: "rooms",
+    dataLabel: "corridor",
     on_Click: () => {
       return null;
       //   console.log(
@@ -92,7 +94,8 @@ export const roomsTopButtons = [
     id: 2,
     primaryColor: "bg-color-2",
     secondaryColor: "bg-color-2",
-    dataLabel: "BEDROOM",
+    group: "rooms",
+    dataLabel: "bedroom",
     on_Click: () => {
       return null;
     },
@@ -102,7 +105,8 @@ export const roomsTopButtons = [
     id: 3,
     primaryColor: "bg-color-3",
     secondaryColor: "bg-color-4",
-    dataLabel: "BATH",
+    group: "rooms",
+    dataLabel: "bath",
     on_Click: () => {
       return null;
       // callService(window.connection, "homeassistant", "toggle", {
@@ -115,7 +119,8 @@ export const roomsTopButtons = [
     id: 4,
     primaryColor: "bg-color-4",
     secondaryColor: "bg-color-2",
-    dataLabel: "LIVINGROOM",
+    group: "rooms",
+    dataLabel: "livingroom",
     on_Click: () => {
       return null;
     },
@@ -125,7 +130,8 @@ export const roomsTopButtons = [
     id: 5,
     primaryColor: "bg-color-5",
     secondaryColor: "bg-color-2",
-    dataLabel: "KITCHEN",
+    group: "rooms",
+    dataLabel: "kitchen",
     on_Click: () => {
       return null;
     },
@@ -135,7 +141,8 @@ export const roomsTopButtons = [
     id: 6,
     primaryColor: "bg-color-6",
     secondaryColor: "bg-color-2",
-    dataLabel: "ATTIC",
+    group: "rooms",
+    dataLabel: "attic",
     on_Click: () => {
       return null;
     },
@@ -517,15 +524,18 @@ export default function TopButtons({ RoundedButtonArray }) {
 
   return topButtons.map((i) => {
     return (
-      <RoundedButton
-        id={i.id}
-        primaryColor={i.primaryColor}
-        secondaryColor={i.secondaryColor}
-        isActive={i.isActive}
-        dataLabel={i.dataLabel}
-        on_Click={i.on_Click}
-        onButtonChange={handleTopButtonChange}
-      />
+      <Link to={"/" + i.group + "/" + i.dataLabel}>
+        <RoundedButton
+          id={i.id}
+          primaryColor={i.primaryColor}
+          secondaryColor={i.secondaryColor}
+          group={i.group}
+          isActive={i.isActive}
+          dataLabel={i.dataLabel}
+          on_Click={i.on_Click}
+          onButtonChange={handleTopButtonChange}
+        />
+      </Link>
     );
   });
 }

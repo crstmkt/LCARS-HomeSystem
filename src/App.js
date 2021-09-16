@@ -15,7 +15,7 @@ import Dashboard from "./components/Dashboard";
 import Rooms from "./components/Rooms";
 import LCARS from "./lcars-sdk/core/lcars-sdk";
 import $ from "jquery";
-import { Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
   const [activeModule, setActiveModule] = useState("dashboard");
@@ -188,12 +188,10 @@ function App() {
           </div>
           <div id="wpr_centerControls" class="wrapper flex-h flex-c-v">
             <Switch>
-              <Route exact path="/dashboard">
+              <Route path="/dashboard">
                 <Dashboard />
               </Route>
-              <Route exact path="/rooms">
-                <Rooms />
-              </Route>
+              <Route path="/rooms" component={Rooms} />
               <Route path="*">
                 <h1 class="bar text-color-1 blink">SYSTEM HALTED</h1>
               </Route>

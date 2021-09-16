@@ -14,7 +14,6 @@ import "./lcars-sdk/widgets/sdk_default-bracket/default-bracket.css";
 import "./lcars-sdk/widgets/sdk_solid-level-bar/solid-level-bar.css";
 import "./lcars-sdk/widgets/sdk_scroll-button/scroll-button.css";
 import "./App.css";
-import "./theme.css";
 
 ReactDOM.render(
   <React.StrictMode>
