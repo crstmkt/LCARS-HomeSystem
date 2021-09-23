@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { showMainView } from "./js/Animations";
-import Systemtime from "./components/Systemtime";
-import Logs from "./components/Logs";
+import Systemtime from "./Components/Systemtime";
+import Logs from "./Components/Logs";
 import TopButtons, {
   defaultTopButtons,
   roomsTopButtons,
@@ -10,26 +10,35 @@ import TopButtons, {
   weatherTopButtons,
   networkTopButtons,
   entitiesTopButtons,
-} from "./components/TopButtons";
-import Dashboard from "./components/Dashboard";
-import Rooms from "./components/Rooms";
+} from "./Components/TopButtons";
+import Dashboard from "./Components/Dashboard";
+import Rooms from "./Components/Rooms";
 import LCARS from "./lcars-sdk/core/lcars-sdk";
 import $ from "jquery";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { setTopButtons } from "./Reducer/TopButtonsSlice";
 
 function App() {
   const [activeModule, setActiveModule] = useState("dashboard");
 
-  const [topButtons, setTopButtons] = useState(defaultTopButtons);
+  const topButtons = useSelector((state) => state.topButtons.list);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    if (activeModule === "dashboard") setTopButtons(defaultTopButtons);
-    else if (activeModule === "rooms") setTopButtons(roomsTopButtons);
-    else if (activeModule === "devices") setTopButtons(devicesTopButtons);
-    else if (activeModule === "energy") setTopButtons(energyTopButtons);
-    else if (activeModule === "weather") setTopButtons(weatherTopButtons);
-    else if (activeModule === "network") setTopButtons(networkTopButtons);
-    else if (activeModule === "entities") setTopButtons(entitiesTopButtons);
+    if (activeModule === "dashboard")
+      dispatch(setTopButtons(defaultTopButtons));
+    else if (activeModule === "rooms") dispatch(setTopButtons(roomsTopButtons));
+    else if (activeModule === "devices")
+      dispatch(setTopButtons(devicesTopButtons));
+    else if (activeModule === "energy")
+      dispatch(setTopButtons(energyTopButtons));
+    else if (activeModule === "weather")
+      dispatch(setTopButtons(weatherTopButtons));
+    else if (activeModule === "network")
+      dispatch(setTopButtons(networkTopButtons));
+    else if (activeModule === "entities")
+      dispatch(setTopButtons(entitiesTopButtons));
     return () => {
       //cleanup;
     };

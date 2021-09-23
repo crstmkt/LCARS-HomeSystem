@@ -4,6 +4,8 @@ import "./index.css";
 import App from "./App";
 //import AppReact from "./AppReact";
 //import TestAPI from "./TestAPI";
+import { Provider } from "react-redux";
+import { store } from "./store";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./lcars-sdk/fonts/sdk_fonts-default.css";
@@ -17,9 +19,11 @@ import "./App.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <App />
+      </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("wpr_viewport")
 );
