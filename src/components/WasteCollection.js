@@ -42,7 +42,7 @@ function asyncCall(cntDays) {
               '<p class="flash">' +
                 wdate.format("DD.MM.YYYY") +
                 " : " +
-                data.attributes[Object.keys(data.attributes)[i]].toUpperCase() +
+                data.attributes[Object.keys(data.attributes)[i]] +
                 "</p>"
             );
           } else {
@@ -50,7 +50,7 @@ function asyncCall(cntDays) {
               "<p>" +
                 wdate.format("DD.MM.YYYY") +
                 " : " +
-                data.attributes[Object.keys(data.attributes)[i]].toUpperCase() +
+                data.attributes[Object.keys(data.attributes)[i]] +
                 "</p>"
             );
           }
@@ -70,9 +70,7 @@ function asyncCall(cntDays) {
                 '<p class="flash">' +
                   wdate.format("DD.MM.YYYY") +
                   " : " +
-                  data.attributes[
-                    Object.keys(data.attributes)[i]
-                  ].toUpperCase() +
+                  data.attributes[Object.keys(data.attributes)[i]] +
                   "</p>"
               );
               cntEntries++;
@@ -81,9 +79,7 @@ function asyncCall(cntDays) {
                 "<p>" +
                   wdate.format("DD.MM.YYYY") +
                   " : " +
-                  data.attributes[
-                    Object.keys(data.attributes)[i]
-                  ].toUpperCase() +
+                  data.attributes[Object.keys(data.attributes)[i]] +
                   "</p>"
               );
               cntEntries++;
