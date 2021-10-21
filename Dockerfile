@@ -13,4 +13,4 @@ COPY . ./
 # start app
 CMD ["npm", "start"]
 
-# docker buildx build . --platform linux/arm64 -t crstmkt/lcars-homesystem --push
+# docker buildx build . --platform linux/arm -t crstmkt/lcars-homesystem --push
