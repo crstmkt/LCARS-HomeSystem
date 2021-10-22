@@ -11,7 +11,6 @@ export const topButtonsSlice = createSlice({
   initialState,
   reducers: {
     setTopButtons: (state, action) => {
-      //console.log(current(state));
       state.list = action.payload;
     },
   },
