@@ -12,7 +12,7 @@ const WasteCollection = (props) => {
     asyncCall(cntDays);
     setInterval(function () {
       asyncCall(cntDays);
-    }, 10000);
+    }, 3600000);
   });
 
   return <div></div>;

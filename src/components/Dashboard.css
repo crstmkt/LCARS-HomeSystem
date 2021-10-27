@@ -5,12 +5,23 @@
   margin-top: 0px !important;
 }
 
-#wasteCollections {
-  max-height: 370px !important;
-  max-width: 590px !important;
+#columnLeft {
+  width: 1420px;
 }
 
-#waste_right {
+#columnRight {
+}
+
+#aboveWasteCollection {
+  height: 320px;
+}
+
+#abWasteCollContent {
+  height: 245px;
+}
+
+#waste_right,
+#abWasteRight {
   min-width: 450px;
   height: 100%;
 }
