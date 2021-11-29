@@ -197,9 +197,7 @@ function App() {
           </div>
           <div id="wpr_centerControls" class="wrapper flex-h flex-c-v">
             <Switch>
-              <Route path="/dashboard">
-                <Dashboard />
-              </Route>
+              <Route path="/dashboard" component={Dashboard}></Route>
               <Route path="/rooms" component={Rooms} />
               <Route path="*">
                 <h1 class="bar text-color-1 blink">SYSTEM HALTED</h1>
