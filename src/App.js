@@ -20,25 +20,36 @@ import { useSelector, useDispatch } from "react-redux";
 import { setTopButtons } from "./Reducer/TopButtonsSlice";
 
 function App() {
-  const [activeModule, setActiveModule] = useState("dashboard");
+  const [activeModule, setActiveModule] = useState(Route.path);
 
   const topButtons = useSelector((state) => state.topButtons.list);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (activeModule === "dashboard")
-      dispatch(setTopButtons(defaultTopButtons));
-    else if (activeModule === "rooms") dispatch(setTopButtons(roomsTopButtons));
-    else if (activeModule === "devices")
-      dispatch(setTopButtons(devicesTopButtons));
-    else if (activeModule === "energy")
-      dispatch(setTopButtons(energyTopButtons));
-    else if (activeModule === "weather")
-      dispatch(setTopButtons(weatherTopButtons));
-    else if (activeModule === "network")
-      dispatch(setTopButtons(networkTopButtons));
-    else if (activeModule === "entities")
-      dispatch(setTopButtons(entitiesTopButtons));
+    switch (activeModule) {
+      case "dashboard":
+      default:
+        dispatch(setTopButtons(defaultTopButtons));
+        break;
+      case "rooms":
+        dispatch(setTopButtons(roomsTopButtons));
+        break;
+      case "devices":
+        dispatch(setTopButtons(devicesTopButtons));
+        break;
+      case "energy":
+        dispatch(setTopButtons(energyTopButtons));
+        break;
+      case "weather":
+        dispatch(setTopButtons(weatherTopButtons));
+        break;
+      case "network":
+        dispatch(setTopButtons(networkTopButtons));
+        break;
+      case "entities":
+        dispatch(setTopButtons(entitiesTopButtons));
+        break;
+    }
     return () => {
       //cleanup;
     };
