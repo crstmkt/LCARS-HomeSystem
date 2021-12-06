@@ -3,7 +3,7 @@ import { subscribeEntities } from "../API/dist";
 import moment from "moment";
 
 const Room = (props) => {
-  const path = props.match.path.split("/")[2];
+  const path = props.match.url.split("/")[2];
   const [entities, setEntitiesState] = useState();
 
   subscribeEntities(window.connection, (ent) => setEntitiesState(ent));
