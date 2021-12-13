@@ -1,5 +1,4 @@
 import { createSlice, current } from "@reduxjs/toolkit";
-import { v4 as uuid } from "uuid";
 import { defaultTopButtons } from "../Components/TopButtons";
 
 const initialState = {

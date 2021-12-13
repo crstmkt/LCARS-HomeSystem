@@ -512,34 +512,34 @@ pre {
    ========================================================================== */
 
 /*Button*/
-.button.round {
+.round {
   border-radius: 30px;
 }
 
-.button.round:before,
-.button.round:after {
-  right: 25px;
-  left: 25px;
+.round:before,
+.round:after {
+  right: 25px !important;
+  left: 25px !important;
 }
 
-.button.round-right {
+.round-right {
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
 }
 
-.button.round-right:before,
-.button.right:after {
-  right: 25px;
+.round-right:before,
+.right:after {
+  right: 25px !important;
 }
 
-.button.round-left {
+.round-left {
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
 }
 
-.button.round-left:before,
-.button.round-left:after {
-  left: 25px;
+.round-left:before,
+.round-left:after {
+  left: 25px !important;
 }
 
 /*Bar*/
