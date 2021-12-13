@@ -12,42 +12,59 @@ import TopButtons, {
   entitiesTopButtons,
 } from "./Components/TopButtons";
 import Dashboard from "./Components/Dashboard";
-import Rooms from "./Components/Rooms";
+import Rooms from "./Components/Rooms/Rooms";
 import LCARS from "./lcars-sdk/core/lcars-sdk";
 import $ from "jquery";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { setTopButtons } from "./Reducer/TopButtonsSlice";
+import { LCARSButton } from "./lcars-styled-components/Button/LCARSButton";
+//import { setTopButtons } from "./Reducer/TopButtonsSlice";
+import { LCARSColorPalette } from "./lcars-styled-components/ColorPalette";
 
 function App() {
-  const [activeModule, setActiveModule] = useState(Route.path);
+  const [activeModule, setActiveModule] = useState(Route.url);
+  const [topButtons, setTopButtons] = useState([]);
 
-  const topButtons = useSelector((state) => state.topButtons.list);
-  const dispatch = useDispatch();
+  //const topButtons = useSelector((state) => state.topButtons.list);
+  //const dispatch = useDispatch();
 
   useEffect(() => {
     switch (activeModule) {
       case "dashboard":
       default:
-        dispatch(setTopButtons(defaultTopButtons));
+        //dispatch(
+        setTopButtons(defaultTopButtons);
+        //);
         break;
       case "rooms":
-        dispatch(setTopButtons(roomsTopButtons));
+        //dispatch(
+        setTopButtons(roomsTopButtons);
+        //);
         break;
       case "devices":
-        dispatch(setTopButtons(devicesTopButtons));
+        //dispatch(
+        setTopButtons(devicesTopButtons);
+        //);
         break;
       case "energy":
-        dispatch(setTopButtons(energyTopButtons));
+        //dispatch(
+        setTopButtons(energyTopButtons);
+        //);
         break;
       case "weather":
-        dispatch(setTopButtons(weatherTopButtons));
+        //dispatch(
+        setTopButtons(weatherTopButtons);
+        //);
         break;
       case "network":
-        dispatch(setTopButtons(networkTopButtons));
+        //dispatch(
+        setTopButtons(networkTopButtons);
+        //);
         break;
       case "entities":
-        dispatch(setTopButtons(entitiesTopButtons));
+        //dispatch(
+        setTopButtons(entitiesTopButtons);
+        //);
         break;
     }
     return () => {
@@ -175,14 +192,19 @@ function App() {
             ></div>
           </Link>
           <Link to="/network">
-            <div
+            <LCARSButton
+              color={LCARSColorPalette.Orange2}
+              hidden={true}
+              dataLabel="NETWORK"
+            ></LCARSButton>
+            {/* <div
               id="buttonSID9spzacj4j"
               class="button bg-color-3 hidden"
               data-label="NETWORK"
               onClick={() => {
                 setActiveModule("network");
               }}
-            ></div>
+            ></div> */}
           </Link>
           <Link to="/entities">
             <div
@@ -193,18 +215,24 @@ function App() {
             ></div>
           </Link>
         </div>
-        <div id="wrapperSIDfff6sprkp" class="wrapper column flex-c-h flex-v">
-          <div id="rowSIDmnu78fmyz" class="row frame">
-            <div id="barSIDvoe66jcdg" class="bar bg-color-4 hidden"></div>
-            <div id="barSIDwwhzy6v1q" class="bar bg-color-3 hidden small"></div>
-            <div id="barSIDmao7t1n0i" class="bar bg-color-5 hidden"></div>
+        <div
+          id="wrapperSIDfff6sprkp"
+          className="wrapper column flex-c-h flex-v"
+        >
+          <div id="rowSIDmnu78fmyz" className="row frame">
+            <div id="barSIDvoe66jcdg" className="bar bg-color-4 hidden"></div>
+            <div
+              id="barSIDwwhzy6v1q"
+              className="bar bg-color-3 hidden small"
+            ></div>
+            <div id="barSIDmao7t1n0i" className="bar bg-color-5 hidden"></div>
             <div
               id="barSIDlu31trop1"
               class="bar bg-color-2 hidden flex-c-h"
             ></div>
-            <div id="barSIDq4u8lkv3v" class="bar bg-color-2 hidden"></div>
-            <div id="barSIDivuywe6cx" class="bar bg-color-5 hidden"></div>
-            <div id="barSIDp8ipbh9rx" class="bar bg-color-2 hidden"></div>
+            <div id="barSIDq4u8lkv3v" className="bar bg-color-2 hidden"></div>
+            <div id="barSIDivuywe6cx" className="bar bg-color-5 hidden"></div>
+            <div id="barSIDp8ipbh9rx" className="bar bg-color-2 hidden"></div>
           </div>
           <div id="wpr_centerControls" class="wrapper flex-h flex-c-v">
             <Switch>
