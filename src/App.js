@@ -16,55 +16,36 @@ import Rooms from "./Components/Rooms/Rooms";
 import LCARS from "./lcars-sdk/core/lcars-sdk";
 import $ from "jquery";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
 import { LCARSButton } from "./lcars-styled-components/Button/LCARSButton";
-//import { setTopButtons } from "./Reducer/TopButtonsSlice";
 import { LCARSColorPalette } from "./lcars-styled-components/ColorPalette";
 
 function App() {
   const [activeModule, setActiveModule] = useState(Route.url);
   const [topButtons, setTopButtons] = useState([]);
 
-  //const topButtons = useSelector((state) => state.topButtons.list);
-  //const dispatch = useDispatch();
-
   useEffect(() => {
     switch (activeModule) {
       case "dashboard":
       default:
-        //dispatch(
         setTopButtons(defaultTopButtons);
-        //);
         break;
       case "rooms":
-        //dispatch(
         setTopButtons(roomsTopButtons);
-        //);
         break;
       case "devices":
-        //dispatch(
         setTopButtons(devicesTopButtons);
-        //);
         break;
       case "energy":
-        //dispatch(
         setTopButtons(energyTopButtons);
-        //);
         break;
       case "weather":
-        //dispatch(
         setTopButtons(weatherTopButtons);
-        //);
         break;
       case "network":
-        //dispatch(
         setTopButtons(networkTopButtons);
-        //);
         break;
       case "entities":
-        //dispatch(
         setTopButtons(entitiesTopButtons);
-        //);
         break;
     }
     return () => {
@@ -197,14 +178,6 @@ function App() {
               hidden={true}
               dataLabel="NETWORK"
             ></LCARSButton>
-            {/* <div
-              id="buttonSID9spzacj4j"
-              class="button bg-color-3 hidden"
-              data-label="NETWORK"
-              onClick={() => {
-                setActiveModule("network");
-              }}
-            ></div> */}
           </Link>
           <Link to="/entities">
             <div
