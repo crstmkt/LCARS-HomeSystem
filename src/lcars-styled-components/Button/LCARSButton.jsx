@@ -44,8 +44,7 @@ function isVersion(round) {
     default:
       retVal = "";
       break;
-    case true:
-    case "true":
+    case "round":
       retVal = " round";
       break;
     case "left":
@@ -58,19 +57,31 @@ function isVersion(round) {
   return retVal;
 }
 
+function addClasses(additionalClasses) {
+  var retVal = "";
+  additionalClasses.split(",").forEach(function (item) {
+    retVal += " " + item;
+  });
+  return retVal;
+}
+
 export const LCARSButton = ({
   color,
   hidden = false,
   version = false,
-  dataLabel,
+  dataLabel = "",
+  onClick = null,
+  additionalClasses = "",
 }) => {
   var classes = hidden ? "hidden" : "";
   classes += isVersion(version);
+  classes += addClasses(additionalClasses);
   return (
     <StyledLCARSButton
       color={color}
       className={classes}
       data-label={dataLabel}
+      onClick={onClick}
     ></StyledLCARSButton>
   );
 };

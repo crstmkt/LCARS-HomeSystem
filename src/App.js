@@ -127,65 +127,63 @@ function App() {
             </div>
           </div>
           <Link to={"/dashboard"}>
-            <div
-              id="buttonSIDlymj9dqjd"
-              class="button bg-color-2 hidden"
-              data-label="DASHBOARD"
-              onClick={() => {
-                setActiveModule("dashboard");
-              }}
-            ></div>
-          </Link>
-          <Link to="/rooms">
-            <div
-              id="buttonSIDwmrlmu37z"
-              class="button bg-color-4 hidden step-two"
-              data-label="ROOMS"
-              onClick={() => {
-                setActiveModule("rooms");
-              }}
-            ></div>
-          </Link>
-          <Link to="/devices">
-            <div
-              id="buttonSID7r59osbl1"
-              class="button bg-color-3 hidden"
-              data-label="DEVICES"
-              onClick={() => {
-                setActiveModule("devices");
-              }}
-            ></div>
-          </Link>
-          <Link to="/energy">
-            <div
-              id="buttonSIDntglo1ex8"
-              class="button bg-color-2 hidden step-two"
-              data-label="ENERGY"
-              onClick={() => setActiveModule("energy")}
-            ></div>
-          </Link>
-          <Link to="/weather">
-            <div
-              id="buttonSIDeukie0ohw"
-              class="button bg-color-5 hidden flex-c-v"
-              data-label="WEATHER"
-              onClick={() => setActiveModule("weather")}
-            ></div>
-          </Link>
-          <Link to="/network">
             <LCARSButton
               color={LCARSColorPalette.Orange2}
               hidden={true}
+              dataLabel="DASHBOARD"
+              onClick={() => setActiveModule("dashboard")}
+            ></LCARSButton>
+          </Link>
+          <Link to="/rooms">
+            <LCARSButton
+              color={LCARSColorPalette.Orange4}
+              hidden={true}
+              dataLabel="ROOMS"
+              onClick={() => setActiveModule("rooms")}
+              additionalClasses="step-two"
+            ></LCARSButton>
+          </Link>
+          <Link to="/devices">
+            <LCARSButton
+              color={LCARSColorPalette.Orange3}
+              hidden={true}
+              dataLabel="DEVICES"
+              onClick={() => setActiveModule("devices")}
+            ></LCARSButton>
+          </Link>
+          <Link to="/energy">
+            <LCARSButton
+              color={LCARSColorPalette.Orange2}
+              hidden={true}
+              dataLabel="ENERGY"
+              onClick={() => setActiveModule("energy")}
+              additionalClasses="step-two"
+            ></LCARSButton>
+          </Link>
+          <Link to="/weather">
+            <LCARSButton
+              color={LCARSColorPalette.Orange5}
+              hidden={true}
+              dataLabel="WEATHER"
+              onClick={() => setActiveModule("weather")}
+            ></LCARSButton>
+          </Link>
+          <Link to="/network">
+            <LCARSButton
+              color={LCARSColorPalette.Orange1}
+              hidden={true}
               dataLabel="NETWORK"
+              onClick={() => setActiveModule("network")}
             ></LCARSButton>
           </Link>
           <Link to="/entities">
-            <div
-              id="buttonSIDp9gewhasz"
-              class="button bg-color-2 hidden step-two"
-              data-label="ENTITIES"
+            <LCARSButton
+              color={LCARSColorPalette.Orange2}
+              hidden={true}
+              dataLabel="ENTITIES"
               onClick={() => setActiveModule("entities")}
-            ></div>
+              additionalClasses="step-two"
+            ></LCARSButton>
           </Link>
         </div>
         <div
