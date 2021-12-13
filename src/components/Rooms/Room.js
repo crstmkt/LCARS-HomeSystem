@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { subscribeEntities } from "../API/dist";
-import moment from "moment";
+import { subscribeEntities } from "../../API/dist";
 
 const Room = (props) => {
   const path = props.match.url.split("/")[2];
