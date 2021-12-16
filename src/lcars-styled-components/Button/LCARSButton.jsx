@@ -36,26 +36,17 @@ const StyledLCARSButton = styled.div`
     white-space: pre;
     content: attr(data-altLabel);
   }
-`;
-
-function isVersion(round) {
-  var retVal = "";
-  switch (round) {
-    default:
-      retVal = "";
-      break;
-    case "round":
-      retVal = " round";
-      break;
-    case "left":
-      retVal = " round-left";
-      break;
-    case "right":
-      retVal = " round-right";
-      break;
+  &:active {
+    -webkit-animation: none !important;
+    animation: none !important;
+    background-color: #ffffff !important;
+    border-bottom-color: #ffffff !important;
+    border-right-color: #ffffff !important;
+    border-top-color: #ffffff !important;
+    border-left-color: #ffffff !important;
+    border-color: #ffffff !important;
   }
-  return retVal;
-}
+`;
 
 function addClasses(additionalClasses) {
   var retVal = "";
@@ -74,7 +65,7 @@ export const LCARSButton = ({
   additionalClasses = "",
 }) => {
   var classes = hidden ? "hidden" : "";
-  classes += isVersion(version);
+  classes += version;
   classes += addClasses(additionalClasses);
   return (
     <StyledLCARSButton
