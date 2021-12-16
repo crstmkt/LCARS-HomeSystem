@@ -16,9 +16,11 @@ import Rooms from "./Components/Rooms/Rooms";
 import LCARS from "./lcars-sdk/core/lcars-sdk";
 import $ from "jquery";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { LCARSButton } from "./lcars-styled-components/Button/LCARSButton";
-import { LCARSColorPalette } from "./lcars-styled-components/ColorPalette";
-import { LCARSElbow } from "./lcars-styled-components/Elbow/LCARSElbow";
+import {
+  LCARSButton,
+  LCARSColorPalette,
+  LCARSElbow,
+} from "./lcars-styled-components/lcars-styled-components";
 
 function App() {
   const [activeModule, setActiveModule] = useState(Route.url);
@@ -80,6 +82,7 @@ function App() {
             color={LCARSColorPalette.StandardMagenta}
             version="bottom-left"
             additionalClasses="flex-c-v"
+            hidden={"true"}
           ></LCARSElbow>
           {/* <div
             id="elbowSID7vwtva2hl"
@@ -125,10 +128,11 @@ function App() {
       <div id="wrapperSIDgkaalrgvy" class="wrapper main flex-h flex-c-v">
         <div id="wrapperSIDvx5igyv5n" class="wrapper column flex-v">
           <LCARSElbow
-            color={LCARSColorPalette.RedAlert1}
+            color={LCARSColorPalette.StandardSand}
             version={"top-left"}
             orientation={"horizontal"}
             size={"default"}
+            hidden={"true"}
           ></LCARSElbow>
           {/* <div
             id="elbowSIDvqqb969rs"
@@ -141,7 +145,7 @@ function App() {
           <Link to={"/dashboard"}>
             <LCARSButton
               color={LCARSColorPalette.StandardBeige}
-              hidden={true}
+              hidden={"true"}
               dataLabel="DASHBOARD"
               onClick={() => setActiveModule("dashboard")}
             ></LCARSButton>

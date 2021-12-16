@@ -10,7 +10,7 @@ function addClasses(additionalClasses) {
   return retVal;
 }
 
-export const LCARSElbow = ({
+const LCARSElbow = ({
   color,
   hidden = false,
   orientation = "horizontal",
@@ -37,3 +37,5 @@ export const LCARSElbow = ({
     </StyledLCARSElbow>
   );
 };
+
+export default LCARSElbow;

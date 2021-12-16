@@ -1,4 +1,4 @@
-export const LCARSColorPalette = {
+const LCARSColorPalette = {
   StandardOrange: "#ff9c00",
   StandardOcca: "#f7b05a",
   StandardBeige: "#ffcc99",
@@ -22,3 +22,5 @@ export const LCARSColorPalette = {
   RedAlert4: "#f5173c",
   RedAlert5: "#bf2d42",
 };
+
+export default LCARSColorPalette;
