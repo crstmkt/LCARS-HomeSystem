@@ -76,14 +76,19 @@ function App() {
             id="buttonSIDhybpg06vw"
             class="button bg-color-3 step-two hidden"
           ></div>
-          <div
+          <LCARSElbow
+            color={LCARSColorPalette.StandardMagenta}
+            version="bottom-left"
+            additionalClasses="flex-c-v"
+          ></LCARSElbow>
+          {/* <div
             id="elbowSID7vwtva2hl"
             class="elbow default horizontal bottom-left bg-color-5 flex-c-v hidden"
           >
             <div id="barSIDxjwzdlad8" class="bar">
               <div id="blockSIDsr8k22dfu" class="block"></div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div id="wrapperSID4grmugwnd" class="wrapper flex-c-h flex-v">
           <div
@@ -121,7 +126,9 @@ function App() {
         <div id="wrapperSIDvx5igyv5n" class="wrapper column flex-v">
           <LCARSElbow
             color={LCARSColorPalette.RedAlert1}
-            additionalClasses="elbow, default, horizontal, top-left"
+            version={"top-left"}
+            orientation={"horizontal"}
+            size={"default"}
           ></LCARSElbow>
           {/* <div
             id="elbowSIDvqqb969rs"
