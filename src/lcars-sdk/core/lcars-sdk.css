@@ -923,7 +923,7 @@ pre {
   border-color: inherit !important;
 }
 
-.elbow.top-left .bar .block {
+/* .elbow.top-left .bar .block {
   border-left-color: inherit !important;
   border-top-color: inherit !important;
 }
@@ -941,7 +941,7 @@ pre {
 .elbow.top-right .bar .block {
   border-right-color: inherit !important;
   border-top-color: inherit !important;
-}
+} */
 
 /* =============================================================================
    Elbows - Default Horizontal

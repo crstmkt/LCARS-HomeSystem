@@ -18,6 +18,7 @@ import $ from "jquery";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { LCARSButton } from "./lcars-styled-components/Button/LCARSButton";
 import { LCARSColorPalette } from "./lcars-styled-components/ColorPalette";
+import { LCARSElbow } from "./lcars-styled-components/Elbow/LCARSElbow";
 
 function App() {
   const [activeModule, setActiveModule] = useState(Route.url);
@@ -118,17 +119,21 @@ function App() {
       </div>
       <div id="wrapperSIDgkaalrgvy" class="wrapper main flex-h flex-c-v">
         <div id="wrapperSIDvx5igyv5n" class="wrapper column flex-v">
-          <div
+          <LCARSElbow
+            color={LCARSColorPalette.RedAlert1}
+            additionalClasses="elbow, default, horizontal, top-left"
+          ></LCARSElbow>
+          {/* <div
             id="elbowSIDvqqb969rs"
             class="elbow default horizontal top-left bg-color-5 hidden"
           >
             <div id="barSID7ndws5075" class="bar">
               <div id="blockSIDasyww0lrz" class="block"></div>
             </div>
-          </div>
+          </div> */}
           <Link to={"/dashboard"}>
             <LCARSButton
-              color={LCARSColorPalette.Orange2}
+              color={LCARSColorPalette.StandardBeige}
               hidden={true}
               dataLabel="DASHBOARD"
               onClick={() => setActiveModule("dashboard")}
@@ -136,7 +141,7 @@ function App() {
           </Link>
           <Link to="/rooms">
             <LCARSButton
-              color={LCARSColorPalette.Orange4}
+              color={LCARSColorPalette.StandardOcca}
               hidden={true}
               dataLabel="ROOMS"
               onClick={() => setActiveModule("rooms")}
@@ -145,7 +150,7 @@ function App() {
           </Link>
           <Link to="/devices">
             <LCARSButton
-              color={LCARSColorPalette.Orange3}
+              color={LCARSColorPalette.StandardMagenta}
               hidden={true}
               dataLabel="DEVICES"
               onClick={() => setActiveModule("devices")}
@@ -153,7 +158,7 @@ function App() {
           </Link>
           <Link to="/energy">
             <LCARSButton
-              color={LCARSColorPalette.Orange2}
+              color={LCARSColorPalette.StandardMediumOrange}
               hidden={true}
               dataLabel="ENERGY"
               onClick={() => setActiveModule("energy")}
@@ -162,7 +167,7 @@ function App() {
           </Link>
           <Link to="/weather">
             <LCARSButton
-              color={LCARSColorPalette.Orange5}
+              color={LCARSColorPalette.StandardLightBlue}
               hidden={true}
               dataLabel="WEATHER"
               onClick={() => setActiveModule("weather")}
@@ -170,7 +175,7 @@ function App() {
           </Link>
           <Link to="/network">
             <LCARSButton
-              color={LCARSColorPalette.Orange1}
+              color={LCARSColorPalette.StandardDarkYellow}
               hidden={true}
               dataLabel="NETWORK"
               onClick={() => setActiveModule("network")}
@@ -178,7 +183,7 @@ function App() {
           </Link>
           <Link to="/entities">
             <LCARSButton
-              color={LCARSColorPalette.Orange2}
+              color={LCARSColorPalette.StandardDirt}
               hidden={true}
               dataLabel="ENTITIES"
               onClick={() => setActiveModule("entities")}
