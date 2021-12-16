@@ -84,14 +84,6 @@ function App() {
             additionalClasses="flex-c-v"
             hidden={"true"}
           ></LCARSElbow>
-          {/* <div
-            id="elbowSID7vwtva2hl"
-            class="elbow default horizontal bottom-left bg-color-5 flex-c-v hidden"
-          >
-            <div id="barSIDxjwzdlad8" class="bar">
-              <div id="blockSIDsr8k22dfu" class="block"></div>
-            </div>
-          </div> */}
         </div>
         <div id="wrapperSID4grmugwnd" class="wrapper flex-c-h flex-v">
           <div
@@ -131,17 +123,8 @@ function App() {
             color={LCARSColorPalette.StandardSand}
             version={"top-left"}
             orientation={"horizontal"}
-            size={"default"}
             hidden={"true"}
           ></LCARSElbow>
-          {/* <div
-            id="elbowSIDvqqb969rs"
-            class="elbow default horizontal top-left bg-color-5 hidden"
-          >
-            <div id="barSID7ndws5075" class="bar">
-              <div id="blockSIDasyww0lrz" class="block"></div>
-            </div>
-          </div> */}
           <Link to={"/dashboard"}>
             <LCARSButton
               color={LCARSColorPalette.StandardBeige}
