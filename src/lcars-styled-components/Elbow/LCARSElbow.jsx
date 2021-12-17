@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { LCARSBar } from "../Bar/LCARSBar";
+import { LCARSBar } from "../lcars-styled-components";
 import { StyledLCARSElbow } from "./LCARSElbow.style";
 
 function addClasses(additionalClasses) {

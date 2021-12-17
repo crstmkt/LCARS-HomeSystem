@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
+//TODO: Separate into styled.jsx
 const StyledLCARSBlock = styled.div`
   position: relative;
   min-height: 60px;
   min-width: 25px;
-  background: inherit;
+  background: ${(props) => props.color || "lightgrey"};
   &:before {
     font-size: inherit;
     display: block;
@@ -43,7 +44,7 @@ function addClasses(additionalClasses) {
   return retVal;
 }
 
-export const LCARSBlock = ({
+const LCARSBlock = ({
   color,
   hidden = false,
   version = "",
@@ -56,9 +57,12 @@ export const LCARSBlock = ({
   classes += addClasses(additionalClasses);
   return (
     <StyledLCARSBlock
+      color={color}
       className={classes}
       data-label={dataLabel}
       onClick={onClick}
     ></StyledLCARSBlock>
   );
 };
+
+export default LCARSBlock;

@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { LCARSBlock } from "../Block/LCARSBlock";
+import { LCARSBlock } from "../lcars-styled-components";
 
+//TODO: Separate into style.jsx
 const StyledLCARSBar = styled.div`
   position: relative;
   min-height: 30px;
@@ -44,7 +45,7 @@ function addClasses(additionalClasses) {
   return retVal;
 }
 
-export const LCARSBar = ({
+const LCARSBar = ({
   color,
   hidden = false,
   version = "",
@@ -68,3 +69,5 @@ export const LCARSBar = ({
     </StyledLCARSBar>
   );
 };
+
+export default LCARSBar;
