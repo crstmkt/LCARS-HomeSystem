@@ -9,13 +9,13 @@ const Room = (props) => {
 
   return (
     <div>
-      <h1 className="text-color-1">
+      <h1 className="text-color-2">
         {entities === undefined ||
         entities["sensor." + path + "_sensors_htu21_temperature"] === undefined
           ? "N/A"
           : entities["sensor." + path + "_sensors_htu21_temperature"].state}
       </h1>
-      <h1 className="text-color-1">
+      <h1 className="text-color-2">
         {entities === undefined ||
         entities["sensor." + path + "_sensors_htu21_humidity"] === undefined
           ? "N/A"

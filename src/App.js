@@ -17,6 +17,8 @@ import LCARS from "./lcars-sdk/core/lcars-sdk";
 import $ from "jquery";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import {
+  LCARSBar,
+  LCARSBlock,
   LCARSButton,
   LCARSColorPalette,
   LCARSElbow,
@@ -74,12 +76,13 @@ function App() {
     <div id="wpr_mainView" class="wrapper column flex-v flex-c-h">
       <div id="wrapperSID3wttzcnqe" class="wrapper header flex-h">
         <div id="wrapperSID2n9tjph4p" class="wrapper column flex-v">
-          <div
-            id="buttonSIDhybpg06vw"
-            class="button bg-color-3 step-two hidden"
-          ></div>
+          <LCARSBlock
+            color={LCARSColorPalette._29CENT_LightBlue}
+            hidden={true}
+            additionalClasses="step-two"
+          ></LCARSBlock>
           <LCARSElbow
-            color={LCARSColorPalette.StandardMagenta}
+            color={LCARSColorPalette._29CENT_LightBlue}
             version="bottom-left"
             additionalClasses="flex-c-v"
             hidden={"true"}
@@ -104,30 +107,49 @@ function App() {
             </div>
           </div>
           <div id="rowSID7zfyqtz3a" class="row frame flex-h">
-            <div id="barSIDqs5xnc2hi" class="bar bg-color-1 hidden"></div>
-            <div id="barSIDy64j00spg" class="bar bg-color-2 hidden"></div>
-            <div id="barSIDi3q609b8m" class="bar bg-color-3 hidden"></div>
-            <div
-              id="barSIDoldnr8lzu"
-              class="bar bg-color-5 flex-c-h hidden"
-            ></div>
-            <div id="barSIDk1d7yuo36" class="bar bg-color-4 hidden"></div>
-            <div id="barSIDia6bftvp3" class="bar bg-color-4 hidden"></div>
-            <div id="barSID1s6fsbbiq" class="bar bg-color-1 hidden"></div>
+            <LCARSBar
+              color={LCARSColorPalette._29CENT_LightBlue}
+              hidden={true}
+            ></LCARSBar>
+            <LCARSBar
+              color={LCARSColorPalette._29CENT_LightBlue}
+              hidden={true}
+            ></LCARSBar>
+            <LCARSBar
+              color={LCARSColorPalette._29CENT_LightBlue}
+              hidden={true}
+            ></LCARSBar>
+            <LCARSBar
+              color={LCARSColorPalette._29CENT_LightBlue}
+              hidden={true}
+              additionalClasses="flex-c-h"
+            ></LCARSBar>
+            <LCARSBar
+              color={LCARSColorPalette._29CENT_LightBlue}
+              hidden={true}
+            ></LCARSBar>
+            <LCARSBar
+              color={LCARSColorPalette._29CENT_LightBlue}
+              hidden={true}
+            ></LCARSBar>
+            <LCARSBar
+              color={LCARSColorPalette._29CENT_LightBlue}
+              hidden={true}
+            ></LCARSBar>
           </div>
         </div>
       </div>
       <div id="wrapperSIDgkaalrgvy" class="wrapper main flex-h flex-c-v">
         <div id="wrapperSIDvx5igyv5n" class="wrapper column flex-v">
           <LCARSElbow
-            color={LCARSColorPalette.StandardSand}
+            color={LCARSColorPalette._29CENT_LightBlue}
             version={"top-left"}
             orientation={"horizontal"}
             hidden={"true"}
           ></LCARSElbow>
           <Link to={"/dashboard"}>
             <LCARSButton
-              color={LCARSColorPalette.StandardBeige}
+              color={LCARSColorPalette._29CENT_LightBlue}
               hidden={"true"}
               dataLabel="DASHBOARD"
               onClick={() => setActiveModule("dashboard")}
@@ -135,7 +157,7 @@ function App() {
           </Link>
           <Link to="/rooms">
             <LCARSButton
-              color={LCARSColorPalette.StandardOcca}
+              color={LCARSColorPalette._29CENT_LightBlue}
               hidden={true}
               dataLabel="ROOMS"
               onClick={() => setActiveModule("rooms")}
@@ -144,7 +166,7 @@ function App() {
           </Link>
           <Link to="/devices">
             <LCARSButton
-              color={LCARSColorPalette.StandardMagenta}
+              color={LCARSColorPalette._29CENT_LightBlue}
               hidden={true}
               dataLabel="DEVICES"
               onClick={() => setActiveModule("devices")}
@@ -152,7 +174,7 @@ function App() {
           </Link>
           <Link to="/energy">
             <LCARSButton
-              color={LCARSColorPalette.StandardMediumOrange}
+              color={LCARSColorPalette._29CENT_LightBlue}
               hidden={true}
               dataLabel="ENERGY"
               onClick={() => setActiveModule("energy")}
@@ -161,7 +183,7 @@ function App() {
           </Link>
           <Link to="/weather">
             <LCARSButton
-              color={LCARSColorPalette.StandardLightBlue}
+              color={LCARSColorPalette._29CENT_LightBlue}
               hidden={true}
               dataLabel="WEATHER"
               onClick={() => setActiveModule("weather")}
@@ -169,7 +191,7 @@ function App() {
           </Link>
           <Link to="/network">
             <LCARSButton
-              color={LCARSColorPalette.StandardDarkYellow}
+              color={LCARSColorPalette._29CENT_LightBlue}
               hidden={true}
               dataLabel="NETWORK"
               onClick={() => setActiveModule("network")}
@@ -177,7 +199,7 @@ function App() {
           </Link>
           <Link to="/entities">
             <LCARSButton
-              color={LCARSColorPalette.StandardDirt}
+              color={LCARSColorPalette._29CENT_LightBlue}
               hidden={true}
               dataLabel="ENTITIES"
               onClick={() => setActiveModule("entities")}
@@ -190,19 +212,36 @@ function App() {
           className="wrapper column flex-c-h flex-v"
         >
           <div id="rowSIDmnu78fmyz" className="row frame">
-            <div id="barSIDvoe66jcdg" className="bar bg-color-4 hidden"></div>
-            <div
-              id="barSIDwwhzy6v1q"
-              className="bar bg-color-3 hidden small"
-            ></div>
-            <div id="barSIDmao7t1n0i" className="bar bg-color-5 hidden"></div>
-            <div
-              id="barSIDlu31trop1"
-              class="bar bg-color-2 hidden flex-c-h"
-            ></div>
-            <div id="barSIDq4u8lkv3v" className="bar bg-color-2 hidden"></div>
-            <div id="barSIDivuywe6cx" className="bar bg-color-5 hidden"></div>
-            <div id="barSIDp8ipbh9rx" className="bar bg-color-2 hidden"></div>
+            <LCARSBar
+              color={LCARSColorPalette._29CENT_LightBlue}
+              hidden={true}
+            ></LCARSBar>
+            <LCARSBar
+              color={LCARSColorPalette._29CENT_LightBlue}
+              hidden={true}
+              additionalClasses="small"
+            ></LCARSBar>
+            <LCARSBar
+              color={LCARSColorPalette._29CENT_LightBlue}
+              hidden={true}
+            ></LCARSBar>
+            <LCARSBar
+              color={LCARSColorPalette._29CENT_LightBlue}
+              hidden={true}
+              additionalClasses="flex-c-h"
+            ></LCARSBar>
+            <LCARSBar
+              color={LCARSColorPalette._29CENT_LightBlue}
+              hidden={true}
+            ></LCARSBar>
+            <LCARSBar
+              color={LCARSColorPalette._29CENT_LightBlue}
+              hidden={true}
+            ></LCARSBar>
+            <LCARSBar
+              color={LCARSColorPalette._29CENT_LightBlue}
+              hidden={true}
+            ></LCARSBar>
           </div>
           <div id="wpr_centerControls" class="wrapper flex-h flex-c-v">
             <Switch>

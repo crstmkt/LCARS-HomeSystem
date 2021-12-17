@@ -576,7 +576,7 @@ pre {
 }
 
 /*Cap*/
-.cap.round-left:before,
+/* .cap.round-left:before,
 .cap.round-left:after {
   left: 25px;
 }
@@ -648,7 +648,7 @@ pre {
 .cap.xlarge.right:before,
 .cap.xlarge.right:after {
   right: 50px;
-}
+} */
 
 /*Oval*/
 .oval.small {

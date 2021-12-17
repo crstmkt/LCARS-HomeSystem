@@ -10,7 +10,7 @@ import {
 export const defaultTopButtons = [
   {
     id: 1,
-    primaryColor: LCARSColorPalette.StandardOcca,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     version: "round",
     dataLabel: "Button1",
@@ -20,7 +20,7 @@ export const defaultTopButtons = [
   },
   {
     id: 2,
-    primaryColor: LCARSColorPalette.StandardPurple,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Button2",
     version: "round",
@@ -30,7 +30,7 @@ export const defaultTopButtons = [
   },
   {
     id: 3,
-    primaryColor: LCARSColorPalette.StandardSand,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-4",
     dataLabel: "Button3",
     version: "round",
@@ -40,7 +40,7 @@ export const defaultTopButtons = [
   },
   {
     id: 4,
-    primaryColor: LCARSColorPalette.StandardTurquoise,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Button4",
     version: "round",
@@ -50,7 +50,7 @@ export const defaultTopButtons = [
   },
   {
     id: 5,
-    primaryColor: LCARSColorPalette.StandardLightTurquoise,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Button5",
     version: "round",
@@ -60,7 +60,7 @@ export const defaultTopButtons = [
   },
   {
     id: 6,
-    primaryColor: LCARSColorPalette.StandardMediumOrange,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Button6",
     version: "round",
@@ -75,7 +75,7 @@ export const defaultTopButtons = [
 export const roomsTopButtons = [
   {
     id: 1,
-    primaryColor: LCARSColorPalette.StandardOcca,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     group: "rooms",
     dataLabel: "corridor",
@@ -86,7 +86,7 @@ export const roomsTopButtons = [
   },
   {
     id: 2,
-    primaryColor: LCARSColorPalette.StandardMediumOrange,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     group: "rooms",
     dataLabel: "bedroom",
@@ -97,7 +97,7 @@ export const roomsTopButtons = [
   },
   {
     id: 3,
-    primaryColor: LCARSColorPalette.StandardDirt,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-4",
     group: "rooms",
     dataLabel: "bath",
@@ -108,7 +108,7 @@ export const roomsTopButtons = [
   },
   {
     id: 4,
-    primaryColor: LCARSColorPalette.StandardDarkYellow,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     group: "rooms",
     dataLabel: "livingroom",
@@ -119,7 +119,7 @@ export const roomsTopButtons = [
   },
   {
     id: 5,
-    primaryColor: LCARSColorPalette.StandardLightOrange,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     group: "rooms",
     dataLabel: "kitchen",
@@ -130,7 +130,7 @@ export const roomsTopButtons = [
   },
   {
     id: 6,
-    primaryColor: LCARSColorPalette.StandardBeige,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     group: "rooms",
     dataLabel: "attic",
@@ -146,7 +146,7 @@ export const roomsTopButtons = [
 export const devicesTopButtons = [
   {
     id: 1,
-    primaryColor: LCARSColorPalette.StandardDarkYellow,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Devices1",
     version: "round",
@@ -156,7 +156,7 @@ export const devicesTopButtons = [
   },
   {
     id: 2,
-    primaryColor: LCARSColorPalette.StandardMagenta,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Devices2",
     version: "round",
@@ -166,7 +166,7 @@ export const devicesTopButtons = [
   },
   {
     id: 3,
-    primaryColor: LCARSColorPalette.StandardLightTurquoise,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-4",
     dataLabel: "Devices3",
     version: "round",
@@ -176,7 +176,7 @@ export const devicesTopButtons = [
   },
   {
     id: 4,
-    primaryColor: LCARSColorPalette.StandardBlue,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Devices4",
     version: "round",
@@ -186,7 +186,7 @@ export const devicesTopButtons = [
   },
   {
     id: 5,
-    primaryColor: LCARSColorPalette.StandardBeige,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Devices5",
     version: "round",
@@ -196,7 +196,7 @@ export const devicesTopButtons = [
   },
   {
     id: 6,
-    primaryColor: LCARSColorPalette.StandardOrange,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Devices6",
     version: "round",
@@ -211,7 +211,7 @@ export const devicesTopButtons = [
 export const energyTopButtons = [
   {
     id: 1,
-    primaryColor: LCARSColorPalette.StandardPurple,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Energy1",
     version: "round",
@@ -221,7 +221,7 @@ export const energyTopButtons = [
   },
   {
     id: 2,
-    primaryColor: LCARSColorPalette.StandardBlue,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Energy2",
     version: "round",
@@ -231,7 +231,7 @@ export const energyTopButtons = [
   },
   {
     id: 3,
-    primaryColor: LCARSColorPalette.StandardLightBlue,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-4",
     dataLabel: "Energy3",
     version: "round",
@@ -241,7 +241,7 @@ export const energyTopButtons = [
   },
   {
     id: 4,
-    primaryColor: LCARSColorPalette.StandardMediumOrange,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Energy4",
     version: "round",
@@ -251,7 +251,7 @@ export const energyTopButtons = [
   },
   {
     id: 5,
-    primaryColor: LCARSColorPalette.StandardLightYellow,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Energy5",
     version: "round",
@@ -261,7 +261,7 @@ export const energyTopButtons = [
   },
   {
     id: 6,
-    primaryColor: LCARSColorPalette.StandardOrange,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Energy6",
     version: "round",
@@ -276,7 +276,7 @@ export const energyTopButtons = [
 export const weatherTopButtons = [
   {
     id: 1,
-    primaryColor: LCARSColorPalette.StandardLightTurquoise,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Weather1",
     version: "round",
@@ -286,7 +286,7 @@ export const weatherTopButtons = [
   },
   {
     id: 2,
-    primaryColor: LCARSColorPalette.StandardMediumOrange,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Weather2",
     version: "round",
@@ -296,7 +296,7 @@ export const weatherTopButtons = [
   },
   {
     id: 3,
-    primaryColor: LCARSColorPalette.StandardDarkYellow,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-4",
     dataLabel: "Weather3",
     version: "round",
@@ -306,7 +306,7 @@ export const weatherTopButtons = [
   },
   {
     id: 4,
-    primaryColor: LCARSColorPalette.StandardLightBlue,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Weather4",
     version: "round",
@@ -316,7 +316,7 @@ export const weatherTopButtons = [
   },
   {
     id: 5,
-    primaryColor: LCARSColorPalette.StandardSand,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Weather5",
     version: "round",
@@ -326,7 +326,7 @@ export const weatherTopButtons = [
   },
   {
     id: 6,
-    primaryColor: LCARSColorPalette.StandardDirt,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Weather6",
     version: "round",
@@ -341,7 +341,7 @@ export const weatherTopButtons = [
 export const networkTopButtons = [
   {
     id: 1,
-    primaryColor: LCARSColorPalette.StandardLightOrange,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Network1",
     version: "round",
@@ -351,7 +351,7 @@ export const networkTopButtons = [
   },
   {
     id: 2,
-    primaryColor: LCARSColorPalette.StandardOcca,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Network2",
     version: "round",
@@ -361,7 +361,7 @@ export const networkTopButtons = [
   },
   {
     id: 3,
-    primaryColor: LCARSColorPalette.StandardSand,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-4",
     dataLabel: "GUEST WIFI",
     version: "round",
@@ -373,7 +373,7 @@ export const networkTopButtons = [
   },
   {
     id: 4,
-    primaryColor: LCARSColorPalette.StandardYellow,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Network4",
     version: "round",
@@ -383,7 +383,7 @@ export const networkTopButtons = [
   },
   {
     id: 5,
-    primaryColor: LCARSColorPalette.StandardLightYellow,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Network5",
     version: "round",
@@ -393,7 +393,7 @@ export const networkTopButtons = [
   },
   {
     id: 6,
-    primaryColor: LCARSColorPalette.StandardBlue,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Network6",
     version: "round",
@@ -408,7 +408,7 @@ export const networkTopButtons = [
 export const entitiesTopButtons = [
   {
     id: 1,
-    primaryColor: LCARSColorPalette.StandardLightOrange,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Entities1",
     version: "round",
@@ -418,7 +418,7 @@ export const entitiesTopButtons = [
   },
   {
     id: 2,
-    primaryColor: LCARSColorPalette.StandardMediumOrange,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Entities2",
     version: "round",
@@ -428,7 +428,7 @@ export const entitiesTopButtons = [
   },
   {
     id: 3,
-    primaryColor: LCARSColorPalette.StandardSand,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-4",
     dataLabel: "Entities3",
     version: "round",
@@ -438,7 +438,7 @@ export const entitiesTopButtons = [
   },
   {
     id: 4,
-    primaryColor: LCARSColorPalette.StandardLightTurquoise,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Entities4",
     version: "round",
@@ -448,7 +448,7 @@ export const entitiesTopButtons = [
   },
   {
     id: 5,
-    primaryColor: LCARSColorPalette.StandardBlue,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Entities5",
     version: "round",
@@ -458,7 +458,7 @@ export const entitiesTopButtons = [
   },
   {
     id: 6,
-    primaryColor: LCARSColorPalette.StandardBeige,
+    primaryColor: LCARSColorPalette._29CENT_LightBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Entities6",
     version: "round",

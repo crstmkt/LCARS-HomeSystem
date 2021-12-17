@@ -1,6 +1,4 @@
-import styled from "styled-components";
-import { StyledLCARSBar } from "./LCARSBar.styled";
-import { LCARSBlock } from "../lcars-styled-components";
+import { StyledLCARSCap } from "./LCARSCap.style";
 
 function addClasses(additionalClasses) {
   var retVal = "";
@@ -10,30 +8,28 @@ function addClasses(additionalClasses) {
   return retVal;
 }
 
-const LCARSBar = ({
+const LCARSCap = ({
   color,
   hidden = false,
-  version = "",
+  version = "round-right",
+  size = "medium",
   dataLabel = "",
   onClick = null,
   additionalClasses = "",
-  isElbow = false,
 }) => {
-  var classes = "bar";
+  var classes = "cap";
   classes += hidden ? " hidden" : "";
-  classes += version;
+  classes += " " + version;
+  classes += " " + size;
   classes += addClasses(additionalClasses);
   return (
-    <StyledLCARSBar
+    <StyledLCARSCap
       color={color}
       className={classes}
       data-label={dataLabel}
       onClick={onClick}
-      isElbow={isElbow}
-    >
-      {isElbow ? <LCARSBlock additionalClasses="block" /> : ""}
-    </StyledLCARSBar>
+    ></StyledLCARSCap>
   );
 };
 
-export default LCARSBar;
+export default LCARSCap;

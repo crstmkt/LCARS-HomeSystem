@@ -8,7 +8,7 @@ const Rooms = (props) => {
   return (
     <Switch>
       <Route exact path={`${path}`}>
-        <h1 className="text-color-1">ROOMS</h1>
+        <h1 className="text-color-2">ROOMS</h1>
       </Route>
       <Route path={`${path}/*`} component={Room}></Route>
     </Switch>

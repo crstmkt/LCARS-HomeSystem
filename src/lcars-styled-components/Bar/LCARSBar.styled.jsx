@@ -4,7 +4,7 @@ export const StyledLCARSBar = styled.div`
   position: relative;
   min-height: 30px;
   min-width: 30px;
-  background: inherit;
+  background: ${(props) => props.color || "lightgrey"};
   &:before {
     font-size: inherit;
     display: block;
