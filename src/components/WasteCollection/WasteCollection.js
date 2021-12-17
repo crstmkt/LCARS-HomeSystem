@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
-import PropTypes from "prop-types";
-import { subscribeEntities } from "../API/dist/index.js";
 import moment from "moment";
-import { getHost, getToken } from "../API/API";
+import { getHost, getToken } from "../../API/API";
 import $ from "jquery";
 
 const WasteCollection = (props) => {
