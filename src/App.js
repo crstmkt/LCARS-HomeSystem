@@ -11,7 +11,7 @@ import TopButtons, {
   networkTopButtons,
   entitiesTopButtons,
 } from "./Components/TopButtons";
-import Dashboard from "./Components/Dashboard";
+import Dashboard from "./Components/Dashboard/Dashboard";
 import Rooms from "./Components/Rooms/Rooms";
 import LCARS from "./lcars-sdk/core/lcars-sdk";
 import $ from "jquery";
