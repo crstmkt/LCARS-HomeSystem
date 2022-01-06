@@ -1,5 +1,4 @@
-import styled from "styled-components";
-import { StyledLCARSBar } from "./LCARSBar.styled";
+import { StyledLCARSBar } from "./LCARSBar.style";
 import { LCARSBlock } from "../lcars-styled-components";
 
 function addClasses(additionalClasses) {

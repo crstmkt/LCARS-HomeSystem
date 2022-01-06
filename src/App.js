@@ -17,11 +17,16 @@ import LCARS from "./lcars-sdk/core/lcars-sdk";
 import $ from "jquery";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import {
+  LCARSAside,
   LCARSBar,
+  LCARSBlank,
   LCARSBlock,
   LCARSButton,
+  LCARSCap,
   LCARSColorPalette,
+  LCARSColumn,
   LCARSElbow,
+  LCARSRow,
 } from "./lcars-styled-components/lcars-styled-components";
 
 function App() {

@@ -1,4 +1,4 @@
-import { StyledLCARSButton } from "./LCARSButton.style";
+import { StyledLCARSRow } from "./LCARSRow.style";
 
 function addClasses(additionalClasses) {
   var retVal = "";
@@ -8,25 +8,20 @@ function addClasses(additionalClasses) {
   return retVal;
 }
 
-const LCARSButton = ({
-  color,
+const LCARSRow = ({
   hidden = false,
-  version = false,
-  dataLabel = "",
   onClick = null,
   additionalClasses = "",
+  children = "",
 }) => {
   var classes = hidden ? "hidden" : "";
-  classes += " " + version;
+  classes += " row";
   classes += addClasses(additionalClasses);
   return (
-    <StyledLCARSButton
-      color={color}
-      className={classes}
-      data-label={dataLabel}
-      onClick={onClick}
-    ></StyledLCARSButton>
+    <StyledLCARSRow hidden={hidden} onClick={onClick} className={classes}>
+      {children}
+    </StyledLCARSRow>
   );
 };
 
-export default LCARSButton;
+export default LCARSRow;

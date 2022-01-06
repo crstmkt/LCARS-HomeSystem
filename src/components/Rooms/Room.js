@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { subscribeEntities } from "../../API/dist";
 
 const Room = (props) => {
   const path = props.match.url.split("/")[2];
   const [entities, setEntitiesState] = useState();
 
-  subscribeEntities(window.connection, (ent) => setEntitiesState(ent));
+  useEffect(() => {
+    subscribeEntities(window.connection, (ent) => setEntitiesState(ent));
+    return () => {};
+  }, []);
 
   return (
     <div>
