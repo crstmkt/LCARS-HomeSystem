@@ -82,12 +82,12 @@ function App() {
       <div id="wrapperSID3wttzcnqe" class="wrapper header flex-h">
         <div id="wrapperSID2n9tjph4p" class="wrapper column flex-v">
           <LCARSBlock
-            color={LCARSColorPalette._29CENT_LightBlue}
+            color={LCARSColorPalette.STX_DarkBlue}
             hidden={true}
             additionalClasses="step-two"
           ></LCARSBlock>
           <LCARSElbow
-            color={LCARSColorPalette._29CENT_LightBlue}
+            color={LCARSColorPalette.STX_MediumBlue}
             version="bottom-left"
             additionalClasses="flex-c-v"
             hidden={"true"}
@@ -113,32 +113,32 @@ function App() {
           </div>
           <div id="rowSID7zfyqtz3a" class="row frame flex-h">
             <LCARSBar
-              color={LCARSColorPalette._29CENT_LightBlue}
+              color={LCARSColorPalette.STX_Orange}
               hidden={true}
             ></LCARSBar>
             <LCARSBar
-              color={LCARSColorPalette._29CENT_LightBlue}
+              color={LCARSColorPalette.STX_Sand}
               hidden={true}
             ></LCARSBar>
             <LCARSBar
-              color={LCARSColorPalette._29CENT_LightBlue}
+              color={LCARSColorPalette.STX_DarkOrange}
               hidden={true}
             ></LCARSBar>
             <LCARSBar
-              color={LCARSColorPalette._29CENT_LightBlue}
+              color={LCARSColorPalette.STX_Orange}
               hidden={true}
               additionalClasses="flex-c-h"
             ></LCARSBar>
             <LCARSBar
-              color={LCARSColorPalette._29CENT_LightBlue}
+              color={LCARSColorPalette.STX_LightBlue}
               hidden={true}
             ></LCARSBar>
             <LCARSBar
-              color={LCARSColorPalette._29CENT_LightBlue}
+              color={LCARSColorPalette.STX_LightBlue}
               hidden={true}
             ></LCARSBar>
             <LCARSBar
-              color={LCARSColorPalette._29CENT_LightBlue}
+              color={LCARSColorPalette.STX_Lime}
               hidden={true}
             ></LCARSBar>
           </div>
@@ -147,14 +147,14 @@ function App() {
       <div id="wrapperSIDgkaalrgvy" class="wrapper main flex-h flex-c-v">
         <div id="wrapperSIDvx5igyv5n" class="wrapper column flex-v">
           <LCARSElbow
-            color={LCARSColorPalette._29CENT_LightBlue}
+            color={LCARSColorPalette.STX_Orange}
             version={"top-left"}
             orientation={"horizontal"}
             hidden={"true"}
           ></LCARSElbow>
           <Link to={"/dashboard"}>
             <LCARSButton
-              color={LCARSColorPalette._29CENT_LightBlue}
+              color={LCARSColorPalette.STX_DarkOrange}
               hidden={"true"}
               dataLabel="DASHBOARD"
               onClick={() => setActiveModule("dashboard")}
@@ -162,7 +162,7 @@ function App() {
           </Link>
           <Link to="/rooms">
             <LCARSButton
-              color={LCARSColorPalette._29CENT_LightBlue}
+              color={LCARSColorPalette.STX_Lime}
               hidden={true}
               dataLabel="ROOMS"
               onClick={() => setActiveModule("rooms")}
@@ -171,7 +171,7 @@ function App() {
           </Link>
           <Link to="/devices">
             <LCARSButton
-              color={LCARSColorPalette._29CENT_LightBlue}
+              color={LCARSColorPalette.STX_Lime}
               hidden={true}
               dataLabel="DEVICES"
               onClick={() => setActiveModule("devices")}
@@ -179,7 +179,7 @@ function App() {
           </Link>
           <Link to="/energy">
             <LCARSButton
-              color={LCARSColorPalette._29CENT_LightBlue}
+              color={LCARSColorPalette.Standard_Beige}
               hidden={true}
               dataLabel="ENERGY"
               onClick={() => setActiveModule("energy")}

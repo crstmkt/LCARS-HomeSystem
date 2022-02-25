@@ -59,6 +59,7 @@ const LCARSColorPalette = {
   RedAlert3: "#bf2d24",
   RedAlert4: "#f5173c",
   RedAlert5: "#bf2d42",
+  SomeStuff: "#bd5256",
 };
 
 export default LCARSColorPalette;
