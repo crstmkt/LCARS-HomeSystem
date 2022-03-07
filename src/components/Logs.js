@@ -2,6 +2,10 @@ import moment from "moment";
 import $ from "jquery";
 import React, { useEffect, useState } from "react";
 import { getHost, getToken } from "../API/API";
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1ea795fc79cbb75eccb4a08bc56cdeb854244df1
 
 const Logs = () => {
   //Because FUCK CORS - and those who are responsible for not working allowed header in HASS Config

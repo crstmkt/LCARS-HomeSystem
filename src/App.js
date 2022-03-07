@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { showMainView } from "./js/Animations";
-import Systemtime from "./Components/Systemtime";
-import Logs from "./Components/Logs";
+import Systemtime from "./components/Systemtime";
+import Logs from "./components/Logs";
 import TopButtons, {
   defaultTopButtons,
   roomsTopButtons,
@@ -10,9 +10,9 @@ import TopButtons, {
   weatherTopButtons,
   networkTopButtons,
   entitiesTopButtons,
-} from "./Components/TopButtons";
-import Dashboard from "./Components/Dashboard/Dashboard";
-import Rooms from "./Components/Rooms/Rooms";
+} from "./components/TopButtons";
+import Dashboard from "./components/Dashboard/Dashboard";
+import Rooms from "./components/Rooms/Rooms";
 import LCARS from "./lcars-sdk/core/lcars-sdk";
 import $ from "jquery";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
