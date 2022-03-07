@@ -1,9 +1,6 @@
 {
   "compilerOptions": {
-    "lib": [
-      "es2015",
-      "dom"
-    ],
+    "lib": ["es2015", "dom"],
     "target": "es2017",
     "outDir": "dist",
     "declaration": true,
@@ -24,7 +21,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "src/API/lib/*"
-  ]
+  "include": ["src"]
 }
