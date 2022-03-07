@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { callService } from "../API/dist/index.js";
 import { Link } from "react-router-dom";
 import {
   LCARSButton,
@@ -366,9 +365,7 @@ export const networkTopButtons = [
     dataLabel: "GUEST WIFI",
     version: "round",
     on_Click: () => {
-      callService(window.connection, "homeassistant", "toggle", {
-        entity_id: "switch.lcars_srv_wi_fi_lcars_net_g",
-      });
+      return null;
     },
   },
   {
