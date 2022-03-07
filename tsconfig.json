@@ -21,11 +21,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-<<<<<<< HEAD
   "include": ["src"]
-=======
-  "include": [
-    "src"
-  ]
->>>>>>> 1ea795fc79cbb75eccb4a08bc56cdeb854244df1
 }
