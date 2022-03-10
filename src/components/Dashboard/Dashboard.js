@@ -20,18 +20,14 @@ export default function Dashboard() {
       <div id="columnRight" className="column flex-v">
         <div id="aboveWasteCollection" className="column flex-h">
           <div id="abWasteLeft" className="column flex-v">
+            <LCARSBlock color={LCARSColorPalette.darkgrey}></LCARSBlock>
+            <LCARSBlock color={LCARSColorPalette.darkgrey}></LCARSBlock>
             <LCARSBlock
-              color={LCARSColorPalette._29CENT_LightBlue}
-            ></LCARSBlock>
-            <LCARSBlock
-              color={LCARSColorPalette._29CENT_LightBlue}
-            ></LCARSBlock>
-            <LCARSBlock
-              color={LCARSColorPalette._29CENT_LightBlue}
+              color={LCARSColorPalette.darkgrey}
               additionalClasses="step-two"
             ></LCARSBlock>
             <LCARSElbow
-              color={LCARSColorPalette._29CENT_LightBlue}
+              color={LCARSColorPalette.darkgrey}
               version={"bottom-left"}
               size={"medium"}
             ></LCARSElbow>
@@ -42,11 +38,11 @@ export default function Dashboard() {
             </div>
             <div id="rowSID6972md01u" class="row frame flex-h">
               <LCARSBar
-                color={LCARSColorPalette._29CENT_LightBlue}
+                color={LCARSColorPalette.darkgrey}
                 additionalClasses="flex-c-h"
               ></LCARSBar>
               <LCARSCap
-                color={LCARSColorPalette._29CENT_LightBlue}
+                color={LCARSColorPalette.darkgrey}
                 size="small"
                 version="round-right"
               ></LCARSCap>
@@ -61,21 +57,21 @@ export default function Dashboard() {
         <div id="wasteCollections" className="column flex-h">
           <div id="waste_left" class="column flex-v">
             <LCARSElbow
-              color={LCARSColorPalette._29CENT_LightBlue}
+              color={LCARSColorPalette.darkgrey}
               size={"medium"}
             ></LCARSElbow>
             <LCARSButton
-              color={LCARSColorPalette._29CENT_LightBlue}
+              color={LCARSColorPalette.darkgrey}
               dataLabel="NEXT FIVE"
               onClick={() => setWMode(0)}
             ></LCARSButton>
             <LCARSButton
-              color={LCARSColorPalette._29CENT_LightBlue}
+              color={LCARSColorPalette.darkgrey}
               dataLabel="NEXT 7 DAYS"
               onClick={() => setWMode(7)}
             ></LCARSButton>
             <LCARSButton
-              color={LCARSColorPalette._29CENT_LightBlue}
+              color={LCARSColorPalette.darkgrey}
               dataLabel="NEXT 30 DAYS"
               onClick={() => setWMode(30)}
               additionalClasses="step-two"
@@ -87,7 +83,7 @@ export default function Dashboard() {
                 WASTE COLLECTIONS
               </div>
               <LCARSCap
-                color={LCARSColorPalette._29CENT_LightBlue}
+                color={LCARSColorPalette.darkgrey}
                 size="small"
               ></LCARSCap>
               {/* <div
