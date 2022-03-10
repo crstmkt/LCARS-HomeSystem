@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Dashboard.css";
-import WasteCollection from "./../WasteCollection/WasteCollection";
+import WasteCollection from "../WasteCollection/WasteCollection";
 import {
   LCARSBar,
   LCARSBlock,
