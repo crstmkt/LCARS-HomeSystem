@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const StyledLCARSButton = styled.div`
   position: relative;
-  min-height: 60px;
-  min-width: 150px;
+  min-height: ${(props) => props.minheight || "60px"};
+  min-width: ${(props) => props.minwidth || "150px"};
   cursor: pointer;
   background: ${(props) => props.color || "lightgrey"};
   &:before {

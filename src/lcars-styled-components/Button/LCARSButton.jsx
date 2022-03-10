@@ -13,6 +13,8 @@ const LCARSButton = ({
   hidden = false,
   version = false,
   dataLabel = "",
+  minheight,
+  minwidth,
   onClick = null,
   additionalClasses = "",
 }) => {
@@ -24,6 +26,8 @@ const LCARSButton = ({
       color={color}
       className={classes}
       data-label={dataLabel}
+      minheight={minheight}
+      minwidth={minwidth}
       onClick={onClick}
     ></StyledLCARSButton>
   );

@@ -1,5 +1,5 @@
 import { createSlice, current } from "@reduxjs/toolkit";
-import { defaultTopButtons } from "../components/TopButtons";
+import { defaultTopButtons } from "../components/TopButtons/TopButtons";
 
 const initialState = {
   list: defaultTopButtons,

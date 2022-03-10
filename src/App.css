@@ -10,10 +10,6 @@
   margin-right: 5px;
 }
 
-#wpr_viewport > .column:first-child .button-wrap:last-child {
-  margin-top: 195px;
-}
-
 .sdk.default-bracket {
   width: 305px;
   height: 255px;
@@ -22,7 +18,6 @@
 .button-wrap {
   flex-wrap: wrap;
   width: 100%;
-  margin-top: 0;
   padding-top: 5px;
 }
 
@@ -129,9 +124,10 @@
 
 .header .button-wrap {
   position: absolute;
-  bottom: 35px;
-  right: 0px;
-  width: 470px;
+  bottom: 70px;
+  right: -70px;
+  width: 550px;
+  height: 50px;
 }
 
 .header .button-wrap a .button {
@@ -141,11 +137,6 @@
 .header .button-wrap a .button:first-child:nth-last-child(2) ~ .button {
   margin-bottom: 0px;
 }
-
-/* .header .button-wrap > a .button:nth-child(3n + 1),
-.header .button-wrap > a .button:first-child {
-  margin-left: 0px !important;
-} */
 
 /* White Strobe */
 .alertFlash .alertFlash:not(.complexButton) {

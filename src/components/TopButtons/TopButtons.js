@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import {
   LCARSButton,
   LCARSColorPalette,
-} from "../lcars-styled-components/lcars-styled-components";
+} from "../../lcars-styled-components/lcars-styled-components";
 
 //#region defaultTopButtons
 export const defaultTopButtons = [
@@ -11,7 +11,6 @@ export const defaultTopButtons = [
     id: 1,
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
-    version: "round",
     dataLabel: "Button1",
     on_Click: () => {
       return null;
@@ -22,7 +21,6 @@ export const defaultTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Button2",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -32,7 +30,6 @@ export const defaultTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-4",
     dataLabel: "Button3",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -42,7 +39,6 @@ export const defaultTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Button4",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -52,7 +48,6 @@ export const defaultTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Button5",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -62,7 +57,6 @@ export const defaultTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Button6",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -78,7 +72,6 @@ export const roomsTopButtons = [
     secondaryColor: "bg-color-2",
     group: "rooms",
     dataLabel: "corridor",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -89,7 +82,6 @@ export const roomsTopButtons = [
     secondaryColor: "bg-color-2",
     group: "rooms",
     dataLabel: "bedroom",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -100,7 +92,6 @@ export const roomsTopButtons = [
     secondaryColor: "bg-color-4",
     group: "rooms",
     dataLabel: "bath",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -111,7 +102,6 @@ export const roomsTopButtons = [
     secondaryColor: "bg-color-2",
     group: "rooms",
     dataLabel: "livingroom",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -122,7 +112,6 @@ export const roomsTopButtons = [
     secondaryColor: "bg-color-2",
     group: "rooms",
     dataLabel: "kitchen",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -133,7 +122,6 @@ export const roomsTopButtons = [
     secondaryColor: "bg-color-2",
     group: "rooms",
     dataLabel: "attic",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -148,7 +136,6 @@ export const devicesTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Devices1",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -158,7 +145,6 @@ export const devicesTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Devices2",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -168,7 +154,6 @@ export const devicesTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-4",
     dataLabel: "Devices3",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -178,7 +163,6 @@ export const devicesTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Devices4",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -188,7 +172,6 @@ export const devicesTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Devices5",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -198,7 +181,6 @@ export const devicesTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Devices6",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -213,7 +195,6 @@ export const energyTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Energy1",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -223,7 +204,6 @@ export const energyTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Energy2",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -233,7 +213,6 @@ export const energyTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-4",
     dataLabel: "Energy3",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -243,7 +222,6 @@ export const energyTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Energy4",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -253,7 +231,6 @@ export const energyTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Energy5",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -263,7 +240,6 @@ export const energyTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Energy6",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -278,7 +254,6 @@ export const weatherTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Weather1",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -288,7 +263,6 @@ export const weatherTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Weather2",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -298,7 +272,6 @@ export const weatherTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-4",
     dataLabel: "Weather3",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -318,7 +291,6 @@ export const weatherTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Weather5",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -328,7 +300,6 @@ export const weatherTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Weather6",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -343,7 +314,6 @@ export const networkTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Network1",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -353,7 +323,6 @@ export const networkTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Network2",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -363,7 +332,6 @@ export const networkTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-4",
     dataLabel: "GUEST WIFI",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -373,7 +341,6 @@ export const networkTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Network4",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -383,7 +350,6 @@ export const networkTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Network5",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -393,7 +359,6 @@ export const networkTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Network6",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -408,7 +373,6 @@ export const entitiesTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Entities1",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -418,7 +382,6 @@ export const entitiesTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Entities2",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -428,7 +391,6 @@ export const entitiesTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-4",
     dataLabel: "Entities3",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -438,7 +400,6 @@ export const entitiesTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Entities4",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -448,7 +409,6 @@ export const entitiesTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Entities5",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -458,7 +418,6 @@ export const entitiesTopButtons = [
     primaryColor: LCARSColorPalette.mediumgrey,
     secondaryColor: "bg-color-2",
     dataLabel: "Entities6",
-    version: "round",
     on_Click: () => {
       return null;
     },
@@ -481,18 +440,11 @@ export default function TopButtons({ RoundedButtonArray }) {
           color={i.primaryColor}
           dataLabel={i.dataLabel}
           onClick={i.on_Click}
-          version={i.version}
+          version="round"
+          minheight="50px"
+          minwidth="155px"
           additionalClasses="button" //TODO: refactor Margin approch from App.css Z 29
         ></LCARSButton>
-        {/* <RoundedButton
-          id={i.id}
-          primaryColor={i.secondaryColor}
-          secondaryColor={i.secondaryColor}
-          group={i.group}
-          isActive={i.isActive}
-          dataLabel={i.dataLabel}
-          on_Click={i.on_Click}
-        /> */}
       </Link>
     );
   });

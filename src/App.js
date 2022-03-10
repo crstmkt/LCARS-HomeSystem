@@ -10,7 +10,7 @@ import TopButtons, {
   weatherTopButtons,
   networkTopButtons,
   entitiesTopButtons,
-} from "./components/TopButtons";
+} from "./components/TopButtons/TopButtons";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Rooms from "./components/Rooms/Rooms";
 import LCARS from "./lcars-sdk/core/lcars-sdk";
@@ -99,7 +99,7 @@ function App() {
                 LCARS HOME SYSTEM
               </div>
               <Systemtime />
-              <div id="wrapperSIDeuhyxyz4z" class="wrapper flex-h button-wrap">
+              <div id="wpr_topButtons" class="wrapper flex-h button-wrap">
                 <TopButtons RoundedButtonArray={topButtons} />
               </div>
             </div>
@@ -201,7 +201,6 @@ function App() {
               hidden={true}
               dataLabel="ENTITIES"
               onClick={() => setActiveModule("entities")}
-              additionalClasses="step-two"
             ></LCARSButton>
           </Link>
         </div>
