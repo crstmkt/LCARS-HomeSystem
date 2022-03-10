@@ -65,13 +65,6 @@ function App() {
 
   //Unhide LCARS Interface
   useEffect(() => {
-    $(function () {
-      var dom = $("#wpr_viewport");
-      LCARS.helper.viewportZoom(dom, { width: 1440, height: 1080 });
-      window.addEventListener("resize", function () {
-        LCARS.helper.viewportZoom(dom, { width: 1440, height: 1080 });
-      });
-    });
     showMainView();
     return () => {};
   }, []);
