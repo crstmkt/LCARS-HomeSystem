@@ -176,7 +176,6 @@ function App() {
               hidden={true}
               dataLabel="ENERGY"
               onClick={() => setActiveModule("energy")}
-              additionalClasses="step-two"
             ></LCARSButton>
           </Link>
           <Link to="/weather">

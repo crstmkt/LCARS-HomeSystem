@@ -45,7 +45,7 @@
   margin-left: 10px;
 }
 #wpr_mainView > .header {
-  height: 320px;
+  height: 250px;
 }
 
 #wpr_mainView > .header .column {
@@ -127,7 +127,7 @@
   bottom: 70px;
   right: -70px;
   width: 550px;
-  height: 50px;
+  height: 47px;
 }
 
 .header .button-wrap a .button {
