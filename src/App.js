@@ -2,20 +2,16 @@ import React, { useEffect, useState } from "react";
 import { showMainView } from "./js/Animations";
 import Systemtime from "./components/Systemtime";
 import Logs from "./components/Logs";
-import TopButtons, {
-  defaultTopButtons,
-  roomsTopButtons,
-  devicesTopButtons,
-  energyTopButtons,
-  weatherTopButtons,
-  networkTopButtons,
-  entitiesTopButtons,
-} from "./components/TopButtons/TopButtons";
+import TopButtons from "./components/TopButtons/TopButtons";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Rooms from "./components/Rooms/Rooms";
-import LCARS from "./lcars-sdk/core/lcars-sdk";
-import $ from "jquery";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useHistory,
+  withRouter,
+} from "react-router-dom";
 import {
   LCARSAside,
   LCARSBar,
@@ -28,40 +24,15 @@ import {
   LCARSElbow,
   LCARSRow,
 } from "./lcars-styled-components/lcars-styled-components";
+import NavMenu from "./components/NavMenu/NavMenu";
 
 function App() {
-  const [activeModule, setActiveModule] = useState(Route.url);
-  const [topButtons, setTopButtons] = useState([]);
+  const history = useHistory();
+  const [url, setUrl] = useState(history.location.pathname);
 
   useEffect(() => {
-    switch (activeModule) {
-      case "dashboard":
-      default:
-        setTopButtons(defaultTopButtons);
-        break;
-      case "rooms":
-        setTopButtons(roomsTopButtons);
-        break;
-      case "devices":
-        setTopButtons(devicesTopButtons);
-        break;
-      case "energy":
-        setTopButtons(energyTopButtons);
-        break;
-      case "weather":
-        setTopButtons(weatherTopButtons);
-        break;
-      case "network":
-        setTopButtons(networkTopButtons);
-        break;
-      case "entities":
-        setTopButtons(entitiesTopButtons);
-        break;
-    }
-    return () => {
-      //cleanup;
-    };
-  }, [activeModule]);
+    setUrl(history.location.pathname);
+  });
 
   //Unhide LCARS Interface
   useEffect(() => {
@@ -100,7 +71,7 @@ function App() {
               </div>
               <Systemtime />
               <div id="wpr_topButtons" class="wrapper flex-h button-wrap">
-                <TopButtons RoundedButtonArray={topButtons} />
+                <TopButtons url={url} />
               </div>
             </div>
           </div>
@@ -138,71 +109,7 @@ function App() {
         </div>
       </div>
       <div id="wrapperSIDgkaalrgvy" class="wrapper main flex-h flex-c-v">
-        <div id="wrapperSIDvx5igyv5n" class="wrapper column flex-v">
-          <LCARSElbow
-            color={LCARSColorPalette.darkgrey}
-            version={"top-left"}
-            orientation={"horizontal"}
-            hidden={"true"}
-          ></LCARSElbow>
-          <Link to={"/dashboard"}>
-            <LCARSButton
-              color={LCARSColorPalette.mediumgrey}
-              hidden={"true"}
-              dataLabel="DASHBOARD"
-              onClick={() => setActiveModule("dashboard")}
-            ></LCARSButton>
-          </Link>
-          <Link to="/rooms">
-            <LCARSButton
-              color={LCARSColorPalette.mediumgrey}
-              hidden={true}
-              dataLabel="ROOMS"
-              onClick={() => setActiveModule("rooms")}
-              additionalClasses="step-two"
-            ></LCARSButton>
-          </Link>
-          <Link to="/devices">
-            <LCARSButton
-              color={LCARSColorPalette.mediumgrey}
-              hidden={true}
-              dataLabel="DEVICES"
-              onClick={() => setActiveModule("devices")}
-            ></LCARSButton>
-          </Link>
-          <Link to="/energy">
-            <LCARSButton
-              color={LCARSColorPalette.mediumgrey}
-              hidden={true}
-              dataLabel="ENERGY"
-              onClick={() => setActiveModule("energy")}
-            ></LCARSButton>
-          </Link>
-          <Link to="/weather">
-            <LCARSButton
-              color={LCARSColorPalette.mediumgrey}
-              hidden={true}
-              dataLabel="WEATHER"
-              onClick={() => setActiveModule("weather")}
-            ></LCARSButton>
-          </Link>
-          <Link to="/network">
-            <LCARSButton
-              color={LCARSColorPalette.mediumgrey}
-              hidden={true}
-              dataLabel="NETWORK"
-              onClick={() => setActiveModule("network")}
-            ></LCARSButton>
-          </Link>
-          <Link to="/entities">
-            <LCARSButton
-              color={LCARSColorPalette.mediumgrey}
-              hidden={true}
-              dataLabel="ENTITIES"
-              onClick={() => setActiveModule("entities")}
-            ></LCARSButton>
-          </Link>
-        </div>
+        <NavMenu />
         <div
           id="wrapperSIDfff6sprkp"
           className="wrapper column flex-c-h flex-v"
@@ -242,7 +149,7 @@ function App() {
           <div id="wpr_centerControls" class="wrapper flex-h flex-c-v">
             <Switch>
               <Route path="/dashboard" component={Dashboard}></Route>
-              <Route path="/rooms" component={Rooms} />
+              <Route path="/rooms" component={Rooms}></Route>
               <Route path="*">
                 <h1 class="bar text-color-1 blink">SYSTEM HALTED</h1>
               </Route>
@@ -255,4 +162,4 @@ function App() {
   //#endregion
 }
 
-export default App;
+export default withRouter(App);

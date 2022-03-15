@@ -425,13 +425,37 @@ export const entitiesTopButtons = [
 ];
 //#endregion
 
-export default function TopButtons({ RoundedButtonArray }) {
-  const [topButtons, setTopButtons] = useState(RoundedButtonArray);
+export default function TopButtons({ url }) {
+  const [topButtons, setTopButtons] = useState(defaultTopButtons);
 
   useEffect(() => {
-    setTopButtons(RoundedButtonArray);
+    switch (url) {
+      case "/dashboard":
+      case "/":
+      default:
+        setTopButtons(defaultTopButtons);
+        break;
+      case "/rooms":
+        setTopButtons(roomsTopButtons);
+        break;
+      case "/devices":
+        setTopButtons(devicesTopButtons);
+        break;
+      case "/energy":
+        setTopButtons(energyTopButtons);
+        break;
+      case "/weather":
+        setTopButtons(weatherTopButtons);
+        break;
+      case "/network":
+        setTopButtons(networkTopButtons);
+        break;
+      case "/entities":
+        setTopButtons(entitiesTopButtons);
+        break;
+    }
     return () => {};
-  }, [RoundedButtonArray]);
+  }, [url]);
 
   return topButtons.map((i) => {
     return (
