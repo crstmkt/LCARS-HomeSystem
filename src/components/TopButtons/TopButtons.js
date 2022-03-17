@@ -428,29 +428,31 @@ export const entitiesTopButtons = [
 export default function TopButtons({ url }) {
   const [topButtons, setTopButtons] = useState(defaultTopButtons);
 
+  const link = url.split("/");
+
   useEffect(() => {
-    switch (url) {
-      case "/dashboard":
-      case "/":
+    switch (link[1]) {
+      case "dashboard":
+      case "":
       default:
         setTopButtons(defaultTopButtons);
         break;
-      case "/rooms":
+      case "rooms":
         setTopButtons(roomsTopButtons);
         break;
-      case "/devices":
+      case "devices":
         setTopButtons(devicesTopButtons);
         break;
-      case "/energy":
+      case "energy":
         setTopButtons(energyTopButtons);
         break;
-      case "/weather":
+      case "weather":
         setTopButtons(weatherTopButtons);
         break;
-      case "/network":
+      case "network":
         setTopButtons(networkTopButtons);
         break;
-      case "/entities":
+      case "entities":
         setTopButtons(entitiesTopButtons);
         break;
     }

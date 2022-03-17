@@ -1,18 +1,20 @@
 #wpr_viewport {
   width: 100%;
   height: 100%;
-  padding: 10px;
   text-align: right;
 }
 
-#wpr_viewport > .column:first-child {
-  width: 305px;
-  margin-right: 5px;
+/* Stylesheet for BIG Screens */
+@media (min-width: 1440px), (min-height: 745px) {
+  header {
+    min-height: 20% !important;
+  }
 }
-
-.sdk.default-bracket {
-  width: 305px;
-  height: 255px;
+/* Stylesheet for small screens */
+@media (max-width: 1439px), (max-height: 744px) {
+  header {
+    display: none !important;
+  }
 }
 
 .button-wrap {
@@ -34,7 +36,7 @@
   margin-left: 0px !important;
 }
 
-.header .title {
+header .title {
   width: auto;
   overflow: hidden;
   text-overflow: clip;
@@ -42,20 +44,17 @@
 }
 
 #wpr_mainView {
-  margin-left: 10px;
-}
-#wpr_mainView > .header {
-  height: 250px;
+  padding: 0.3%;
 }
 
-#wpr_mainView > .header .column {
-  width: 150px;
+#wpr_mainView > header > nav {
+  width: 8.5%;
   overflow: visible;
 }
 
-#wpr_mainView > .header .column .elbow .bar {
-  width: 209px;
-  right: -204px;
+#wpr_mainView > aside > nav {
+  width: 8.5%;
+  overflow: visible;
 }
 
 #wpr_centerControls {
@@ -63,23 +62,22 @@
   padding-left: 35px;
 }
 
-#systemTime {
+/* #systemTime {
   margin: 10px;
-}
+} */
 
 #logs {
-  padding-left: 35px;
   text-align: left;
   max-height: 120px !important;
 }
 
-.default-bracket {
+/* .default-bracket {
   width: 305px;
   height: 255px;
   margin-bottom: 5px;
-}
+} */
 
-.header .row.frame {
+header .row.frame {
   padding-left: 209px;
 }
 
@@ -90,9 +88,11 @@
   width: 150px;
   overflow: visible;
 }
+
 .main .column:first-child .elbow .bar {
   width: 209px;
 }
+
 .main .row.frame {
   padding-left: 209px;
 }
@@ -122,7 +122,7 @@
   max-width: 35px;
 }
 
-.header .button-wrap {
+header .button-wrap {
   position: absolute;
   bottom: 70px;
   right: -70px;
@@ -130,11 +130,11 @@
   height: 47px;
 }
 
-.header .button-wrap a .button {
+header .button-wrap a .button {
   margin-left: 5px !important;
 }
-.header .button-wrap a .button:first-child:nth-last-child(2),
-.header .button-wrap a .button:first-child:nth-last-child(2) ~ .button {
+header .button-wrap a .button:first-child:nth-last-child(2),
+header .button-wrap a .button:first-child:nth-last-child(2) ~ .button {
   margin-bottom: 0px;
 }
 
@@ -179,7 +179,7 @@
   height: 255px;
 }
 
-@media (max-width: 1150px), (max-height: 745px) {
+/* @media (max-width: 1150px), (max-height: 745px) {
   body {
     zoom: 0.75;
   }
@@ -189,7 +189,7 @@
   body {
     zoom: 0.5;
   }
-}
+} */
 
 /* =============================================================================
    Active/Hover States. Included for optional use.

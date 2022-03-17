@@ -33,4 +33,33 @@ export const StyledLCARSBar = styled.div`
     max-height: 50%;
     white-space: pre;
   }
+  &.bar.xlarge {
+    min-height: 125px;
+    max-height: 125px;
+  }
+  &.bar.large {
+    min-height: 90px;
+    max-height: 90px;
+  }
+  &.bar.medium {
+    min-height: 60px;
+    max-height: 60px;
+  }
+  &.bar.small {
+    min-height: 15px;
+    max-height: 15px;
+  }
+  &.bar.tiny {
+    min-height: 10px;
+    max-height: 10px;
+  }
+  &.bar:after {
+    top: 0px;
+  }
+  &.bar.small:after,
+  &.bar.small:before,
+  &.bar.tiny:after,
+  &.bar.tiny:before {
+    display: none;
+  }
 `;

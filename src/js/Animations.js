@@ -1,8 +1,8 @@
 import $ from "jquery";
 // Barebones 'Automated' Show Pattern - idea testing a later proper module.
 export function showMainView() {
-  var headerBars = $("#wpr_mainView > .header .row *");
-  var headerColumn = $("#wpr_mainView > .header .column > *");
+  var headerBars = $("#wpr_mainView > header .row *");
+  var headerColumn = $("#wpr_mainView > header .column > *");
   var mainBars = $("#wpr_mainView > .main .row *");
   var mainColumn = $(
     "#wpr_mainView > .main > .elbow, #wpr_mainView > .main .column > * "
@@ -34,7 +34,7 @@ export function showMainView() {
     sequenceFooterPattern.push(this);
   });
 
-  sequenceFooterPattern.push($(".header .content"));
+  sequenceFooterPattern.push($("header .content"));
 
   $(sequenceHeaderPattern).showObjectSequence({});
   $(sequenceFooterPattern).showObjectSequence({});
@@ -61,8 +61,8 @@ var timing_sequence = 65;
 export function raMainViewSetup() {
   $("#wpr_mainView").addClass("red-alert");
 
-  var headerBars = $("#wpr_mainView > .header .row *");
-  var headerColumn = $("#wpr_mainView > .header .column > *");
+  var headerBars = $("#wpr_mainView > header .row *");
+  var headerColumn = $("#wpr_mainView > header .column > *");
   var mainBars = $("#wpr_mainView > .main .row *");
   var mainColumn = $(
     '#wpr_mainView > .main > .elbow, #wpr_mainView > .main .column > *:not([class*="wrapper"],[class*="row"],[class*="content"])'

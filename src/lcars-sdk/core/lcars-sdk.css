@@ -512,7 +512,7 @@ pre {
    ========================================================================== */
 
 /*Button*/
-.button.round {
+/* .button.round {
   border-radius: 30px;
 }
 
@@ -540,7 +540,7 @@ pre {
 .button.round-left:before,
 .button.round-left:after {
   left: 25px;
-}
+} */
 
 /*Bar*/
 .bar.xlarge {

@@ -5,10 +5,11 @@ import {
   LCARSButton,
   LCARSColorPalette,
 } from "../../lcars-styled-components/lcars-styled-components";
+import "./NavMenu.css";
 
 function NavMenu() {
   return (
-    <div id="wrapperSIDvx5igyv5n" class="wrapper column flex-v">
+    <nav class="wrapper flex-v">
       <LCARSElbow
         color={LCARSColorPalette.darkgrey}
         version={"top-left"}
@@ -86,7 +87,7 @@ function NavMenu() {
           }}
         ></LCARSButton>
       </Link>
-    </div>
+    </nav>
   );
 }
 

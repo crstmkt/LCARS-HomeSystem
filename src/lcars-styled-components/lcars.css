@@ -1,0 +1,42 @@
+body {
+  background-color: #000000;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  /* font-size: 20px; */
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.title {
+  position: relative;
+  background-color: transparent !important;
+  color: #ffffff;
+  font-size: 2em;
+}
+
+/* =============================================================================
+   Flexbox Model
+   ========================================================================== */
+
+.flex-v {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-c-v {
+  flex: 1;
+}
+
+.flex-h {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-c-h {
+  flex: 1;
+}

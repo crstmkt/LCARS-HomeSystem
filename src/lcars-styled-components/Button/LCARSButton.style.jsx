@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const StyledLCARSButton = styled.div`
   position: relative;
-  min-height: ${(props) => props.minheight || "60px"};
-  min-width: ${(props) => props.minwidth || "150px"};
+  min-height: ${(props) => props.minheight || "3em"};
+  min-width: ${(props) => props.minwidth || "inherit"};
   cursor: pointer;
   background: ${(props) => props.color || "lightgrey"};
   &:before {
@@ -15,6 +15,7 @@ export const StyledLCARSButton = styled.div`
     right: 0px;
     padding: 4px 8px;
     letter-spacing: -1px;
+    text-transform: uppercase;
     line-height: 1.25;
     overflow: hidden;
     max-height: 100%;
@@ -31,6 +32,7 @@ export const StyledLCARSButton = styled.div`
     right: 0px;
     padding: 4px 8px;
     letter-spacing: -1px;
+    text-transform: uppercase;
     line-height: 1.25;
     max-height: 50%;
     white-space: pre;
@@ -45,5 +47,29 @@ export const StyledLCARSButton = styled.div`
     border-top-color: #ffffff !important;
     border-left-color: #ffffff !important;
     border-color: #ffffff !important;
+  }
+  &.button.round {
+    border-radius: 30px;
+  }
+  &.button.round:before,
+  &.button.round:after {
+    right: 25px;
+    left: 25px;
+  }
+  &.button.round-right {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+  &.button.round-right:before,
+  &.button.right:after {
+    right: 25px;
+  }
+  &.button.round-left {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+  }
+  &.button.round-left:before,
+  &.button.round-left:after {
+    left: 25px;
   }
 `;
