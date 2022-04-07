@@ -7,7 +7,18 @@
 /* Stylesheet for BIG Screens */
 @media (min-width: 1440px), (min-height: 745px) {
   header {
-    min-height: 20% !important;
+    min-height: 28vh !important;
+  }
+
+  #wpr_mainView > div > aside {
+    background: orange;
+    float: left;
+    height: 80vh;
+    width: 8.5%;
+  }
+
+  #wpr_mainView > div > aside > nav > a > div {
+    height: 9.25vh !important;
   }
 }
 /* Stylesheet for small screens */
@@ -15,31 +26,38 @@
   header {
     display: none !important;
   }
+
+  #wpr_mainView > div > aside {
+    background: orange;
+    float: left;
+    height: 100vh;
+    width: 8.5%;
+  }
+
+  #wpr_mainView > div > aside > nav > a > div {
+    height: 11.75vh !important;
+  }
 }
 
-.button-wrap {
+header .button-wrap {
   flex-wrap: wrap;
-  width: 100%;
-  padding-top: 5px;
+  width: 480px;
+  margin-left: auto;
 }
 
-.button-wrap a .button {
+header .button-wrap a .button {
   margin-bottom: 5px;
   margin-left: 5px;
 }
 
-.button-wrap a .button:nth-last-child(2),
-.button-wrap a .button:nth-last-child(2) ~ .button {
+header .button-wrap a .button:nth-last-child(2),
+header .button-wrap a .button:nth-last-child(2) ~ .button {
   margin-bottom: 0px;
-}
-.button-wrap a .button:nth-child(odd) {
-  margin-left: 0px !important;
 }
 
 header .title {
   width: auto;
   overflow: hidden;
-  text-overflow: clip;
   white-space: normal;
 }
 
@@ -52,9 +70,13 @@ header .title {
   overflow: visible;
 }
 
-#wpr_mainView > aside > nav {
-  width: 8.5%;
+#wpr_mainView > div > aside > nav {
   overflow: visible;
+  height: inherit;
+}
+
+section {
+  width: auto;
 }
 
 #wpr_centerControls {
@@ -78,6 +100,7 @@ header .title {
 } */
 
 header .row.frame {
+  background-color: aqua;
   padding-left: 209px;
 }
 
@@ -120,22 +143,6 @@ header .row.frame {
 .frame .bar:nth-child(7) {
   width: 100%;
   max-width: 35px;
-}
-
-header .button-wrap {
-  position: absolute;
-  bottom: 70px;
-  right: -70px;
-  width: 550px;
-  height: 47px;
-}
-
-header .button-wrap a .button {
-  margin-left: 5px !important;
-}
-header .button-wrap a .button:first-child:nth-last-child(2),
-header .button-wrap a .button:first-child:nth-last-child(2) ~ .button {
-  margin-bottom: 0px;
 }
 
 /* White Strobe */

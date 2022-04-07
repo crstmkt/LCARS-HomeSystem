@@ -67,7 +67,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div id="rowSID7zfyqtz3a" class="row frame flex-h">
+          <div id="closingBar" class="row frame flex-h">
             <LCARSBar
               color={LCARSColorPalette.darkgrey}
               hidden={true}
@@ -83,7 +83,6 @@ function App() {
             <LCARSBar
               color={LCARSColorPalette.darkgrey}
               hidden={true}
-              additionalClasses="flex-c-h"
             ></LCARSBar>
             <LCARSBar
               color={LCARSColorPalette.darkgrey}
@@ -100,52 +99,57 @@ function App() {
           </div>
         </div>
       </header>
-      <aside id="wrapperSIDgkaalrgvy" class="wrapper main flex-h flex-c-v">
-        <NavMenu />
-      </aside>
-      {/* <div id="wrapperSIDfff6sprkp" className="wrapper column flex-c-h flex-v">
-        { <div id="rowSIDmnu78fmyz" className="row frame">
-            <LCARSBar
-              color={LCARSColorPalette.darkgrey}
-              hidden={true}
-            ></LCARSBar>
-            <LCARSBar
-              color={LCARSColorPalette.darkgrey}
-              hidden={true}
-              additionalClasses="small"
-            ></LCARSBar>
-            <LCARSBar
-              color={LCARSColorPalette.darkgrey}
-              hidden={true}
-            ></LCARSBar>
-            <LCARSBar
-              color={LCARSColorPalette.darkgrey}
-              hidden={true}
-              additionalClasses="flex-c-h"
-            ></LCARSBar>
-            <LCARSBar
-              color={LCARSColorPalette.darkgrey}
-              hidden={true}
-            ></LCARSBar>
-            <LCARSBar
-              color={LCARSColorPalette.darkgrey}
-              hidden={true}
-            ></LCARSBar>
-            <LCARSBar
-              color={LCARSColorPalette.darkgrey}
-              hidden={true}
-            ></LCARSBar>
-          </div> }
-        <div id="wpr_centerControls" class="wrapper flex-h flex-c-v">
-          <Switch>
-            <Route path="/dashboard" component={Dashboard}></Route>
-            <Route path="/rooms" component={Rooms}></Route>
-            <Route path="*">
-              <h1 class="bar text-color-1 blink">SYSTEM HALTED</h1>
-            </Route>
-          </Switch>
-        </div>
-      </div> */}
+      <div id="centerView">
+        <aside>
+          <NavMenu />
+        </aside>
+        <section>
+          <div id="wrapperSIDfff6sprkp" className="flex-v">
+            <div id="rowSIDmnu78fmyz" className=" flex-h">
+              <LCARSBar
+                color={LCARSColorPalette.darkgrey}
+                hidden={true}
+              ></LCARSBar>
+              <LCARSBar
+                color={LCARSColorPalette.darkgrey}
+                hidden={true}
+                additionalClasses="small"
+              ></LCARSBar>
+              <LCARSBar
+                color={LCARSColorPalette.darkgrey}
+                hidden={true}
+              ></LCARSBar>
+              <LCARSBar
+                color={LCARSColorPalette.darkgrey}
+                hidden={true}
+                additionalClasses="flex-c-h"
+              ></LCARSBar>
+              <LCARSBar
+                color={LCARSColorPalette.darkgrey}
+                hidden={true}
+              ></LCARSBar>
+              <LCARSBar
+                color={LCARSColorPalette.darkgrey}
+                hidden={true}
+              ></LCARSBar>
+              <LCARSBar
+                color={LCARSColorPalette.darkgrey}
+                hidden={true}
+              ></LCARSBar>
+            </div>
+
+            {/* <div id="wpr_centerControls" class="wrapper flex-h flex-c-v">
+              <Switch>
+                <Route path="/dashboard" component={Dashboard}></Route>
+                <Route path="/rooms" component={Rooms}></Route>
+                <Route path="*">
+                  <h1 class="bar text-color-1 blink">SYSTEM HALTED</h1>
+                </Route>
+              </Switch>
+            </div> */}
+          </div>
+        </section>
+      </div>
     </div>
   );
   //#endregion

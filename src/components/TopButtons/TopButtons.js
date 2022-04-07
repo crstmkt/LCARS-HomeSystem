@@ -467,7 +467,7 @@ export default function TopButtons({ url }) {
           dataLabel={i.dataLabel}
           onClick={i.on_Click}
           version="round"
-          minheight="50px"
+          minheight="5.5vh"
           minwidth="155px"
           additionalClasses="button" //TODO: refactor Margin approch from App.css Z 29
         ></LCARSButton>

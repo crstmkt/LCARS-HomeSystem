@@ -34,7 +34,7 @@ function NavMenu() {
           onClick={() => {
             return null;
           }}
-          additionalClasses="step-two"
+          additionalClasses=""
         ></LCARSButton>
       </Link>
       <Link to="/devices">
