@@ -15,7 +15,7 @@ const LCARSRow = ({
   children = "",
 }) => {
   var classes = hidden ? "hidden" : "";
-  classes += " row";
+  classes += " lcars-row";
   classes += addClasses(additionalClasses);
   return (
     <StyledLCARSRow hidden={hidden} onClick={onClick} className={classes}>

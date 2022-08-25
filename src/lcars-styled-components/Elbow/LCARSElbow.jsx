@@ -13,18 +13,14 @@ function addClasses(additionalClasses) {
 const LCARSElbow = ({
   color,
   hidden = false,
-  orientation = "horizontal",
-  version = "top-left",
-  size = "default",
+  version = "",
   dataLabel = "",
   onClick = null,
   additionalClasses = "",
 }) => {
-  var classes = "elbow";
+  var classes = "lcars-elbow";
   classes += hidden ? " hidden" : "";
-  classes += " " + orientation;
   classes += " " + version;
-  classes += " " + size;
   classes += addClasses(additionalClasses);
   return (
     <StyledLCARSElbow
@@ -32,9 +28,7 @@ const LCARSElbow = ({
       className={classes}
       data-label={dataLabel}
       onClick={onClick}
-    >
-      <LCARSBar color={color} isElbow={true} additionalClasses="bar"></LCARSBar>
-    </StyledLCARSElbow>
+    ></StyledLCARSElbow>
   );
 };
 

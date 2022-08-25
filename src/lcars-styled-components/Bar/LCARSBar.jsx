@@ -18,7 +18,7 @@ const LCARSBar = ({
   additionalClasses = "",
   isElbow = false,
 }) => {
-  var classes = "bar";
+  var classes = "lcars-bar";
   classes += hidden ? " hidden" : "";
   classes += version;
   classes += addClasses(additionalClasses);
@@ -29,9 +29,7 @@ const LCARSBar = ({
       data-label={dataLabel}
       onClick={onClick}
       isElbow={isElbow}
-    >
-      {isElbow ? <LCARSBlock additionalClasses="block" /> : ""}
-    </StyledLCARSBar>
+    ></StyledLCARSBar>
   );
 };
 

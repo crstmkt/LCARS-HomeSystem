@@ -2,64 +2,97 @@ import styled from "styled-components";
 
 export const StyledLCARSBar = styled.div`
   position: relative;
-  min-height: 30px;
-  min-width: 30px;
-  background: ${(props) => props.color || "lightgrey"};
-  &:before {
-    font-size: inherit;
-    display: block;
-    position: absolute;
-    left: 0px;
-    bottom: 0px;
-    right: 0px;
-    padding: 4px 8px;
-    letter-spacing: -1px;
-    line-height: 1.25;
-    overflow: hidden;
-    max-height: 100%;
-    white-space: pre;
-  }
+  color: #000;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: inline-block;
+  background-color: #fc6;
   &:after {
-    font-size: inherit;
-    overflow: hidden;
+    content: "";
     display: block;
     position: absolute;
-    left: 0px;
-    top: 2px;
-    right: 0px;
-    padding: 4px 8px;
-    letter-spacing: -1px;
-    line-height: 1.25;
-    max-height: 50%;
-    white-space: pre;
+    background: #000;
   }
-  &.bar.xlarge {
-    min-height: 125px;
-    max-height: 125px;
+  &.spacer {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    width: 0.25rem;
+    min-width: 0.25rem;
+    height: 0.25rem;
+    min-height: 0.25rem;
   }
-  &.bar.large {
-    min-height: 90px;
-    max-height: 90px;
+  &.double-spacer {
+    background-color: transparent;
+    width: 0.5rem;
+    min-width: 0.5rem;
+    height: 0.5rem;
+    min-height: 0.5rem;
   }
-  &.bar.medium {
-    min-height: 60px;
-    max-height: 60px;
+  &.left-space {
+    margin-left: 0.25rem;
   }
-  &.bar.small {
-    min-height: 15px;
-    max-height: 15px;
+  &.left-double-space {
+    margin-left: 0.5rem;
   }
-  &.bar.tiny {
-    min-height: 10px;
-    max-height: 10px;
+  &.right-space {
+    margin-right: 0.25rem;
   }
-  &.bar:after {
-    top: 0px;
+  &.right-double-space {
+    margin-right: 0.5rem;
   }
-  &.bar.small:after,
-  &.bar.small:before,
-  &.bar.tiny:after,
-  &.bar.tiny:before {
-    display: none;
+  &.horizontal {
+    height: 1.5rem;
+  }
+  &.left-end {
+    width: 1.5rem;
+    max-width: 1.5rem;
+    min-width: 1.5rem;
+    border-top-left-radius: 0.75rem;
+    border-bottom-left-radius: 0.75rem;
+  }
+  &.left-end.decorated:after {
+    right: 0.25rem;
+    width: 0.25rem;
+    height: 100%;
+    background-color: #000;
+  }
+  &.right-end {
+    width: 1.5rem;
+    max-width: 1.5rem;
+    min-width: 1.5rem;
+    border-top-right-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+  }
+  &.right-end.decorated:after {
+    left: 0.25rem;
+    width: 0.25rem;
+    height: 100%;
+    background-color: #000;
+    background-color: #000;
+  }
+  &.fill {
+    flex: 1;
+  }
+  &.bottom {
+    align-self: flex-end;
+  }
+  & .lcars-title {
+    color: #fff;
+    background-color: #000;
+    text-transform: uppercase;
+    margin: 0;
+    margin-left: 0.83335rem;
+    padding-left: 0.16667rem;
+    padding-right: 0.16667rem;
+    padding-bottom: 0.16667rem;
+    display: inline-block;
+    font-size: 150%;
+    height: 100%;
+  }
+  & .lcars-title.right {
+    float: right;
+    margin-right: 0.83335rem;
   }
 `;

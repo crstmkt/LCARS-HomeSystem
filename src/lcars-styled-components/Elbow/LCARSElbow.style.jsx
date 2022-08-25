@@ -2,121 +2,71 @@ import styled from "styled-components";
 
 export const StyledLCARSElbow = styled.div`
   position: relative;
-  z-index: 1;
-  cursor: pointer;
+  width: 9.5rem;
+  min-width: 9.5rem;
+  height: 4.5rem;
+  min-height: 4.5rem;
+  background: #fc6;
+  margin: 0;
   background: ${(props) => props.color || "lightgrey"};
-  &:before {
-    font-size: 20px;
-    display: block;
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    padding: 5px 7px;
-    letter-spacing: -1px;
-    line-height: 1.25;
-    z-index: 2;
-    background-color: transparent;
-    background-clip: content-box;
-    max-height: 100%;
-    overflow: hidden;
-  }
   &:after {
-    font-size: 20px;
+    content: "";
     display: block;
     position: absolute;
-    left: 0px;
-    right: 0px;
-    padding: 5px 7px 5px;
-    letter-spacing: -1px;
-    line-height: 1.25;
-    z-index: 2;
-    background-color: transparent;
-    background-clip: content-box;
-    max-height: 100%;
-    overflow: hidden;
+    width: 2rem;
+    height: 3rem;
+    background: ${(props) => props.color || "lightgrey"};
   }
-  &.block {
+  & a {
+    display: inline-block;
     position: absolute;
-    z-index: 1;
-    background-color: transparent;
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
+    color: #000;
+    bottom: 0;
+    padding: 0.25rem;
   }
-  &.bar {
-    position: absolute;
-    background-color: ${(props) => props.color || "lightgrey"};
-    border-color: ${(props) => props.color || "lightgrey"};
+  &.left-bottom {
+    border-bottom-left-radius: 3.75rem;
   }
-  &.default.horizontal {
-    min-width: 92.5px;
-    min-height: 92.5px;
+  &.left-bottom a {
+    right: 2.25rem;
   }
-  &.default.horizontal .block {
-    min-height: 35px;
-    min-width: 35px;
-    border-width: 20px;
-    border-style: solid;
+  &.left-bottom:after {
+    right: 0;
+    top: 1.5rem;
+    border-bottom-left-radius: 1.875rem;
   }
-  &.default.horizontal .bar {
-    max-height: 30px;
-    min-width: 50px;
+  &.left-top {
+    border-top-left-radius: 3.75rem;
   }
-  &.top-left.default.horizontal {
-    border-top-left-radius: 92.5px;
-    text-align: right;
+  &.left-top a {
+    top: 0;
+    right: 2.25rem;
   }
-  &.elbow.top-left .bar .block {
-    border-left-color: ${(props) => props.color || "lightgrey"};
-    border-top-color: ${(props) => props.color || "lightgrey"};
+  &.left-top:after {
+    right: 0;
+    bottom: 1.5rem;
+    border-top-left-radius: 3.75rem;
   }
-  &.elbow.bottom-left .bar .block {
-    border-left-color: ${(props) => props.color || "lightgrey"};
-    border-bottom-color: ${(props) => props.color || "lightgrey"};
+  &.right-bottom {
+    border-bottom-right-radius: 3.75rem;
   }
-  &.top-left.default.horizontal .bar {
-    top: 0px;
-    left: calc(100% - 5px);
+  &.right-bottom:after {
+    top: 1.5rem;
+    border-bottom-right-radius: 1.875rem;
   }
-  &.top-left.default.horizontal .block {
-    top: calc(100% - 20px);
-    left: -15px;
-    border-right: 0px solid transparent;
-    border-bottom: 0px solid transparent;
-    border-top-left-radius: 70px;
-    border-bottom-right-radius: 50px;
+  &.right-bottom a {
+    left: 2.25rem;
   }
-  &.top-left.default.horizontal:before {
-    bottom: 0px;
-    left: 10px;
+  &.right-top {
+    border-top-right-radius: 3.75rem;
   }
-  &.top-left.default.horizontal:after {
-    top: 0px;
-    left: 70px;
+  &.right-top a {
+    display: inline-block;
+    top: 0;
+    left: 2.25rem;
   }
-  &.bottom-left.default.horizontal {
-    border-bottom-left-radius: 92.5px;
-    text-align: right;
-  }
-  &.bottom-left.default.horizontal .bar {
-    bottom: 0px;
-    left: calc(100% - 5px);
-  }
-  &.bottom-left.default.horizontal .block {
-    bottom: calc(100% - 20px);
-    left: -15px;
-    border-right: 0px solid transparent;
-    border-top: 0px solid transparent;
-    border-bottom-left-radius: 70px;
-    border-top-right-radius: 50px;
-  }
-
-  &.bottom-left.default.horizontal:before {
-    top: 0px;
-    left: 10px;
-  }
-  &.bottom-left.default.horizontal:after {
-    bottom: 0px;
-    left: 70px;
+  &.right-top:after {
+    bottom: 1.5rem;
+    border-top-right-radius: 1.875rem;
   }
 `;

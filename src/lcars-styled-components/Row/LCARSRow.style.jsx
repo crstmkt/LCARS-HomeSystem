@@ -1,15 +1,34 @@
 import styled from "styled-components";
 
 export const StyledLCARSRow = styled.div`
-  min-height: 30px;
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
-  & > * {
-    max-height: inherit;
-    position: relative;
-    margin-left: 5px;
+  width: 100%;
+  &.fill {
+    flex: 1;
   }
-  & > *:first-child {
-    margin-left: 0px;
+  &.centered {
+    justify-content: center;
+  }
+  &.full-centered {
+    justify-content: center;
+    align-items: center;
+  }
+  &.right {
+    justify-content: flex-end;
+  }
+  &.right-centered {
+    justify-content: flex-end;
+    align-items: center;
+  }
+  &.right-bottom {
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  & :last-child {
+    margin-right: 0;
+  }
+  & > * {
+    margin-right: 0.25rem;
   }
 `;
