@@ -4,39 +4,22 @@
   text-align: right;
 }
 
-/* Stylesheet for BIG Screens */
-@media (min-width: 1440px), (min-height: 745px) {
-  header {
-    min-height: 28vh !important;
-  }
-
-  #wpr_mainView > div > aside {
-    background: orange;
-    float: left;
-    height: 80vh;
-    width: 8.5%;
-  }
-
-  #wpr_mainView > div > aside > nav > a > div {
-    height: 9.25vh !important;
-  }
+header {
+  min-height: 25.5vh !important;
 }
-/* Stylesheet for small screens */
-@media (max-width: 1439px), (max-height: 744px) {
-  header {
-    display: none !important;
-  }
 
-  #wpr_mainView > div > aside {
-    background: orange;
-    float: left;
-    height: 100vh;
-    width: 8.5%;
-  }
+#wpr_mainView > div > aside {
+  float: left;
+  height: 80vh;
+  width: 8.5%;
+}
 
-  #wpr_mainView > div > aside > nav > a > div {
-    height: 11.75vh !important;
-  }
+#centerView {
+  margin-top: 0.5vh;
+}
+
+#wpr_mainView > div > aside > nav > a > div {
+  height: 8.5vh !important;
 }
 
 header .button-wrap {
@@ -84,10 +67,6 @@ section {
   padding-left: 35px;
 }
 
-/* #systemTime {
-  margin: 10px;
-} */
-
 #logs {
   text-align: left;
   max-height: 120px !important;
@@ -99,9 +78,8 @@ section {
   margin-bottom: 5px;
 } */
 
-header .row.frame {
-  background-color: aqua;
-  padding-left: 209px;
+header .row.frame > .bar {
+  margin-left: 5px;
 }
 
 .main .column {
@@ -110,6 +88,10 @@ header .row.frame {
   bottom: 0px;
   width: 150px;
   overflow: visible;
+}
+
+#topRow > .bar {
+  margin-left: 5px;
 }
 
 .main .column:first-child .elbow .bar {

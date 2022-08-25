@@ -11,14 +11,14 @@ function NavMenu() {
   return (
     <nav class="wrapper flex-v">
       <LCARSElbow
-        color={LCARSColorPalette.darkgrey}
+        color={LCARSColorPalette.Gold}
         version={"top-left"}
         orientation={"horizontal"}
         hidden={"true"}
       ></LCARSElbow>
       <Link to={"/dashboard"}>
         <LCARSButton
-          color={LCARSColorPalette.mediumgrey}
+          color={LCARSColorPalette.Orange}
           hidden={"true"}
           dataLabel="DASHBOARD"
           onClick={() => {
@@ -28,7 +28,7 @@ function NavMenu() {
       </Link>
       <Link to="/rooms">
         <LCARSButton
-          color={LCARSColorPalette.mediumgrey}
+          color={LCARSColorPalette.OrangePeel}
           hidden={true}
           dataLabel="ROOMS"
           onClick={() => {
@@ -39,7 +39,7 @@ function NavMenu() {
       </Link>
       <Link to="/devices">
         <LCARSButton
-          color={LCARSColorPalette.mediumgrey}
+          color={LCARSColorPalette.BahamaBlue}
           hidden={true}
           dataLabel="DEVICES"
           onClick={() => {
@@ -49,7 +49,7 @@ function NavMenu() {
       </Link>
       <Link to="/energy">
         <LCARSButton
-          color={LCARSColorPalette.mediumgrey}
+          color={LCARSColorPalette.Lavender}
           hidden={true}
           dataLabel="ENERGY"
           onClick={() => {
@@ -59,7 +59,7 @@ function NavMenu() {
       </Link>
       <Link to="/weather">
         <LCARSButton
-          color={LCARSColorPalette.mediumgrey}
+          color={LCARSColorPalette.LightBlue}
           hidden={true}
           dataLabel="WEATHER"
           onClick={() => {
@@ -69,7 +69,7 @@ function NavMenu() {
       </Link>
       <Link to="/network">
         <LCARSButton
-          color={LCARSColorPalette.mediumgrey}
+          color={LCARSColorPalette.Yellow}
           hidden={true}
           dataLabel="NETWORK"
           onClick={() => {
@@ -79,7 +79,7 @@ function NavMenu() {
       </Link>
       <Link to="/entities">
         <LCARSButton
-          color={LCARSColorPalette.mediumgrey}
+          color={LCARSColorPalette.Cosmic}
           hidden={true}
           dataLabel="ENTITIES"
           onClick={() => {

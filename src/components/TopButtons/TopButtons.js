@@ -9,7 +9,7 @@ import {
 export const defaultTopButtons = [
   {
     id: 1,
-    primaryColor: LCARSColorPalette.mediumgrey,
+    primaryColor: LCARSColorPalette.BahamaBlue,
     secondaryColor: "bg-color-2",
     dataLabel: "Button1",
     on_Click: () => {

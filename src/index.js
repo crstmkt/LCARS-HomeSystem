@@ -8,14 +8,7 @@ import { Provider } from "react-redux";
 import { store } from "./store";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
-import "./lcars-sdk/fonts/sdk_fonts-default.css";
 import "./lcars-styled-components/lcars.css";
-//import "./lcars-sdk/core/lcars-sdk.css";
-import "./lcars-sdk/themes/sdk_theme-default.css";
-import "./lcars-sdk/widgets/sdk_default-bar-frame/default-bar-frame.css";
-import "./lcars-sdk/widgets/sdk_default-bracket/default-bracket.css";
-import "./lcars-sdk/widgets/sdk_solid-level-bar/solid-level-bar.css";
-import "./lcars-sdk/widgets/sdk_scroll-button/scroll-button.css";
 import "./lcars-styled-components/Elbow/LCARSElbow.css";
 import "./App.css";
 

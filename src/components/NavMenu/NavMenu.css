@@ -1,4 +1,7 @@
 nav > * {
   position: relative;
+}
+
+nav > * ~ * {
   margin-top: 2.5%;
 }

@@ -41,12 +41,12 @@ function App() {
       <header class="flex-h">
         <nav class="flex-v">
           <LCARSBlock
-            color={LCARSColorPalette.darkgrey}
+            color={LCARSColorPalette.Gold}
             hidden={true}
             additionalClasses=""
           ></LCARSBlock>
           <LCARSElbow
-            color={LCARSColorPalette.darkgrey}
+            color={LCARSColorPalette.Sand}
             version="bottom-left"
             additionalClasses="flex-c-v"
             hidden={"true"}
@@ -68,34 +68,17 @@ function App() {
             </div>
           </div>
           <div id="closingBar" class="row frame flex-h">
+            <LCARSBar color={LCARSColorPalette.Sand} hidden={true}></LCARSBar>
+            <LCARSBar color={LCARSColorPalette.Sand} hidden={true}></LCARSBar>
             <LCARSBar
-              color={LCARSColorPalette.darkgrey}
+              color={LCARSColorPalette.Gold}
               hidden={true}
+              additionalClasses="flex-c-h"
             ></LCARSBar>
-            <LCARSBar
-              color={LCARSColorPalette.darkgrey}
-              hidden={true}
-            ></LCARSBar>
-            <LCARSBar
-              color={LCARSColorPalette.darkgrey}
-              hidden={true}
-            ></LCARSBar>
-            <LCARSBar
-              color={LCARSColorPalette.darkgrey}
-              hidden={true}
-            ></LCARSBar>
-            <LCARSBar
-              color={LCARSColorPalette.darkgrey}
-              hidden={true}
-            ></LCARSBar>
-            <LCARSBar
-              color={LCARSColorPalette.darkgrey}
-              hidden={true}
-            ></LCARSBar>
-            <LCARSBar
-              color={LCARSColorPalette.darkgrey}
-              hidden={true}
-            ></LCARSBar>
+            <LCARSBar color={LCARSColorPalette.Sand} hidden={true}></LCARSBar>
+            <LCARSBar color={LCARSColorPalette.Gold} hidden={true}></LCARSBar>
+            <LCARSBar color={LCARSColorPalette.Sand} hidden={true}></LCARSBar>
+            <LCARSBar color={LCARSColorPalette.Gold} hidden={true}></LCARSBar>
           </div>
         </div>
       </header>
@@ -105,48 +88,19 @@ function App() {
         </aside>
         <section>
           <div id="wrapperSIDfff6sprkp" className="flex-v">
-            <div id="rowSIDmnu78fmyz" className=" flex-h">
+            <div id="topRow" className="row frame flex-h">
+              <LCARSBar color={LCARSColorPalette.Gold} hidden={true}></LCARSBar>
+              <LCARSBar color={LCARSColorPalette.Gold} hidden={true}></LCARSBar>
               <LCARSBar
-                color={LCARSColorPalette.darkgrey}
-                hidden={true}
-              ></LCARSBar>
-              <LCARSBar
-                color={LCARSColorPalette.darkgrey}
-                hidden={true}
-                additionalClasses="small"
-              ></LCARSBar>
-              <LCARSBar
-                color={LCARSColorPalette.darkgrey}
-                hidden={true}
-              ></LCARSBar>
-              <LCARSBar
-                color={LCARSColorPalette.darkgrey}
+                color={LCARSColorPalette.Sand}
                 hidden={true}
                 additionalClasses="flex-c-h"
               ></LCARSBar>
-              <LCARSBar
-                color={LCARSColorPalette.darkgrey}
-                hidden={true}
-              ></LCARSBar>
-              <LCARSBar
-                color={LCARSColorPalette.darkgrey}
-                hidden={true}
-              ></LCARSBar>
-              <LCARSBar
-                color={LCARSColorPalette.darkgrey}
-                hidden={true}
-              ></LCARSBar>
+              <LCARSBar color={LCARSColorPalette.Gold} hidden={true}></LCARSBar>
+              <LCARSBar color={LCARSColorPalette.Sand} hidden={true}></LCARSBar>
+              <LCARSBar color={LCARSColorPalette.Gold} hidden={true}></LCARSBar>
+              <LCARSBar color={LCARSColorPalette.Sand} hidden={true}></LCARSBar>
             </div>
-
-            {/* <div id="wpr_centerControls" class="wrapper flex-h flex-c-v">
-              <Switch>
-                <Route path="/dashboard" component={Dashboard}></Route>
-                <Route path="/rooms" component={Rooms}></Route>
-                <Route path="*">
-                  <h1 class="bar text-color-1 blink">SYSTEM HALTED</h1>
-                </Route>
-              </Switch>
-            </div> */}
           </div>
         </section>
       </div>
