@@ -7,12 +7,6 @@ import {
   useHistory,
   withRouter,
 } from "react-router-dom";
-import {
-  LCARSBar,
-  LCARSBlock,
-  LCARSColorPalette,
-  LCARSElbow,
-} from "./lcars-styled-components/lcars-styled-components";
 
 function AppX() {
   const history = useHistory();
@@ -29,12 +23,16 @@ function AppX() {
   }, []);
 
   return (
-    <div id="header" class="lcars-row header">
-      <LCARSElbow
-        color={LCARSColorPalette.Burbon}
-        version="left-top"
-      ></LCARSElbow>
-      <LCARSBar additionalClasses="horizontal"></LCARSBar>
+    <div>
+      <div id="header" class="lcars-row header">
+        <div class="lcars-elbow left-bottom lcars-golden-tanoi-bg"></div>
+
+        <div class="lcars-bar horizontal">
+          <div class="lcars-title right">LCARS</div>
+        </div>
+
+        <div class="lcars-bar horizontal right-end decorated"></div>
+      </div>
     </div>
   );
 }

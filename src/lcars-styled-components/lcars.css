@@ -30,27 +30,19 @@ a {
   margin: 0.5rem;
 }
 
-/* =============================================================================
-   Flexbox Model SDK
-   ========================================================================== */
-
-/* .flex-v {
-  display: flex;
-  flex-direction: column;
+.hidden {
+  visibility: hidden;
+  -webkit-animation: none !important;
+  animation: none !important;
+  pointer-events: none;
 }
 
-.flex-c-v {
-  flex: 1;
+.hidden * {
+  -webkit-animation: none !important;
+  animation: none !important;
+  -webkit-transition: none;
+  transition: none !important;
 }
-
-.flex-h {
-  display: flex;
-  flex-direction: row;
-}
-
-.flex-c-h {
-  flex: 1;
-} */
 
 /* =============================================================================
    Fonts
@@ -102,4 +94,206 @@ a {
     url("fonts/lcars-mono-webfont.svg#lcars-monoregular") format("svg");
   font-weight: normal;
   font-style: normal;
+}
+
+/* =============================================================================
+   Test
+   ========================================================================== */
+
+.lcars-elbow {
+  position: relative;
+  width: 9.5rem;
+  min-width: 9.5rem;
+  height: 4.5rem;
+  min-height: 4.5rem;
+  background: #fc6;
+  margin: 0;
+}
+.lcars-elbow a {
+  display: inline-block;
+  position: absolute;
+  color: #000;
+  bottom: 0;
+  padding: 0.25rem;
+}
+.lcars-elbow:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 2rem;
+  height: 3rem;
+  background: #000;
+}
+.lcars-elbow.left-bottom {
+  border-top-left-radius: 3.75rem;
+}
+.lcars-elbow.left-bottom a {
+  right: 2.25rem;
+}
+.lcars-elbow.left-bottom:after {
+  right: 0;
+  top: 1.5rem;
+  border-top-left-radius: 1.875rem;
+}
+.lcars-elbow.left-top {
+  border-bottom-left-radius: 3.75rem;
+}
+.lcars-elbow.left-top a {
+  top: 0;
+  right: 2.25rem;
+}
+.lcars-elbow.left-top:after {
+  right: 0;
+  bottom: 1.5rem;
+  border-bottom-left-radius: 3.75rem;
+}
+.lcars-elbow.right-bottom {
+  border-top-right-radius: 3.75rem;
+}
+.lcars-elbow.right-bottom:after {
+  top: 1.5rem;
+  border-top-right-radius: 1.875rem;
+}
+.lcars-elbow.right-bottom a {
+  left: 2.25rem;
+}
+.lcars-elbow.right-top {
+  border-bottom-right-radius: 3.75rem;
+}
+.lcars-elbow.right-top a {
+  display: inline-block;
+  top: 0;
+  left: 2.25rem;
+}
+.lcars-elbow.right-top:after {
+  bottom: 1.5rem;
+  border-bottom-right-radius: 1.875rem;
+}
+.lcars-bar {
+  position: relative;
+  color: #000;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: inline-block;
+  background-color: #fc6;
+}
+.lcars-bar:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #000;
+}
+.lcars-bar.spacer {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  width: 0.25rem;
+  min-width: 0.25rem;
+  height: 0.25rem;
+  min-height: 0.25rem;
+}
+.lcars-bar.double-spacer {
+  background-color: transparent;
+  width: 0.5rem;
+  min-width: 0.5rem;
+  height: 0.5rem;
+  min-height: 0.5rem;
+}
+.lcars-bar.left-space {
+  margin-left: 0.25rem;
+}
+.lcars-bar.left-double-space {
+  margin-left: 0.5rem;
+}
+.lcars-bar.right-space {
+  margin-right: 0.25rem;
+}
+.lcars-bar.right-double-space {
+  margin-right: 0.5rem;
+}
+.lcars-bar.horizontal {
+  height: 1.5rem;
+}
+.lcars-bar.left-end {
+  width: 1.5rem;
+  max-width: 1.5rem;
+  min-width: 1.5rem;
+  border-top-left-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+}
+.lcars-bar.left-end.decorated:after {
+  right: 0.25rem;
+  width: 0.25rem;
+  height: 100%;
+  background-color: #000;
+}
+.lcars-bar.right-end {
+  width: 1.5rem;
+  max-width: 1.5rem;
+  min-width: 1.5rem;
+  border-top-right-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+}
+.lcars-bar.right-end.decorated:after {
+  left: 0.25rem;
+  width: 0.25rem;
+  height: 100%;
+  background-color: #000;
+  background-color: #000;
+}
+.lcars-bar.fill {
+  flex: 1;
+}
+.lcars-bar.bottom {
+  align-self: flex-end;
+}
+.lcars-bar .lcars-title {
+  color: #fff;
+  background-color: #000;
+  text-transform: uppercase;
+  margin: 0;
+  margin-left: 0.83335rem;
+  padding-left: 0.16667rem;
+  padding-right: 0.16667rem;
+  padding-bottom: 0.16667rem;
+  display: inline-block;
+  font-size: 150%;
+  height: 100%;
+}
+.lcars-bar .lcars-title.right {
+  float: right;
+  margin-right: 0.83335rem;
+}
+.lcars-row {
+  display: inline-flex;
+  flex-direction: row;
+  width: 100%;
+}
+.lcars-row.fill {
+  flex: 1;
+}
+.lcars-row.centered {
+  justify-content: center;
+}
+.lcars-row.full-centered {
+  justify-content: center;
+  align-items: center;
+}
+.lcars-row.right {
+  justify-content: flex-end;
+}
+.lcars-row.right-centered {
+  justify-content: flex-end;
+  align-items: center;
+}
+.lcars-row.right-bottom {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.lcars-row :last-child {
+  margin-right: 0;
+}
+.lcars-row > * {
+  margin-right: 0.25rem;
 }

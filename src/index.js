@@ -1,15 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+// import App from "./App";
 import AppX from "./AppX";
 import { Provider } from "react-redux";
 import { store } from "./store";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
-import "./lcars-styled-components/lcars.css";
-import "./lcars-styled-components/Elbow/LCARSElbow.css";
-import "./App.css";
+// import "./lcars-styled-components/lcars.css";
+import "./css/lcars.css";
 
 ReactDOM.render(
   <React.StrictMode>

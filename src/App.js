@@ -20,6 +20,7 @@ import {
 } from "./lcars-styled-components/lcars-styled-components";
 import NavMenu from "./components/NavMenu/NavMenu";
 import MediaQuery from "react-responsive";
+import "./App.css";
 
 function App() {
   const history = useHistory();
