@@ -10,9 +10,9 @@ import "./css/lcars.css";
 
 ReactDOM.render(
   <React.StrictMode>
-      <Router>
-        <AppX />
-      </Router>s
+    <Router>
+      <AppX />
+    </Router>
   </React.StrictMode>,
   document.getElementById("lcars-app-container")
 );
