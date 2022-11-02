@@ -18,11 +18,14 @@ function AppX() {
   useEffect(() => {
     //Set History
     //setUrl(history.location.pathname);
-    // Get JSON data from Boiler
-    fetch("http://192.168.0.202/data.jsn")
-      .then((response) => response.json())
-      .then((json) => setBoilerJson(json));
-  }, []);
+    fetchBoilerJson();
+    const interval = setInterval(() => {
+      fetchBoilerJson();
+    }, 10000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []); //Delete comma and array for continiously calling
 
   //Unhide LCARS Interface
   useEffect(() => {
@@ -48,9 +51,24 @@ function AppX() {
 
         <div className="lcars-bar horizontal right-end decorated"></div>
       </div>
-      <div id="container">{JSON.stringify(boilerJson)}</div>
+      <div id="container">
+        <img src="./css/svg/dryer.svg" alt="Test"></img>
+
+        {typeof boilerJson === "undefined" ? null : boilerJson.temp1}
+        <br></br>
+        {typeof boilerJson === "undefined" ? null : boilerJson.status}
+        <br></br>
+        {typeof boilerJson === "undefined" ? null : boilerJson.power}
+        <br></br>
+      </div>
     </div>
   );
+
+  function fetchBoilerJson() {
+    fetch("http://192.168.0.202/data.jsn")
+      .then((response) => response.json())
+      .then((json) => setBoilerJson(json));
+  }
 }
 
 export default withRouter(AppX);
