@@ -9,6 +9,8 @@ import {
 //Override styles
 import "./AppX.css";
 
+import SVGDryer from "./css/svg/dryer.svg";
+
 function AppX() {
   // const history = useHistory();
   // const [url, setUrl] = useState(history.location.pathname);
@@ -52,14 +54,15 @@ function AppX() {
         <div className="lcars-bar horizontal right-end decorated"></div>
       </div>
       <div id="container">
-        <img src="./css/svg/dryer.svg" alt="Test"></img>
+        <img src={SVGDryer} alt="SVG Logo " />
 
+        {/*
         {typeof boilerJson === "undefined" ? null : boilerJson.temp1}
         <br></br>
         {typeof boilerJson === "undefined" ? null : boilerJson.status}
         <br></br>
         {typeof boilerJson === "undefined" ? null : boilerJson.power}
-        <br></br>
+        <br></br> */}
       </div>
     </div>
   );
