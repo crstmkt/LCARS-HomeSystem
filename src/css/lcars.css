@@ -387,13 +387,17 @@ body {
   overflow: hidden;
   margin: 0.5rem;
 }
-.lcars-app-container #left-menu {
+.lcars-app-container > div {
+  width: calc(100% - 5rem);
+  height: calc(100% - 0.5rem);
+}
+.lcars-app-container > div > #left-menu {
   position: fixed;
   padding-top: 4.5rem;
   height: 100%;
   left: 0.5rem;
 }
-.lcars-app-container #header {
+.lcars-app-container > div > #header {
   position: fixed;
   background-color: #000;
   width: calc(100% - 1rem);
@@ -403,7 +407,7 @@ body {
   margin-bottom: 0.25rem;
   z-index: 1;
 }
-.lcars-app-container #footer {
+.lcars-app-container > div > #footer {
   position: fixed;
   background-color: #000;
   bottom: 0;
@@ -412,14 +416,11 @@ body {
   width: calc(100% - 1rem);
   z-index: 1;
 }
-.lcars-app-container #container {
+.lcars-app-container > div > #container {
   margin-top: 2.5rem;
   margin-left: 2.5rem;
-  /* padding-left: 9.5rem;
-  padding-top: 4.5rem;
-  padding-bottom: 4.5rem; */
   width: 100%;
-  height: 100%;
+  height: calc(100% -1rem);
   overflow: auto;
 }
 .lcars-row {

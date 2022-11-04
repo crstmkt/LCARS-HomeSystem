@@ -8,8 +8,11 @@ import {
 } from "react-router-dom";
 //Override styles
 import "./AppX.css";
-
+///SVG
 import SVGDryer from "./css/svg/dryer.svg";
+import SVGBoiler from "./css/svg/boiler.svg";
+import SVGBPowerPole from "./css/svg/powerpole.svg";
+import SVGWashingMaschine from "./css/svg/washingmaschine.svg";
 
 function AppX() {
   // const history = useHistory();
@@ -23,7 +26,7 @@ function AppX() {
     fetchBoilerJson();
     const interval = setInterval(() => {
       fetchBoilerJson();
-    }, 10000);
+    }, 2000);
     return () => {
       clearInterval(interval);
     };
@@ -54,23 +57,75 @@ function AppX() {
         <div className="lcars-bar horizontal right-end decorated"></div>
       </div>
       <div id="container">
-        <img src={SVGDryer} alt="SVG Logo " />
-
-        {/*
-        {typeof boilerJson === "undefined" ? null : boilerJson.temp1}
-        <br></br>
-        {typeof boilerJson === "undefined" ? null : boilerJson.status}
-        <br></br>
-        {typeof boilerJson === "undefined" ? null : boilerJson.power}
-        <br></br> */}
+        <div className="lcars-u-16-8 fill"></div>
+        <div className="lcars-u-16-8 fill"></div>
+        <div className="lcars-u-16-7 fill ">
+          <div className="lcars-row">
+            <img src={SVGWashingMaschine}></img>
+            <img src={SVGDryer}></img>
+            <img src={SVGBoiler} alt="SVG Logo " />
+            <div>
+              <h5>
+                {typeof boilerJson === "undefined"
+                  ? null
+                  : formatTemp(boilerJson.temp1)}
+              </h5>
+              <h5>
+                {" "}
+                {typeof boilerJson === "undefined"
+                  ? null
+                  : convertStatus(boilerJson.status)}
+              </h5>
+              <h5>
+                {typeof boilerJson === "undefined"
+                  ? null
+                  : boilerJson.power + "W"}
+              </h5>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
 
+  //AC ELWA
   function fetchBoilerJson() {
     fetch("http://192.168.0.202/data.jsn")
       .then((response) => response.json())
       .then((json) => setBoilerJson(json));
+  }
+
+  function formatTemp(temp) {
+    return (
+      temp.toString().substring(0, 2) + "." + temp.toString().substring(2) + "C"
+    );
+  }
+
+  function convertStatus(statusNr) {
+    switch (statusNr) {
+      case 2:
+        return "HEAT";
+      case 3:
+        return "STANDBY";
+      case 4:
+        return "BOOST HEAT";
+      case 5:
+        return "HEAT FINISHED";
+      case 9:
+        return "SETUP";
+      case 201:
+        return "ERROR OVERTEMP FUSE BLOWN";
+      case 202:
+        return "ERROR OVERTEMP MEASURED";
+      case 203:
+        return "ERROR OVERTEMP ELECTRONICS";
+      case 204:
+        return "ERROR HARDWARE FAULT";
+      case 205:
+        return "ERROR TEMP SENSOR";
+      case 209:
+        return "MAINBOARD ERROR";
+    }
   }
 }
 
