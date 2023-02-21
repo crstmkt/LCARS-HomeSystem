@@ -6,6 +6,7 @@ import {
   useHistory,
   withRouter,
 } from "react-router-dom";
+import getItem from "./API/API";
 //Override styles
 import "./AppX.css";
 ///SVG
@@ -57,13 +58,21 @@ function AppX() {
         <div className="lcars-bar horizontal right-end decorated"></div>
       </div>
       <div id="container">
-        <div className="lcars-u-16-8 fill"></div>
-        <div className="lcars-u-16-8 fill"></div>
-        <div className="lcars-u-16-7 fill ">
+        <div className="lcars-u-0-3 fill"></div>
+        <div className="lcars-u-0-4 fill"></div>
+        <div className="lcars-u-0-4 fill"></div>
+        <div className="lcars-u-0-3 fill ">
           <div className="lcars-row">
-            <img src={SVGWashingMaschine}></img>
-            <img src={SVGDryer}></img>
-            <img src={SVGBoiler} alt="SVG Logo " />
+            <img
+              src={SVGWashingMaschine}
+              height="128"
+              width="128"
+              onClick={
+                () => getItem("workroomsensors_workroomsensorsHTU21Humidity") // What the heck?
+              }
+            ></img>
+            <img src={SVGDryer} height="128" width="128"></img>
+            <img src={SVGBoiler} height="128" width="128" alt="SVG Logo " />
             <div>
               <h5>
                 {typeof boilerJson === "undefined"
@@ -90,7 +99,7 @@ function AppX() {
 
   //AC ELWA
   function fetchBoilerJson() {
-    fetch("http://192.168.0.202/data.jsn")
+    fetch("http://192.168.20.202/data.jsn")
       .then((response) => response.json())
       .then((json) => setBoilerJson(json));
   }
