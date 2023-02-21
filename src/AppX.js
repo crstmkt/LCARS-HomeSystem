@@ -62,7 +62,7 @@ function AppX() {
         <div className="lcars-u-0-3 fill"></div>
         <div className="lcars-u-0-4 fill"></div>
         <div className="lcars-u-0-4 fill"></div>
-        <img src={SVGBPowerPole} width="250" height="420"></img>
+        <img src={SVGBPowerPole} width="250" height="250"></img>
         <div className="lcars-u-0-3 fill">
           <div id="grass" className="lcars-row"></div>
           <div id="cellar" className="lcars-row">
