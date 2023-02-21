@@ -3,3 +3,15 @@
   height: 90vh !important;
   border: 1px solid yellow;
 }
+
+#grass {
+  position: relative;
+  max-width: 100%;
+  display: block;
+  background-position: 0 0;
+  background: url("./css/svg/grass.svg");
+  content: " ";
+  height: 30px;
+}
+#cellar {
+}

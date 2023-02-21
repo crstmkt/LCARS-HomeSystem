@@ -14,6 +14,7 @@ import SVGDryer from "./css/svg/dryer.svg";
 import SVGBoiler from "./css/svg/boiler.svg";
 import SVGBPowerPole from "./css/svg/powerpole.svg";
 import SVGWashingMaschine from "./css/svg/washingmaschine.svg";
+import SVGGrass from "./css/svg/grass.svg";
 
 function AppX() {
   // const history = useHistory();
@@ -61,8 +62,10 @@ function AppX() {
         <div className="lcars-u-0-3 fill"></div>
         <div className="lcars-u-0-4 fill"></div>
         <div className="lcars-u-0-4 fill"></div>
-        <div className="lcars-u-0-3 fill ">
-          <div className="lcars-row">
+        <img src={SVGBPowerPole} width="250" height="420"></img>
+        <div className="lcars-u-0-3 fill">
+          <div id="grass" className="lcars-row"></div>
+          <div id="cellar" className="lcars-row">
             <img
               src={SVGWashingMaschine}
               height="128"
