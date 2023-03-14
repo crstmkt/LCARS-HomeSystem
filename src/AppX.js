@@ -13,8 +13,7 @@ import "./AppX.css";
 import SVGDryer from "./css/svg/dryer.svg";
 import SVGBoiler from "./css/svg/boiler.svg";
 import SVGBPowerPole from "./css/svg/powerpole.svg";
-import SVGWashingMaschine from "./css/svg/washingmaschine.svg";
-import SVGGrass from "./css/svg/grass.svg";
+import SVGWashingMachine from "./css/svg/SVGWashingMachine";
 
 function AppX() {
   // const history = useHistory();
@@ -25,9 +24,9 @@ function AppX() {
   useEffect(() => {
     //Set History
     //setUrl(history.location.pathname);
-    fetchBoilerJson();
+    //fetchBoilerJson();
     const interval = setInterval(() => {
-      fetchBoilerJson();
+      //fetchBoilerJson();
     }, 2000);
     return () => {
       clearInterval(interval);
@@ -66,33 +65,26 @@ function AppX() {
         <div className="lcars-u-0-3 fill">
           <div id="grass" className="lcars-row"></div>
           <div id="cellar" className="lcars-row">
-            <img
-              src={SVGWashingMaschine}
-              height="128"
-              width="128"
-              onClick={
-                () => getItem("workroomsensors_workroomsensorsHTU21Humidity") // What the heck?
-              }
-            ></img>
+            <SVGWashingMachine strokeColor="#f93" width="128" height="128" />
             <img src={SVGDryer} height="128" width="128"></img>
             <img src={SVGBoiler} height="128" width="128" alt="SVG Logo " />
             <div>
-              <h5>
+              <h6>
                 {typeof boilerJson === "undefined"
                   ? null
                   : formatTemp(boilerJson.temp1)}
-              </h5>
-              <h5>
+              </h6>
+              <h6>
                 {" "}
                 {typeof boilerJson === "undefined"
                   ? null
                   : convertStatus(boilerJson.status)}
-              </h5>
-              <h5>
+              </h6>
+              <h6>
                 {typeof boilerJson === "undefined"
                   ? null
                   : boilerJson.power + "W"}
-              </h5>
+              </h6>
             </div>
           </div>
         </div>
