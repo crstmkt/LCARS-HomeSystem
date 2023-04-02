@@ -6,7 +6,7 @@ import {
   useHistory,
   withRouter,
 } from "react-router-dom";
-import getItem from "./API/API";
+import getItem, { convertStatus, fetchBoilerJson, formatTemp } from "./API/API";
 //Override styles
 import "./AppX.css";
 ///SVG
@@ -24,9 +24,9 @@ function AppX() {
   useEffect(() => {
     //Set History
     //setUrl(history.location.pathname);
-    //fetchBoilerJson();
+    fetchBoilerJson().then((data) => setBoilerJson(data));
     const interval = setInterval(() => {
-      //fetchBoilerJson();
+      fetchBoilerJson().then((data) => setBoilerJson(data));
     }, 2000);
     return () => {
       clearInterval(interval);
@@ -35,8 +35,8 @@ function AppX() {
 
   //Unhide LCARS Interface
   useEffect(() => {
-    //ToDo: Call Animation function here
-    return () => {};
+    //ToDo: Call Animation function here (as soon as I rewrote that.)
+    return () => { };
   }, []);
 
   return (
@@ -91,46 +91,6 @@ function AppX() {
       </div>
     </div>
   );
-
-  //AC ELWA
-  function fetchBoilerJson() {
-    fetch("http://192.168.20.202/data.jsn")
-      .then((response) => response.json())
-      .then((json) => setBoilerJson(json));
-  }
-
-  function formatTemp(temp) {
-    return (
-      temp.toString().substring(0, 2) + "." + temp.toString().substring(2) + "C"
-    );
-  }
-
-  function convertStatus(statusNr) {
-    switch (statusNr) {
-      case 2:
-        return "HEAT";
-      case 3:
-        return "STANDBY";
-      case 4:
-        return "BOOST HEAT";
-      case 5:
-        return "HEAT FINISHED";
-      case 9:
-        return "SETUP";
-      case 201:
-        return "ERROR OVERTEMP FUSE BLOWN";
-      case 202:
-        return "ERROR OVERTEMP MEASURED";
-      case 203:
-        return "ERROR OVERTEMP ELECTRONICS";
-      case 204:
-        return "ERROR HARDWARE FAULT";
-      case 205:
-        return "ERROR TEMP SENSOR";
-      case 209:
-        return "MAINBOARD ERROR";
-    }
-  }
 }
 
 export default withRouter(AppX);
