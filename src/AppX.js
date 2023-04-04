@@ -9,10 +9,11 @@ import {
 import getItem from "./API/API";
 //Override styles
 import "./AppX.css";
-///SVG
-import SVGDryer from "./css/svg/dryer.svg";
-import SVGBoiler from "./css/svg/boiler.svg";
-import SVGBPowerPole from "./css/svg/powerpole.svg";
+
+//SVG
+import SVGDryer from "./css/svg/SVGDryer";
+import SVGBoiler from "./css/svg/SVGBoiler";
+import SVGPowerPole from "./css/svg/SVGPowerPole";
 import SVGWashingMachine from "./css/svg/SVGWashingMachine";
 
 function AppX() {
@@ -24,9 +25,9 @@ function AppX() {
   useEffect(() => {
     //Set History
     //setUrl(history.location.pathname);
-    //fetchBoilerJson();
+    fetchBoilerJson();
     const interval = setInterval(() => {
-      //fetchBoilerJson();
+      fetchBoilerJson();
     }, 2000);
     return () => {
       clearInterval(interval);
@@ -61,13 +62,14 @@ function AppX() {
         <div className="lcars-u-0-3 fill"></div>
         <div className="lcars-u-0-4 fill"></div>
         <div className="lcars-u-0-4 fill"></div>
-        <img src={SVGBPowerPole} width="250" height="250"></img>
+        <SVGPowerPole strokeColor="#9c9c9c" width="250" hieght="250" />
         <div className="lcars-u-0-3 fill">
           <div id="grass" className="lcars-row"></div>
           <div id="cellar" className="lcars-row">
             <SVGWashingMachine strokeColor="#f93" width="128" height="128" />
-            <img src={SVGDryer} height="128" width="128"></img>
-            <img src={SVGBoiler} height="128" width="128" alt="SVG Logo " />
+            <SVGDryer strokeColor="#f93" width="128" height="128" />
+            <SVGBoiler strokeColor="#f93" width="128" height="128" />
+
             <div>
               <h6>
                 {typeof boilerJson === "undefined"

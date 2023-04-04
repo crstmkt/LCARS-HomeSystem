@@ -1,6 +1,6 @@
 import React from "react";
 
-function SVGWashingMachine({
+export default function SVGWashingMachine({
   strokeColor = "#f93",
   width = 150,
   height = 150,
@@ -78,4 +78,3 @@ function SVGWashingMachine({
     </div>
   );
 }
-export default SVGWashingMachine;
