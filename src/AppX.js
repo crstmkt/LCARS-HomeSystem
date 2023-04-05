@@ -70,7 +70,7 @@ function AppX() {
             <SVGDryer strokeColor="#f93" width="128" height="128" />
             <SVGBoiler strokeColor="#f93" width="128" height="128" />
 
-            <div>
+            {/* <div>
               <h6>
                 {typeof boilerJson === "undefined"
                   ? null
@@ -87,7 +87,7 @@ function AppX() {
                   ? null
                   : boilerJson.power + "W"}
               </h6>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
